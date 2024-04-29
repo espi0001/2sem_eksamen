@@ -1,0 +1,60 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-font: Arial, Helvetica, sans-serif;
+
+  --primary-color: #fff;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* body {
+  background-color: ;
+  list-style: none;
+} */
+
+/* TEKST START*/
+/* h1 {
+  font-size: ;
+  font-family: ;
+  font-weight: ;
+} */
+
+/* p {
+  font-family: ;
+  color: ;
+  font-size: ;
+  line-height: ;
+  font-weight: ;
+  max-width: ;
+} */
+/* a {
+  cursor: pointer;
+  transition: all 0.55s ease;
+} */
+/* a:hover {
+  color: ;
+} */
+
+/* ___________________________ TABLET  ___________________________*/
+/* reglerne gælder når skærmen er minimum 768px */
+@media screen and (min-width: 768px) {
+}
+
+/* ___________________________ DESKTOP  ___________________________*/
+@media screen and (min-width: 1024px) {
+}

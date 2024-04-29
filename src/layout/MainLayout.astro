@@ -1,0 +1,48 @@
+---
+import "../styles/style.css";
+// import Navigation from "../components/Navigation.astro";
+// import Footer from "../components/Footer.astro";
+// import Topknap from "../components/Topknap.astro";
+// const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <!-- europæisk sprog -->
+    <meta charset="utf-8" />
+
+    <!-- Det eks hvis man bruger safari - så browser ser ens ud-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Fortæller at det er et pesponsivt site -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- SEO -->
+    <meta name="description" content="NOGET TEKST HER" />
+    <meta name="author" content="Sebastian, Rose, Nicoline og Ester" />
+    <meta name="copyright" content="Team_????" />
+
+    <!-- Den kommer ikke frem hos søgemaskiner -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- fa-icon -->
+    <link rel="icon" type="image/svg+xml" href="" />
+
+    <!-- FONTE -  -->
+
+    <!-- FONTE -  -->
+
+    <!-- <meta name="generator" content={Astro.generator} /> -->
+
+    <!-- titel på siden -->
+    <!-- <title>{title}</title> -->
+  </head><body id="top">
+    <!-- <h1>{title}</h1> -->
+
+    <main>
+      <slot />
+    </main>
+
+    <script></script>
+  </body>
+</html>
