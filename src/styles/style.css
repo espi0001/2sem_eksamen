@@ -22,6 +22,14 @@ body {
   scroll-behavior: smooth;
 }
 
+/* FONTS */
+@font-face {
+  font-family: "bn_wolfstarrounded";
+  src: url("bnwolfstar-rounded-webfont.woff2") format("woff2"), url("bnwolfstar-rounded-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* body {
   background-color: ;
   list-style: none;
