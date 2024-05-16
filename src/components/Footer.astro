@@ -1,0 +1,78 @@
+---
+import "../styles/style.css";
+---
+
+<footer>
+  <div class="content">
+    <div class="logo">
+      <img src="" alt="logo" />
+    </div>
+    <div class="sociale_links"></div>
+    <div class="links">
+      <a href="/9_kontakt">Kontakt</a>
+      <a href="">Nyhedsbrev</a>
+      <a href="2_koncerter">Koncerter</a>
+    </div>
+  </div>
+  <hr />
+  <div class="credits">
+    <p>© 2024 Barselona</p>
+    <div class="footer_links">
+      <a href="/10_persondata">Persondatapolitik</a>
+      <a href="/11_vilkaar">Vilkår og betingelser</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color_black);
+    padding: 80px 64px;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 64px;
+  }
+  .links {
+    display: flex;
+    gap: 32px;
+    text-decoration: none;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .credits {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .footer_links {
+    display: flex;
+    gap: 24px;
+  }
+  .footer_links a {
+    text-decoration: underline;
+  }
+  .footer_links a:hover {
+    text-decoration: none;
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+  }
+</style>

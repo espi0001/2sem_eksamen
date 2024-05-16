@@ -78,6 +78,7 @@ a {
   font-family: var(--font_body);
   color: var(--color_white);
   line-height: 1.5;
+  text-decoration: none;
 }
 
 h1 {
@@ -109,7 +110,7 @@ a {
   transition: all 0.55s ease;
 }
 a:hover {
-  color: var(--color_grey);
+  text-decoration: underline;
 }
 
 /* ___________________________ TABLET  ___________________________*/
