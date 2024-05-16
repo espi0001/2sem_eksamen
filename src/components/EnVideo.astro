@@ -1,0 +1,39 @@
+---
+import "../styles/style.css";
+const {} = Astro.props;
+---
+
+<article>
+  <div class="video">
+    <img src="https://esterpiazza.dk/kea/10_eksamen/Lightbox.png" alt="icon" />
+    <div class="video_hover">
+      <a href="#">
+        <p>Barselona - Real Love</p>
+        <a href="#">Afspil</a>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .video {
+    grid-column: 1/1;
+    grid-row: 1/1;
+  }
+  .video_hover {
+    grid-column: 1/1;
+    grid-row: 1/1;
+    display: none;
+  }
+  .video:hover {
+    opacity: 50%;
+  }
+  .video_hover:hover {
+    display: block;
+  }
+</style>

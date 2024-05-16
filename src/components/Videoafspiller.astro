@@ -1,0 +1,48 @@
+---
+import "../styles/style.css";
+const {} = Astro.props;
+---
+
+<article>
+  <div class="video_placeholder">
+    <img src="https://esterpiazza.dk/kea/10_eksamen/Lightbox.png" alt="icon" />
+  </div>
+  <div class="content">
+    <div class="titel">
+      <h1>Barselona - Øjeblikke</h1>
+    </div>
+    <div class="share">
+      <p>DEL</p>
+      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="icon" />
+      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="icon" />
+      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="icon" />
+      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="icon" />
+      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="icon" />
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .video_placeholder {
+    /* width: 616px;
+    height: 347px;  */
+  }
+  .titel {
+    padding-bottom: 32px;
+  }
+  .share {
+    display: flex;
+    gap: 16px;
+  }
+  .share img {
+    max-width: 24px;
+    height: auto;
+  }
+</style>
