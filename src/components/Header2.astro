@@ -1,0 +1,18 @@
+---
+import "../styles/style.css";
+const { header1, text } = Astro.props;
+---
+
+<article class="content">
+  <h1>{header1}</h1>
+  <p>{text}</p>
+</article>
+
+<style>
+  article {
+    padding-top: 80px;
+  }
+  h1 {
+    padding-bottom: 24px;
+  }
+</style>

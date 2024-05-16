@@ -1,0 +1,19 @@
+---
+import "../styles/style.css";
+import Button from "./Button.astro";
+const { sted, dato, lokation } = Astro.props;
+---
+
+<article>
+  <hr />
+  <div class="koncert">
+    <div class="sted_dato">
+      <h5>{sted}</h5>
+      <div class="dato">
+        <p>{dato}</p>
+      </div>
+    </div>
+    <p>{lokation}</p>
+    <Button style="secondary">Find billetter</Button>
+  </div>
+</article>

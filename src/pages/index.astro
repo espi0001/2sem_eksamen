@@ -3,6 +3,9 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Links from "../components/Links.astro";
+import Header1 from "../components/Header1.astro";
+import Header2 from "../components/Header2.astro";
+import Koncertdato from "../components/Koncertdato.astro";
 ---
 
 <html lang="en">
@@ -16,7 +19,9 @@ import Links from "../components/Links.astro";
   <body>
     <MainLayout>
       <!-- <h1>forside</h1> -->
-
+      <Header1 header1="Barselona" header2="Efterår 2024" />
+      <Header2 />
+      <Koncertdato sted="Næstved" dato="13 september 2024" lokation="Næstved, Vershuset" />
       <Button style="primary" linket="Link"> link</Button>
       <Button style="secondary" linket="Link"> link</Button>
 
