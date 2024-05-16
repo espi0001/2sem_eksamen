@@ -1,0 +1,32 @@
+---
+import "../styles/style.css";
+import Button from "./Button.astro";
+const { foto, name, variant, price } = Astro.props;
+---
+
+<article class="produkt">
+  <a href="/4_singleview">
+    <img src={foto} alt="produkt" />
+    <div class="content">
+      <div class="product_name">
+        <p>{name}</p>
+        <p>{variant}</p>
+      </div>
+      <p>{price}</p>
+    </div>
+  </a>
+</article>
+
+<style>
+  article {
+    flex-direction: column;
+  }
+  img {
+    max-width: 304px;
+    height: auto;
+  }
+
+  img:hover {
+    transform: scale(1.02);
+  }
+</style>

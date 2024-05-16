@@ -1,0 +1,20 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Links from "../components/Links.astro";
+import Header2 from "../components/Header2.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import Singleview from "../components/Singleview.astro";
+---
+
+<MainLayout>
+  <!-- <h1>forside</h1> -->
+  <section>
+    <Header2 header1="single view" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+  </section>
+  <Breadcrumb link1="Shop all" link2="Category" link3="Productname" />
+  <section>
+    <Singleview />
+  </section>
+</MainLayout>

@@ -1,0 +1,22 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Links from "../components/Links.astro";
+import Header2 from "../components/Header2.astro";
+import Videoafspiller from "../components/Videoafspiller.astro";
+import EnVideo from "../components/EnVideo.astro";
+---
+
+<MainLayout>
+  <!-- <h1>forside</h1> -->
+  <section>
+    <Header2 header1="Videoer" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+  </section>
+  <section>
+    <Videoafspiller />
+  </section>
+  <section>
+    <EnVideo />
+  </section>
+</MainLayout>
