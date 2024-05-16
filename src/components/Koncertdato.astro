@@ -13,7 +13,37 @@ const { sted, dato, lokation } = Astro.props;
         <p>{dato}</p>
       </div>
     </div>
-    <p>{lokation}</p>
+    <div class="lokation">
+      <p>{lokation}</p>
+    </div>
     <Button style="secondary">Find billetter</Button>
   </div>
 </article>
+
+<style>
+  .koncert {
+    padding: 24px 0px;
+  }
+
+  h5 {
+    text-transform: uppercase;
+  }
+  .sted_dato {
+    display: flex;
+    margin-bottom: 24px;
+    align-items: center;
+    gap: 16px;
+  }
+  .lokation {
+    margin-bottom: 24px;
+  }
+
+  .dato {
+    background-color: var(--color_lightgrey);
+    padding: 4px 8px;
+  }
+  .dato p {
+    font-size: var(--font_size_small);
+    font-weight: medium;
+  }
+</style>

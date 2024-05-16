@@ -4,11 +4,31 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Links from "../components/Links.astro";
 import Header2 from "../components/Header2.astro";
+import Produkt from "../components/Produkt.astro";
 ---
 
 <MainLayout>
-  <!-- <h1>forside</h1> -->
+  // <!-- <h1>forside</h1> -->
   <section>
     <Header2 header1="Produkter" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
   </section>
+  <section class="produkter">
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
+  </section>
 </MainLayout>
+
+<style>
+  .produkter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+  }
+</style>

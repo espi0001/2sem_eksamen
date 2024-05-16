@@ -1,0 +1,56 @@
+---
+import "../styles/style.css";
+import Button from "./Button.astro";
+const { link1, link2, link3 } = Astro.props;
+---
+
+<article>
+  <div class="produkt_billeder">
+    <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="produktbillede" />
+  </div>
+  <div class="produkt_info">
+    <div class="navn_pris">
+      <h3>Logo Hoodie</h3>
+      <h5>500,-</h5>
+    </div>
+    <div class="description">
+      <p>Sort hættetrøje med hvidt Barselona logo</p>
+      <ul>
+        <li>85% økologisk bomuld, 15% genbrugt polyester</li>
+        <li>Vægt: 280 G/M²</li>
+        <li>GOTS, Fair Wear og PETA-Godkendt</li>
+        <li>Louis er 187 cm høj og bærer en str. L</li>
+      </ul>
+    </div>
+    <div class="input">
+      <p>Størrelse</p>
+      <div class="select"></div>
+    </div>
+    <div class="form_submit">
+      <Button style="primary">Tilføj til kurv</Button>
+    </div>
+  </div>
+
+  <style>
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin: auto;
+    }
+    .navn_pris,
+    .description,
+    .input {
+      padding-bottom: 24px;
+    }
+    h3 {
+      padding-bottom: 8px;
+    }
+    .description p {
+      padding-bottom: 16px;
+    }
+    li {
+      padding-top: 8px;
+    }
+  </style>
+</article>

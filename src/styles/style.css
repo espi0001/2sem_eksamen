@@ -51,6 +51,7 @@ body {
 }
 section {
   margin-inline: 36px;
+  padding: 122px 0;
 }
 
 /* TEKST START*/
@@ -63,6 +64,7 @@ h5,
 h6 {
   font-family: var(--font_header);
   color: var(--color_white);
+  font-weight: normal;
 }
 
 h1,
@@ -77,11 +79,13 @@ h6 {
 }
 
 p,
-a {
+a,
+li {
   font-family: var(--font_body);
   color: var(--color_white);
   line-height: 1.5;
   text-decoration: none;
+  font-weight: normal;
 }
 
 h1 {

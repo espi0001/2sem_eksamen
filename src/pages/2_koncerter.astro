@@ -4,11 +4,36 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Links from "../components/Links.astro";
 import Header1 from "../components/Header1.astro";
+import Koncertdato from "../components/Koncertdato.astro";
 ---
 
 <MainLayout>
   <!-- <h1>forside</h1> -->
   <section>
-    <Header1 header1="Barselona" header2="Efterår 2024" />
+    <Header1 header1="Barselona" header4="Efterår 2024" />
+  </section>
+  <section class="koncerter">
+    <div>
+      <Koncertdato sted="Næstved" dato="13 september 2024" lokation="Næstved, Vershuset" />
+      <Koncertdato sted="Skjern" dato="14 september 2024" lokation="Skjern, Remisen" />
+      <Koncertdato sted="Svendborg" dato="20 september 2024" lokation="Svendborg, Borgerforeningen" />
+      <Koncertdato sted="Nørup" dato="25 september 2024" lokation="Nørup, Engelsholm" />
+      <Koncertdato sted="Sønderborg" dato="29 september 2024" lokation="Sønderborg, Sønderborghus" />
+    </div>
+    <div>
+      <Koncertdato sted="Horsens" dato="12 oktober 2024" lokation="Horsens Ny Teater Med Platform K" />
+      <Koncertdato sted="Flensborg" dato="17 oktober 2024" lokation="Flensborg, Flensborghus" />
+      <Koncertdato sted="Skive" dato="18 oktober 2024" lokation="Skive, Skive Teater" />
+      <Koncertdato sted="Helsingør" dato="19 oktober 2024" lokation="Helsingør, Toldkammeret" />
+      <Koncertdato sted="København" dato="26 oktober 2024" lokation="København, Falkoner Salen" />
+    </div>
   </section>
 </MainLayout>
+
+<style>
+  .koncerter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+</style>

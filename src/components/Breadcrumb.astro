@@ -1,0 +1,19 @@
+---
+import "../styles/style.css";
+const { link1, link2, link3 } = Astro.props;
+---
+
+<article>
+  <a href="">{link1}</a>
+  <hr />
+  <a href="">{link2}</a>
+  <hr />
+  <a href="">{link3}</a>
+</article>
+
+<style>
+  article {
+    display: flex;
+    gap: 8px;
+  }
+</style>
