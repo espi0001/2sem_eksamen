@@ -1,0 +1,203 @@
+---
+import "../styles/style.css";
+// import Links from "../components/Links.astro";
+---
+
+<header>
+  <div class="logo">
+    <a href="/">
+      <img src="/" alt="Logo" />
+    </a>
+  </div>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="/2_koncerter">Koncerter</a></li>
+      <hr />
+      <li><a href="/3_merchandise">Merchandise</a></li>
+      <hr />
+      <li><a href="/7_ombarselona">Om Barselona</a></li>
+      <hr />
+      <li><a href="/8_videoer">Videoer</a></li>
+      <hr />
+      <li><a href="/9_kontakt">Kontakt</a></li>
+      <hr />
+      <li><a href="5_kurv">Kurv</a></li>
+    </ul>
+
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-inline: 26px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo img {
+    width: 140px;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .menu li {
+    margin-right: 20px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: end;
+  }
+
+  .menu a:hover {
+    color: var(--action-color);
+  }
+  hr {
+    display: none;
+  }
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+  .burger {
+    display: none;
+  }
+  /* __________________________ Tablet delen __________________________ */
+  /* Reglen gælder til og med 1024px */
+  @media screen and (max-width: 1024px) {
+    header {
+      padding-inline: 40px;
+      text-align: start;
+    }
+    .menu {
+      display: none;
+      text-align: start;
+    }
+    .burger {
+      display: block;
+      text-align: start;
+    }
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    nav.active .menu {
+      display: block;
+      background-color: var(--body-color);
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      text-align: start;
+    }
+
+    nav.active .menu li {
+      margin: 10px 20px;
+      text-align: start;
+    }
+
+    nav.active .menu a {
+      font-size: 1.2rem;
+      text-align: start;
+    }
+    hr {
+      display: block;
+      border-image: var(--gradient-color) 1;
+    }
+    .logo img {
+      width: 90px;
+      height: auto;
+    }
+  }
+
+  /* __________________________ Mobil delen __________________________ */
+  /* Reglen gælder til og med 768px */
+  @media screen and (max-width: 768px) {
+    header {
+      padding-inline: 20px;
+      text-align: start;
+    }
+
+    nav.active .menu a {
+      font-size: 1rem;
+      text-align: start;
+    }
+    .logo img {
+      width: 70px;
+      height: auto;
+    }
+  }
+</style>
+
+<script>
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+  const links = document.querySelectorAll(".menu li a");
+
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
+</script>
