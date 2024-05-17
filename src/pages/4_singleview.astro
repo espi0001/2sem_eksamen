@@ -4,17 +4,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Links from "../components/Links.astro";
 import Header2 from "../components/Header2.astro";
-import Breadcrumb from "../components/Breadcrumb.astro";
+import Breadcrumb2 from "../components/Breadcrumb2.astro";
 import Singleview from "../components/Singleview.astro";
 ---
 
 <MainLayout title="Produkt">
-  <!-- <h1>forside</h1> -->
   <section>
-    <Header2 header1="single view" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-  </section>
-  <Breadcrumb link1="Shop all" link2="Category" link3="Productname" />
-  <section>
+    <Breadcrumb2 navn1="Merchandise" navn2="Tøj" navn3="Logo Hoodie" />
     <Singleview />
   </section>
 </MainLayout>

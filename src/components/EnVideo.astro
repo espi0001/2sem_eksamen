@@ -5,25 +5,27 @@ const {} = Astro.props;
 
 <article>
   <div class="video">
-    <img src="https://esterpiazza.dk/kea/10_eksamen/Lightbox.png" alt="icon" />
-    <div class="video_hover">
+    <iframe src="https://www.youtube-nocookie.com/embed/F4R5EK9f6rI?si=OopOYv1hkjUe5j2u&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- <div class="video_hover">
       <a href="#">
         <p>Barselona - Real Love</p>
         <a href="#">Afspil</a>
       </a>
-    </div>
+    </div> -->
   </div>
 </article>
 
 <style>
+  iframe {
+    width: 100%;
+    height: auto;
+  }
   article {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
+    align-items: center; */
   }
   .video {
-    grid-column: 1/1;
-    grid-row: 1/1;
     max-width: 304px;
   }
   .video_hover {
