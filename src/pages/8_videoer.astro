@@ -16,7 +16,23 @@ import EnVideo from "../components/EnVideo.astro";
   <section>
     <Videoafspiller />
   </section>
-  <section>
+  <section class="videoer_galleri">
+    <EnVideo />
+    <EnVideo />
+    <EnVideo />
+    <EnVideo />
+    <EnVideo />
+    <EnVideo />
+    <EnVideo />
     <EnVideo />
   </section>
 </MainLayout>
+
+<style>
+  .videoer_galleri {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+  }
+</style>

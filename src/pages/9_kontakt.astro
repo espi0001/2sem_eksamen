@@ -4,11 +4,33 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Links from "../components/Links.astro";
 import Header2 from "../components/Header2.astro";
+import Mail from "../components/Mail.astro";
 ---
 
 <MainLayout>
   <!-- <h1>forside</h1> -->
   <section>
-    <Header2 header1="Kontakt" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+    <Header2 header1="Kontakt os" text="Kontakt os via mail, følg link nedenfor" />
+  </section>
+  <section class="mails">
+    <article>
+      <Mail overskrift="Henvendelser vedr. barselona.dk" link=""> mail@barselona.dk</Mail>
+      <Mail overskrift="Management" link=""> mail@barselona.dk</Mail>
+      <Mail overskrift="Booking" link=""> mail@barselona.dk</Mail>
+      <Mail overskrift="Lable" link=""> mail@barselona.dk</Mail>
+    </article>
+
+    <article>
+      <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/09_kontakt_image.avif" alt="Rud og Rasmus koncertbillede" />
+    </article>
   </section>
 </MainLayout>
+
+<style>
+  .mails {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+  }
+</style>

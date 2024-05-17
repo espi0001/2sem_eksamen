@@ -1,0 +1,19 @@
+---
+import "../styles/style.css";
+const { overskrift, link } = Astro.props;
+---
+
+<article>
+  <h6>{overskrift}</h6>
+  <a href={link}> <slot /></a>
+</article>
+
+<style>
+  article {
+    padding-bottom: 40px;
+  }
+
+  h4 {
+    padding-bottom: 8px;
+  }
+</style>
