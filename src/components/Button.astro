@@ -8,17 +8,14 @@ const { style, linket } = Astro.props;
 <style>
   a {
     display: inline-block;
-    font-size: 1rem;
-    padding: 12px 36px;
-    border-width: 0.8px;
-    border-style: solid;
-    text-decoration: none;
+    font-size: var(--font_size_regular);
+    padding: 8px 20px;
     cursor: pointer;
     transition: all 0.55s ease;
   }
 
   a:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
 
   .primary {

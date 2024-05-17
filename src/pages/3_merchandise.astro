@@ -5,13 +5,22 @@ import Button from "../components/Button.astro";
 import Links from "../components/Links.astro";
 import Header2 from "../components/Header2.astro";
 import Produkt from "../components/Produkt.astro";
+import Breadcrumb2 from "../components/Breadcrumb2.astro";
 ---
 
-<MainLayout>
-  // <!-- <h1>forside</h1> -->
+<MainLayout title="Merchandise">
+   <!-- <h1>forside</h1> -->
   <section>
-    <Header2 header1="Produkter" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+      <Header2 header1="Merchandise" text="" />
+      
+      <article class="breadcrumb_button">
+       <Breadcrumb2 />
+      <Button style="secondary">Se alle</Button>
+      </article>
   </section>
+
+
+
   <section class="produkter">
     <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
     <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
@@ -24,7 +33,14 @@ import Produkt from "../components/Produkt.astro";
   </section>
 </MainLayout>
 
-<style>
+<style>{
+
+}
+  .breadcrumb_button {
+    display: flex;
+justify-content: space-between;
+align-items: center;
+  } 
   .produkter {
     display: flex;
     flex-wrap: wrap;

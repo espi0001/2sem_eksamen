@@ -1,0 +1,45 @@
+---
+import "../styles/style.css";
+const { link1, link2, link3, linknavn1, linknavn2, linknavn3 } = Astro.props;
+---
+
+<ul class="breadcrumb">
+  <li><a href={link1}>Tøj</a></li>
+  <li><a href={link2}>Accessories</a></li>
+  <li><a href={link3}>Musik</a></li>
+  <li><a href={link3}>Poster</a></li>
+</ul>
+
+<style>
+  /* Breadcrumb start */
+  ul.breadcrumb {
+    list-style: none;
+  }
+
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 1rem;
+    font-size: var(--font_size_regular);
+  }
+
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: var(--coælor_white);
+    content: "/\00a0";
+  }
+
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: var(--color_white);
+    text-decoration: none;
+    font-size: var(--font_size_small);
+    transition: all 0.55s ease;
+  }
+
+  ul.breadcrumb li a:hover {
+    text-decoration: underline;
+  }
+  /* Breadcrumb slut */
+</style>

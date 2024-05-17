@@ -50,7 +50,7 @@ body {
   list-style: none;
 }
 section {
-  margin-inline: 36px;
+  margin-inline: 64px;
   padding: 90px 0;
 }
 
@@ -119,6 +119,10 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+hr {
+  border-width: 0.1px;
 }
 
 /* ___________________________ TABLET  ___________________________*/

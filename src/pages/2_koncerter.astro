@@ -7,11 +7,15 @@ import Header1 from "../components/Header1.astro";
 import Koncertdato from "../components/Koncertdato.astro";
 ---
 
-<MainLayout>
+<MainLayout title="Koncerter">
   <!-- <h1>forside</h1> -->
-  <section>
+  <!-- <section>
     <Header1 header1="Barselona" header4="Efterår 2024" />
-  </section>
+  </section> -->
+  <article class="content">
+    <h1>Barselona</h1>
+    <h4>Efterår 2024</h4>
+  </article>
   <section class="koncerter">
     <div>
       <Koncertdato sted="Næstved" dato="13 september 2024" lokation="Næstved, Vershuset" />
@@ -32,8 +36,31 @@ import Koncertdato from "../components/Koncertdato.astro";
 
 <style>
   .koncerter {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    display: block;
+  }
+
+  article {
+    text-align: center;
+    padding: 80px;
+    background-image: url(https://esterpiazza.dk/kea/10_eksamen/indhold/02_koncert_header1.avif);
+    background-size: cover;
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .koncerter {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
   }
 </style>
