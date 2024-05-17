@@ -5,14 +5,14 @@ import "../styles/style.css";
 <footer>
   <div class="content">
     <div class="logo">
-      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="logo" />
+      <img src="logo/LogoWhite.svg" alt="logo" />
     </div>
     <div class="sociale_links">
-      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="Facebook icon" />
-      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="Instagram icon" />
-      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="TikTok icon" />
-      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="Spotify icon" />
-      <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="Youtube icon" />
+      <a href="https://www.facebook.com/barselonaband"><img src="/iconer/IconFacebook2.svg" alt="Facebook icon" /></a>
+      <a href="https://www.instagram.com/barselona_officiel/?hl=da"> <img src="/iconer/IconInstagram2.svg" alt="Instagram icon" /></a>
+      <a href="https://www.tiktok.com/@barselona_officiel"> <img src="/iconer/IconTikTok2.svg" alt="TikTok icon" /></a>
+      <a href="https://open.spotify.com/artist/2wdsck730u8ZhDA7eVHw7m?si=3DAZsMWxTZ6tsM3FmmQ6GA&nd=1&dlsi=05d53ffe0bd648a3"> <img src="/iconer/IconSpotify2.svg" alt="Spotify icon" /></a>
+      <a href="https://www.youtube.com/channel/UCr49KaBsStYVeuov4Qkjq-g"> <img src="/iconer/IconYoutube2.svg" alt="Youtube icon" /></a>
     </div>
     <div class="links">
       <a href="/9_kontakt">Kontakt</a>
@@ -50,11 +50,13 @@ import "../styles/style.css";
   }
   .sociale_links {
     display: flex;
-    max-width: 24px;
     height: auto;
     gap: 12px;
     align-items: center;
     justify-content: center;
+  }
+  .sociale_links:hover {
+    background-color: var(--color_black);
   }
   .links {
     display: flex;
