@@ -46,4 +46,39 @@ const {} = Astro.props;
     max-width: 24px;
     height: auto;
   }
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin: auto;
+    padding-top: 24px;
+  }
+  .navn_pris,
+  .description,
+  .input {
+    padding-bottom: 24px;
+  }
+  h3 {
+    padding-bottom: 8px;
+  }
+  .description p {
+    padding-bottom: 16px;
+  }
+  li {
+    padding-top: 8px;
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+  }
 </style>

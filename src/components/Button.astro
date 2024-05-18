@@ -3,7 +3,7 @@ import "../styles/style.css";
 const { style, linket } = Astro.props;
 ---
 
-<a href={linket} class={style}><slot /></a>
+<a href={linket} target="_blank" class={style}><slot /></a>
 
 <style>
   a {
