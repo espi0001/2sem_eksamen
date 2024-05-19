@@ -9,15 +9,15 @@ import Mail from "../components/Mail.astro";
 
 <MainLayout title="Kontakt">
   <!-- <h1>forside</h1> -->
-  <section>
-    <Header2 header1="Kontakt os" text="Kontakt os via mail, følg link nedenfor" />
+  <section class="header">
+    <Header2 header1="Kontakt os" text="Hvis du har spørgsmål, ønsker at give feedback eller har andre forslag til forbedringer, så kan du kontakte os på følgende mailadresser:" />
   </section>
   <section class="mails">
     <article>
-      <Mail overskrift="Henvendelser vedr. barselona.dk" link="mailto:mail@barselona.dk?">mail@barselona.dk</Mail>
-      <Mail overskrift="Management" link="mailto:jonas@sierra79.com?" text="">jonas@sierra79.com</Mail>
-      <Mail overskrift="Booking" link="mailto:soren@sierra79.com?" text="Søren Mensberg">soren@sierra79.com</Mail>
-      <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?">louis.tvede@umusic.com</Mail>
+      <Mail overskrift="Henvendelser vedr. barselona.dk" link="mailto:mail@barselona.dk?"> mail@barselona.dk</Mail>
+      <Mail overskrift="Management" link="mailto:jonas@sierra79.com?" text="Jonas Fjelding"> jonas@sierra79.com</Mail>
+      <Mail overskrift="Booking" link="mailto:soren@sierra79.com?" text="Søren Mensberg"> soren@sierra79.com</Mail>
+      <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?" text="Louis Tvede"> louis.tvede@umusic.com</Mail>
     </article>
 
     <article>
@@ -27,6 +27,11 @@ import Mail from "../components/Mail.astro";
 </MainLayout>
 
 <style>
+  .header {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+  }
   .mails {
     align-items: center;
   }

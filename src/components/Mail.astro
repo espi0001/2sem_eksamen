@@ -6,7 +6,10 @@ const { overskrift, text, link } = Astro.props;
 <article>
   <h6>{overskrift}</h6>
   <p>{text}</p>
-  <a href={link}> <slot /></a>
+  <div class="mail">
+    <p>Mail:</p>
+    <a href={link}> <slot /></a>
+  </div>
 </article>
 
 <style>
@@ -16,5 +19,11 @@ const { overskrift, text, link } = Astro.props;
 
   h4 {
     padding-bottom: 8px;
+  }
+  .mail {
+    display: flex;
+  }
+  .mail p {
+    padding-right: 8px;
   }
 </style>

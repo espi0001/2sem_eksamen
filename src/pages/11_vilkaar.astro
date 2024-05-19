@@ -5,39 +5,46 @@ import Button from "../components/Button.astro";
 import Links from "../components/Links.astro";
 import Header2 from "../components/Header2.astro";
 import Liste from "../components/Liste.astro";
+import Accordion from "../components/Accordion.astro";
 ---
 
 <MainLayout title="Vilkår og betingelser">
   <!-- <h1>forside</h1> -->
-  <section>
+  <section class="header">
     <Header2 header1="Vilkår og betingelser" />
   </section>
-  <section class="vilkaar">
-    <article>
-      <Liste overskrift="Betaling" text="Vi indhenter kun persondata i de tilfælde, hvor dette skulle være relevant for os, og vi vil kun indhente persondata, hvis det er relevant for din aktivitet hos Benern Op I/S. Ved indsamling, behandling og anvendelse af dine persondata overholder vi altid alle relevante og gældende lovbestemmelser. Vi vil kun opbevare dine persondata, så længe vi enten er pålagt en juridisk forpligtelse hertil, eller så længe det er relevant for den hensigt, hvormed de blev indsamlet." />
-
-      <Liste overskrift="Levering" text="Hvis du ønsker at købe og modtage et produkt eller en ydelse fra os, har vi brug for at indsamle visse persondata for at kunne gennemføre handlen og for at kunne tilbyde dig vores services. Vi bruger bl.a. cookies til at holde styr på indholdet i din indkøbskurv, mens du bruger vores webshop. Vi kan indhente oplysninger som f.eks. navn, e-mailadresse, postadresse, leveringsadresse (hvis den varierer fra postadresse), telefonnummer og betalingsoplysninger. Benern Op I/S indsamler og behandler dine persondata, når du foretager dig følgende: Besøger vores hjemmeside" />
-
-      <Liste overskrift="Reklamation" text="Den dataansvarlige for indsamling, behandling og anvendelse af dine personoplysninger på www.barselona.dk er Rasmus Theodor." />
-    </article>
-    <article>
-      <Liste overskrift="Refusion" text="Dine almindelige kontaktoplysninger som navn og adresse indhenter vi for at kunne levere det produkt eller den ydelse, som du har købt hos os. Din e-mailadresse indhenter vi for at kunne sende dig en ordrebekræftelse samt en leveringsbekræftelse. Dine oplysninger (undtagen din e-mailadresse, hvis du har givet samtykke til behandling heraf med henblik på modtagelse af tilbud) vil blive slettet 5 år efter du har modtaget din vare eller ydelse." />
-
-      <Liste
-        overskrift="Fortrydelsesret"
-        text="Vi sælger ikke dine persondata til tredjemand, og vi overfører ikke dine persondata til tredjelande. Vi har vores hjemmeside hos simply.com, som fungerer som vores databehandler. Alle persondata som du oplyser på vores hjemmeside vil blive opbevaret i simply.coms datacentre. Vi bruger eksterne virksomheder som leverandører for at levere vores ydelser bedst muligt. Disse eksterne leverandører er databehandlere og behandler i visse tilfælde personoplysninger i forbindelse med deres levering af ydelser til os. Vores databehandlere behandler kun personoplysninger efter vores instrukser og i overensstemmelse med lovgivningens krav til databehandlere. Vi har indgået databehandleraftaler med vores databehandlere, hvilket er vores og din garanti for, at de overholder gældende regler om beskyttelse af dine personoplysninger.      "
-      />
-
-      <Liste overskrift="Følger af fortrydelse" text="Hv" />
-    </article>
-  </section>
+  <article>
+    <Accordion
+      overskrift1="01. Betaling"
+      text1="Benern Op I/S modtager kun betaling via Mobilepay. Ordren vil først blive behandlet, når betaling er fuldført. Som udgangspunkt behandler vi kun ordrer fra og til Danmark. Dette skyldes betalingsmulighederne gennem MobilePay og høje leveringsomkostninger til udlandet. Ønsker du alligevel at bestille en pakke fra og til udlandet, kan dette arrangeres via mail@barselona.dk. Her kan vi udregne en samlet pris med det ekstra forsendelsesgebyr samt oplyse muligheden for betaling via en bankoverførsel til Benern Op I/S."
+      overskrift2="02. Levering"
+      text2="Benern Op I/S sørger for levering med Postnord i Danmark. Ordrer er altid sendt afsted så hurtigt som det er muligt. Ordrer bliver sendt afsted som pakker med tracking, og leveringstiden kan forventes at være mellem 1-3 hverdage. Dog kan nogle breve desværre godt være længere undervejs, og det beder vi om forståelse for hvis det er tilfældet. Helligdage, sygdom, forsinkelser mm. kan desuden også forsinke leverancer en smule. Vi anbefaler altid at du bestiller gaver i god tid, så en forsinkelse fra posten/fragtmanden ikke ødelægger en højtid. Hvis din ordrer ser meget medtaget ud efter transport anbefaler vi at du nægter modtagelse. Det stiller os bedre i forhold til en erstatning og giver os muligheden for hurtigere at kunne sende dig en ny."
+      overskrift3="03. Reklamation"
+      text3="Benern Op I/S yder 2 års reklamationsret i henhold til købeloven, omfattende fabrikations- og materialefejl, der konstateres ved varens normale anvendelse. Reklamationsretten dækker ikke fejl, skader eller slitage, direkte eller indirekte opstået som følge af forkert betjening, ringe vedligeholdelse, vold eller uautoriserede indgreb. Reklamation over fejl og mangler, som bør opdages ved sædvanlig undersøgelse af varen, skal meddeles Benern Op I/S indenfor rimelig tid. Varen kan efterfølgende returneres for reparation, ombytning eller efter aftale evt. kreditering. I forbindelse med reklamationssager afholder kunden selv returneringsomkostninger. Ved fejl, mangler eller evt. udeblevne leverancer bedes henvendelse rettet til: Benern Op I/S mail@barselona.dk"
+      overskrift4="04. Refusion"
+      text4="I tilfælde af aftalte dekorter, returnerede varer eller forudbetalte varer som afbestilles før afsendelse, skal der ske en hel eller delvis refusion af købesummen. Refusion sker normalt altid via MobilePay til den afsender som ordren er placeret fra. Hvis dette ikke er muligt sker de ved bankoverførsel, og Benern Op I/S har derfor brug for oplysninger om registreringsnummer og kontonummer for din bankkonto. Disse oplysninger er ikke følsomme, og kan uden videre oplyses pr. email eller anden traditionel korrespondanceform."
+      overskrift5="05. Fortrydelsesret"
+      text5="Du har ret til at træde tilbage fra denne aftale uden begrundelse inden for 14 dage. Fortrydelsesfristen udløber 14 dage efter den dag, hvor du eller en, som er berettiget til at modtage pakken for dig, dog ikke transportøren, får varerne i fysisk besiddelse. For at udøve fortrydelsesretten skal du meddele os din beslutning om at fortryde denne aftale i en utvetydig erklæring (f.eks. ved postbesørget brev eller e-mail). Erklæringen sendes til Benern Op I/S via mail@barselona.dk. Fortrydelsesfristen er overholdt, hvis du sender din meddelelse om udøvelse af fortrydelsesretten, inden fortrydelsesfristen er udløbet."
+      overskrift6="06. Følger af fortrydelse"
+      text6="Hvis du udøver din fortrydelsesret i denne aftale, refunderer vi alle betalinger modtaget fra dig, dog ikke leveringsgebyr, uden unødig forsinkelse og under alle omstændigheder senest 14 dage fra den dato, hvor vi har modtaget meddelelse om din beslutning om at fortryde denne aftale. Vi gennemfører en sådan tilbagebetaling med samme betalingsmiddel, som du benyttede ved den oprindelige transaktion. Vi kan tilbageholde tilbagebetalingen, indtil vi har modtaget varerne retur, eller du har fremlagt dokumentation for at have returneret varerne, alt efter hvad der er tidligst. Du returnerer varerne eller afleverer dem til os uden unødig forsinkelse og senest 14 dage fra den dato, hvor du har informeret os om udøvelsen af aftalens fortrydelsesret. Fristen er overholdt, hvis du returnerer varerne inden udløbet af de 14 dage. Du skal afholde de direkte udgifter i forbindelse med tilbagelevering af varerne. Du hæfter kun for eventuel forringelse af varernes værdi, som skyldes anden håndtering, end hvad der er nødvendigt for at fastslå varernes art, egenskaber og den måde, de fungerer på. Det vil fx sige, at du må prøve en trøje, men ikke bruge den. Vi anser brugt tøj for at have en værdi af kr. 0.-, da vi ikke sælger brugte varer. Dette er også for at sikre, at du ikke modtager en vare, som er brugt."
+    />
+  </article>
 </MainLayout>
 
 <style>
-  .vilkaar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  section .accordion {
+    padding-top: 0px;
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
   }
 </style>
