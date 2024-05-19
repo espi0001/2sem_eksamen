@@ -15,8 +15,8 @@ import Mail from "../components/Mail.astro";
   <section class="mails">
     <article>
       <Mail overskrift="Henvendelser vedr. barselona.dk" link="mailto:mail@barselona.dk?">mail@barselona.dk</Mail>
-      <Mail overskrift="Management" link="mailto:jonas@sierra79.com?">jonas@sierra79.com</Mail>
-      <Mail overskrift="Booking" link="mailto:soren@sierra79.com?">soren@sierra79.com</Mail>
+      <Mail overskrift="Management" link="mailto:jonas@sierra79.com?" text="">jonas@sierra79.com</Mail>
+      <Mail overskrift="Booking" link="mailto:soren@sierra79.com?" text="Søren Mensberg">soren@sierra79.com</Mail>
       <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?">louis.tvede@umusic.com</Mail>
     </article>
 
@@ -28,9 +28,20 @@ import Mail from "../components/Mail.astro";
 
 <style>
   .mails {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 80px;
     align-items: center;
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .mails {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: center;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
   }
 </style>

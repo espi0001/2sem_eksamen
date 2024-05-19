@@ -1,10 +1,11 @@
 ---
 import "../styles/style.css";
-const { overskrift, link } = Astro.props;
+const { overskrift, text, link } = Astro.props;
 ---
 
 <article>
   <h6>{overskrift}</h6>
+  <p>{text}</p>
   <a href={link}> <slot /></a>
 </article>
 

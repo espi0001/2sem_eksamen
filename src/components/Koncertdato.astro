@@ -1,7 +1,7 @@
 ---
 import "../styles/style.css";
 import Button from "./Button.astro";
-const { sted, dato, lokation } = Astro.props;
+const { sted, dato, lokation, linket2 } = Astro.props;
 ---
 
 <article>
@@ -16,7 +16,12 @@ const { sted, dato, lokation } = Astro.props;
     <div class="lokation">
       <p>{lokation}</p>
     </div>
-    <Button linket="https://www.ticketmaster.dk/artist/barselona-billetter/992110" style="secondary">Find billetter</Button>
+    <div class="knapper">
+      <div class="knap1">
+        <Button linket="https://www.ticketmaster.dk/artist/barselona-billetter/992110" style="secondary">Find billetter</Button>
+      </div>
+      <Button linket2="https://www.facebook.com/search/events/?q=Barselona&sde=AbrVxKua3d7Q7RQz7ZWPsa9be21FsYZGGfNj98HZhw7z4Jr8oNcvAkTnImoVykXdacbGlW6lojQ2wh8K7DGAbDnw&locale=da_DK" style="primary">Begivenhed</Button>
+    </div>
   </div>
 </article>
 
@@ -47,5 +52,11 @@ const { sted, dato, lokation } = Astro.props;
     font-weight: medium;
     color: var(--color_black);
     font-weight: bold;
+  }
+  .knapper {
+    display: flex;
+  }
+  .knap1 {
+    padding-right: 10px;
   }
 </style>
