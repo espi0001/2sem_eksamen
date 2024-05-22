@@ -7,8 +7,35 @@ import Header2 from "../components/Header2.astro";
 ---
 
 <MainLayout title="Om Barsekona">
-  <!-- <h1>forside</h1> -->
-  <section>
-    <Header2 header1="om Barselona" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+  <article>
+    <video autoplay muted loop src="https://esterpiazza.dk/kea/10_eksamen/indhold/barselonavideomp4.mp4"></video>
+  </article>
+
+  <section class="start">
+    <article>
+      <h2>Hvor det hele startede</h2>
+      <p>Rud Aksel og Rasmus Theodor mødte hinanden på Ollerup efterskole, her møder de en højgravid lærer som bandet er opkaldt efter.</p>
+      <p>Bandnavnet handler om at gå på barsel, hvilket er lidt bizart når vi er to unge drenge. Men vi kan ikke rigtig ændre det nu. da hele vores univers er bundet op på det navn - Rud.</p>
+    </article>
+    <article>
+      <img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/barselona2.avif" alt="" />
+    </article>
   </section>
 </MainLayout>
+
+<style>
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .start {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+</style>
