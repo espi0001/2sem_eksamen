@@ -8,57 +8,123 @@ import Header2 from "../components/Header2.astro";
 import Koncertdato from "../components/Koncertdato.astro";
 import Breadcrumb2 from "../components/Breadcrumb2.astro";
 import Accordion from "../components/Accordion.astro";
+import SecondLayout from "../layouts/SecondLayout.astro";
+import Navigation2 from "../components/Navigation2.astro";
 ---
 
-<MainLayout title="Forside">
-  <!-- <h1>forside</h1> -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/01_forside_barselona-hero-image.avif" alt="Barselona" />
-      <h1>BARSELONA</h1>
-      <a href="#musik" class="listen-link">LYT TIL NYESTE ALBUM</a>
-    </div>
-  </section>
-  <section id="musik" class="musik"></section>
-</MainLayout>
+<SecondLayout title="Forside">
+  <main>
+    <article class="hero">
+      <div class="content">
+        <div class="navigation">
+          <Navigation2 />
+        </div>
+        <!-- <h1>forside</h1> -->
+        <div class="text">
+          <h1>BARSELONA</h1>
+        </div>
+
+        <div class="lyt">
+          <a href="#musik" class="listen-link"> <img src="/iconer2/IconArrowDown.svg" alt="pil ned" /> LYT TIL NYESTE ALBUM</a>
+        </div>
+      </div>
+    </article>
+    <section id="musik" class="musik"></section>
+  </main>
+</SecondLayout>
 
 <style>
   .hero {
-    position: relative;
-    text-align: center;
-    color: white;
-    background: linear-gradient(to right, #1c1c1c, #3c3c3c);
-    padding: 100px 20px;
-  }
+    background-image: url(https://esterpiazza.dk/kea/10_eksamen/indhold/01_forside_barselona-hero-image.avif);
+    background-size: cover;
+    aspect-ratio: 16 / 9;
 
-  .hero-content {
-    max-width: 800px;
+    padding-top: 20px;
+    padding-inline: 20px;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    max-width: 1600px;
+  }
+  .navigation {
+    grid-area: 1 / 1 / 1 / 7;
+    z-index: 1;
+  }
+  .text {
     margin: auto;
+    grid-area: 4 / 1 / 7 / 7;
   }
-
-  .hero-content img {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
+  h1 {
+    font-size: 8.5cqw;
   }
-
-  .hero-content h1 {
-    font-size: 72px;
-    margin: 0;
+  .lyt {
+    padding-top: 20px;
+    grid-area: 5 / 3 / 6 / 6;
   }
-
+  .lyt img {
+    max-width: 30px;
+    align-self: center;
+  }
   .listen-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
   }
 
+  .lyt a {
+    font-size: var(--font_size_tiny);
+  }
   .listen-link:hover {
-    background-color: #ccc;
+    color: var(--color_blue);
+    text-decoration: none;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .text {
+      margin: auto;
+      grid-area: 4 / 1 / 5 / 7;
+    }
+
+    .lyt {
+      padding-top: 10px;
+      grid-area: 5 / 3 / 6 / 5;
+    }
+    .lyt img {
+      max-width: 30px;
+    }
+    .lyt a {
+      font-size: var(--font_size_small);
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .hero {
+      padding-top: 25px;
+      padding-inline: 36px;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+    }
+    .text {
+      margin: auto;
+      grid-area: 6 / 1 / 8 / 7;
+    }
+
+    .lyt {
+      padding-top: 20px;
+      grid-area: 8 / 2 / 9 / 4;
+    }
+    .lyt img {
+      max-width: 30px;
+    }
+    .lyt a {
+      font-size: var(--font_size_regular);
+    }
   }
 </style>

@@ -6,7 +6,23 @@ import Links from "../components/Links.astro";
 import Header2 from "../components/Header2.astro";
 import Produkt from "../components/Produkt.astro";
 import Breadcrumb2 from "../components/Breadcrumb2.astro";
+
+// const data = await fetch(
+//   "https://orihtpvviiwcpmwzboqr.supabase.co",
+//   {
+//     method: "GET",
+//     headers: {
+//       apikey:
+//         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw",
+//     },
+//   }
+// ).then((res) => res.json());
+
+// console.log(data);
+
 ---
+
+
 
 <MainLayout title="Merchandise">
    <!-- <h1>forside</h1> -->
@@ -46,3 +62,49 @@ align-items: center;
     justify-content: center;
   }
 </style>
+
+
+<script>
+  // Get references to the filter buttons and articles
+  const filterButtons = document.querySelectorAll(".filterbutton");
+  const articles = document.querySelectorAll("article");
+
+  // Variable to store the active button
+  let activeButton = document.querySelector(".filterbutton.active");
+
+  // Add a click event listener to each filter button
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const filterValue = (event.target as HTMLElement).getAttribute("data-filter");
+
+      // Remove the active class from the previous active button
+      if (activeButton) {
+        activeButton.classList.remove("active");
+      }
+
+      // Hide all articles
+      articles.forEach((article) => {
+        if (article instanceof HTMLElement) {
+          article.style.display = "none";
+        }
+      });
+
+      if (filterValue === "all") {
+        articles.forEach((article) => {
+          if (article instanceof HTMLElement) {
+            article.style.display = "grid";
+          }
+        });
+      } else {
+        const correspondingArticle = document.querySelector(`.filter${filterValue}`);
+        if (correspondingArticle instanceof HTMLElement) {
+          correspondingArticle.style.display = "grid";
+        }
+      }
+
+      // Add the active class to the clicked button
+      activeButton = event.target as HTMLElement;
+      activeButton.classList.add("active");
+    });
+  });
+</script>

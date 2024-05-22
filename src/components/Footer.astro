@@ -9,11 +9,11 @@ import "../styles/style.css";
       <img src="logo/LogoWhite.svg" alt="logo" />
     </div>
     <div class="sociale_links">
-      <a href="https://www.facebook.com/barselonaband" target="_blank"><img src="/iconer/IconFacebook2.svg" alt="Facebook icon" /></a>
-      <a href="https://www.instagram.com/barselona_officiel/?hl=da" target="_blank"> <img src="/iconer/IconInstagram2.svg" alt="Instagram icon" /></a>
-      <a href="https://www.tiktok.com/@barselona_officiel" target="_blank"> <img src="/iconer/IconTikTok2.svg" alt="TikTok icon" /></a>
-      <a href="https://open.spotify.com/artist/2wdsck730u8ZhDA7eVHw7m?si=3DAZsMWxTZ6tsM3FmmQ6GA&nd=1&dlsi=05d53ffe0bd648a3" target="_blank"> <img src="/iconer/IconSpotify2.svg" alt="Spotify icon" /></a>
-      <a href="https://www.youtube.com/channel/UCr49KaBsStYVeuov4Qkjq-g" target="_blank"> <img src="/iconer/IconYoutube2.svg" alt="Youtube icon" /></a>
+      <a href="https://www.facebook.com/barselonaband" target="_blank"><img src="/iconer2/IconFacebook.svg" alt="Facebook icon" /></a>
+      <a href="https://www.instagram.com/barselona_officiel/?hl=da" target="_blank"> <img src="/iconer2/IconInstagram.svg" alt="Instagram icon" /></a>
+      <a href="https://www.tiktok.com/@barselona_officiel" target="_blank"> <img src="/iconer2/IconTikTok.svg" alt="TikTok icon" /></a>
+      <a href="https://open.spotify.com/artist/2wdsck730u8ZhDA7eVHw7m?si=3DAZsMWxTZ6tsM3FmmQ6GA&nd=1&dlsi=05d53ffe0bd648a3" target="_blank"> <img src="/iconer2/IconSpotify.svg" alt="Spotify icon" /></a>
+      <a href="https://www.youtube.com/channel/UCr49KaBsStYVeuov4Qkjq-g" target="_blank"> <img src="/iconer2/IconYoutube.svg" alt="Youtube icon" /></a>
     </div>
     <div class="links">
       <a href="/9_kontakt">Kontakt</a>
@@ -52,13 +52,18 @@ import "../styles/style.css";
   }
   .sociale_links {
     display: flex;
-    /* height: auto; */
     gap: 12px;
     align-items: center;
     justify-content: center;
   }
-  .sociale_links:hover {
-    background-color: var(--color_black);
+  .sociale_links a {
+    background-color: var(--color_white);
+    border-radius: 50px;
+    width: 30px;
+    height: auto;
+  }
+  .sociale_links a:hover {
+    background-color: var(--color_blue);
   }
   .links {
     display: flex;
@@ -69,8 +74,13 @@ import "../styles/style.css";
     font-weight: bold;
   }
 
+  .links a:hover {
+    text-decoration: none;
+    color: var(--color_blue);
+  }
   hr {
     width: 100%;
+    color: var(--color_blue);
   }
 
   .credits {
@@ -86,12 +96,20 @@ import "../styles/style.css";
     display: flex;
     gap: 24px;
   }
-  .footer_links a {
+
+  .credits a {
+    text-decoration: underline 1px;
+  }
+
+  .credits a:hover {
+    color: var(--color_blue);
+  }
+  /* .footer_links a {
     text-decoration: underline;
   }
   .footer_links a:hover {
     text-decoration: none;
-  }
+  } */
   /* ___________________________ TABLET  ___________________________*/
   /* reglerne gælder når skærmen er minimum 768px */
   @media screen and (min-width: 768px) {
