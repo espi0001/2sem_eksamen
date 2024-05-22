@@ -12,7 +12,53 @@ import Accordion from "../components/Accordion.astro";
 
 <MainLayout title="Forside">
   <!-- <h1>forside</h1> -->
-  <Header1 header1="Barselona" />
-  <Breadcrumb2 />
-  <Accordion />
+  <section class="hero">
+    <div class="hero-content">
+      <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/01_forside_barselona-hero-image.avif" alt="Barselona" />
+      <h1>BARSELONA</h1>
+      <a href="#musik" class="listen-link">LYT TIL NYESTE ALBUM</a>
+    </div>
+  </section>
+  <section id="musik" class="musik"></section>
 </MainLayout>
+
+<style>
+  .hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to right, #1c1c1c, #3c3c3c);
+    padding: 100px 20px;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .hero-content img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 72px;
+    margin: 0;
+  }
+
+  .listen-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  .listen-link:hover {
+    background-color: #ccc;
+  }
+</style>
