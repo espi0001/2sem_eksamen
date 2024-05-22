@@ -7,19 +7,14 @@ import Header2 from "../components/Header2.astro";
 import Produkt from "../components/Produkt.astro";
 import Breadcrumb2 from "../components/Breadcrumb2.astro";
 
-// const data = await fetch(
-//   "https://orihtpvviiwcpmwzboqr.supabase.co",
-//   {
-//     method: "GET",
-//     headers: {
-//       apikey:
-//         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw",
-//     },
-//   }
-// ).then((res) => res.json());
+const data = await fetch("https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/eksamen-barselona", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw",
+  },
+}).then((res) => res.json());
 
-// console.log(data);
-
+console.log(data);
 ---
 
 
@@ -33,6 +28,14 @@ import Breadcrumb2 from "../components/Breadcrumb2.astro";
        <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster"/>
       <Button style="secondary">Se alle</Button>
       </article>
+  </section>
+
+  <section>
+    {
+      data.map((type) => {
+        return <Produkt data={type} />;
+      })
+    }
   </section>
 
   <section class="produkter">

@@ -1,18 +1,20 @@
 ---
 import "../styles/style.css";
 import Button from "./Button.astro";
-const { foto, name, variant, price } = Astro.props;
+const { data } = Astro.props;
+
+console.log(data);
 ---
 
 <article class="produkt">
   <a href="/4_singleview">
-    <img src={foto} alt="produkt" />
+    <img src={data.image} alt={data.name} />
     <div class="content">
       <div class="product_name">
-        <p>{name}</p>
-        <p>{variant}</p>
+        <p>{data.name}</p>
+        <p>{data.type2}</p>
       </div>
-      <p>{price}</p>
+      <p>{data.price}</p>
     </div>
   </a>
 </article>
