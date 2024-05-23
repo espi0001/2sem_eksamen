@@ -1,34 +1,55 @@
 ---
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Links from "../components/Links.astro";
-import Header2 from "../components/Header2.astro";
 import Videoafspiller from "../components/Videoafspiller.astro";
 import EnVideo from "../components/EnVideo.astro";
+import OneVideo from "../components/OneVideo.astro";
 ---
 
 <MainLayout title="Videoer">
   <section>
     <Videoafspiller />
   </section>
+
   <section class="videoer_galleri">
-    <EnVideo />
-    <EnVideo />
-    <EnVideo />
-    <EnVideo />
-    <EnVideo />
-    <EnVideo />
-    <EnVideo />
-    <EnVideo />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/reallove.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/lydenaflivetlive.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/menneskemodmenneske.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/ingenkanloebelive.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/endeloesedroemme.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/fangetlive.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/landsby.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/minenesterus.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/endagminde.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/vierherikke.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/ildebrand.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/northside.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/forfoermig.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/frawienlive.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/fridag.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/etaar.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/densidstesang.webp" />
+    <OneVideo image="https://esterpiazza.dk/kea/10_eksamen/videoer/barcelona.webp" />
   </section>
 </MainLayout>
 
 <style>
   .videoer_galleri {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+    grid-gap: clamp(1rem, 2vw, 1rem);
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .videoer_galleri {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      grid-gap: clamp(1rem, 2vw, 1rem);
+    }
   }
 </style>

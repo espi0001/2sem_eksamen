@@ -1,0 +1,55 @@
+---
+import "../styles/style.css";
+const { image } = Astro.props;
+---
+
+<article>
+  <div class="youtube-player pristine" data-video-id="FiSxg_LNEFU">
+    <img src={image} alt="custom-preview" />
+  </div>
+</article>
+<style>
+  .youtube-player {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+  }
+  .youtube-player img {
+    border: 1px solid #a5a5a5;
+    filter: brightness(60%);
+    transition: 0.5s ease;
+  }
+  .youtube-player img:hover {
+    border: 1px solid #5884ae;
+  }
+
+  .youtube-player.pristine::before {
+    color: transparent;
+    content: "Real Love";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -25px;
+    z-index: 1;
+    font-family: var(--font_body);
+    font-size: var(--font_size_large);
+    transition: 0.5s ease;
+  }
+
+  .youtube-player.pristine:hover::before {
+    color: var(--color_white);
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+  }
+</style>
+<script></script>
