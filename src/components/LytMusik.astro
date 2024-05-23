@@ -1,0 +1,68 @@
+---
+import "../styles/style.css";
+---
+
+<h6>Lyt til vores musik</h6>
+<article class="musik">
+  <div class="album">
+    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/hjerte_album.avif" alt="Væbnet hjerte album" /></a>
+  </div>
+  <div class="album">
+    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/1dag_album.avif" alt="1 dag er vi 1 minde album" /></a>
+  </div>
+  <div class="album">
+    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/lege_album.avif" alt="Legebørn album" /></a>
+  </div>
+  <div class="album">
+    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/hjertebank_album.avif" alt="Hjertebank album" /></a>
+  </div>
+  <div class="album">
+    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/drengepop.webp" alt="Drengepop EP" /></a>
+  </div>
+  <div class="album">
+    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/sommerkys_album.avif" alt="Sommerkys EP" /></a>
+  </div>
+</article>
+
+<style>
+  .musik {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .musik img {
+    max-width: 379px;
+    height: auto;
+  }
+  .album {
+    border: 1px solid #a5a5a5;
+    padding: 10px;
+  }
+  .album:hover {
+    border: 1px solid #5884ae;
+    padding: 5px;
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .musik {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .musik {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 87px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>

@@ -1,0 +1,58 @@
+---
+import "../styles/style.css";
+---
+
+<article>
+  <h3>Lyse Nætter</h3>
+</article>
+
+<article>
+  <div class="grid_3">
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri1.avif" alt="Rasmus på scenen" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri2.avif" alt="Rud og Rasmus sidder sammen" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/koncert.avif" alt="Rud synger til koncert" />
+  </div>
+  <div class="grid_4">
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri4.avif" alt="Rasmus og Rud poserer sammen" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri5.avif" alt="Rasmus og Rud på scenen og spiller" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri6.avif" alt="Rasmus sidder ved klaver og Rud står" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/rud_backstage.avif" alt="Rud står op med noget i hånden " />
+  </div>
+  <div class="grid_3">
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri8.avif" alt="Barselona til koncert" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri9.avif" alt="Barselona spiller til koncert i VEGA" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri10.avif" alt="Rasmus spiller klaver til koncert" />
+  </div>
+</article>
+<style>
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .grid_3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 36px;
+    }
+    .grid_4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 52px;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .grid_3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 36px;
+    }
+    .grid_4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 52px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+</style>
