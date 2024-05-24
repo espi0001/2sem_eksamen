@@ -1,15 +1,16 @@
 ---
 import "../styles/style.css";
-import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Links from "../components/Links.astro";
-import Header1 from "../components/Header1.astro";
-import Header2 from "../components/Header2.astro";
-import Koncertdato from "../components/Koncertdato.astro";
-import Breadcrumb2 from "../components/Breadcrumb2.astro";
-import Accordion from "../components/Accordion.astro";
 import SecondLayout from "../layouts/SecondLayout.astro";
 import Navigation2 from "../components/Navigation2.astro";
+
+const data = await fetch("https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/eksamen", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw",
+  },
+}).then((res) => res.json());
+
+console.log(data);
 ---
 
 <SecondLayout title="Forside">

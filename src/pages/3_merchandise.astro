@@ -1,4 +1,5 @@
 ---
+// Import necessary styles and components
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
@@ -6,230 +7,78 @@ import Header2 from "../components/Header2.astro";
 import Produkt from "../components/Produkt.astro";
 import Breadcrumb2 from "../components/Breadcrumb2.astro";
 
-//https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/barselonaeksamen
+// Supabase endpoint and API key
+const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw";
 
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw
+// Fetch data from Supabase
+const response = await fetch(apiUrl, {
+  method: "GET",
+  headers: {
+    apikey: apiKey,
+  },
+});
+let data = await response.json();
 
-// await fetch(...) sender en HTTP GET-request til den specificerede URL. 
-// URL'en peger på en endpoint hos Supabase, som er en backend-as-a-service platform. 
-// I headers sættes en apikey, der autentificerer anmodningen mod Supabase.
+// Function to shuffle array elements
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
-
-
-// const data = await fetch("https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen", {
-//   method: "GET",
-//   headers: {
-//     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw",
-//   },
-// })
-//   .then((res) => res.json())
-//   .then(showData);
-
-// function showData(items) {
-//   console.log(items);
-// }
+// Shuffle the data array
+data = shuffleArray(data);
 ---
 
 <MainLayout title="Merchandise">
-   <!-- <h1>forside</h1> -->
   <section>
-      <Header2 header1="Merchandise" text="" />
-      
-      <article class="breadcrumb_button">
-       <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster"/>
+    <Header2 header1="Merchandise" text="" />
+    <article class="breadcrumb_button">
+      <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster" />
       <Button style="secondary">Se alle</Button>
-      </article>
+    </article>
   </section>
 
-<section class="produktliste">
-  <template id="smallProductTemplate">
-  <article class="smallProduct">
-  <img class="image" src="" alt="">
-  <p class="product_name"></p>
-  <p class="articletype"></p>
-  <p class="price"></p>
-  </article>
-</template>
-</section>
-
-  <!-- <section class="produkter">
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-    <Produkt foto="https://esterpiazza.dk/kea/10_eksamen/Image.png" name="Væbne Hjerte Sølv Vinyl" variant="Vinyl" price="229,-" />
-  </section> -->
+  <section class="produkter">
+    {data.map((product) => <Produkt images={product.image} name={product.name} type2={product.type2} price={product.price} />)}
+  </section>
 </MainLayout>
 
-<style>{
-
-}
+<style>
   .breadcrumb_button {
     display: flex;
-justify-content: space-between;
-align-items: center;
-  } 
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .produkter {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 32px;
-    justify-content: center;
+    margin-top: 32px;
+  }
+  /* ___________________________ TABLET  ___________________________*/
+  /* Styles for tablets (min-width: 768px) */
+  @media screen and (min-width: 768px) {
+    .produkter {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Maximum of four columns */
+      gap: 32px;
+      justify-content: center;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  /* Styles for desktops (min-width: 1024px) */
+  @media screen and (min-width: 1024px) {
+    .produkter {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Four columns */
+      gap: 32px;
+      justify-content: center;
+    }
   }
 </style>
-
-
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-const type = urlParams.get("type");
-
-fetch("https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen" + type)
-  .then((res) => res.json())
-  .then(showProducts);
-
-  function showProducts(products) { 
-      //looper og kalder showProduct
-    products.forEach(showProduct);
-  }
-function showProduct(product) {
-  console.log(product);
-  //fang template
-  const template = document.querySelector("#smallProductTemplate").content;
-
-    //lav kopi
-  const copy = template.cloneNode(true);
-
-  //ændre indhold
-  copy.querySelector(".product_name").textContent = product.productdisplayname;
-  if (product.soldout) {
-    //produktet er udsolgt
-    copy.querySelector("article").classList.add("soldOut");
-  }
-
-    copy.querySelector(".articletype").textContent = product.articletype;
-  copy.querySelector(".price").textContent = product.price + ",-";
-
-  copy.querySelector("img").src = `https://esterpiazza.dk/kea/10_eksamen/merch/2_logo_hoodie/logo_hoodie1.avif`;
-
-    //appende
-  document.querySelector(".produktliste").appendChild(copy);
-}
-
-
-</script>
-
-
-<!-- <script>
-const url = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen"
-
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw"
-
-const urlParams = new URLSearchParams(window.location.search);
-
-const id = urlParams.get("id");
-
-let items = [];
-fetch(url + "/rest/v1/eksamen", {
-  method: "GET",
-  headers: {
-    apikey: key,
-  },
-})
-  .then((res) => res.json())
-  .then((data) => {
-    items = data;
-    showData();
-  });
-
-function showData() {
-  document.querySelector(".products").innerHTML = "";
-
-}
-
-getProduct() {
-  if (id !== null) {
-    const product = items.find((item) => item.id === id);
-
-    showData(product);
-  }
-  else{
-    console.error("ID parameter is null");
-  }
-}
-
-if (id !== null) {
-  fetch(`${url}/res/v1/eksamen?id=eq.${id}`,{
-    method: "GET",
-    headers: {
-      apikey: key,
-    },
-  })
-   .then((res) => res.json())
-  .then((data); => {
-    items = Array.isArray(data) ? data : data.data;
-    getProduct();
-  })
-  .catch((error) => {
-    console.error("Error fethinch data:", error);
-  });
-}
-else {
-  console.error("ID parameter is null");
-}
-
-function showData(product) {
-  if (product) {
-document.querySelector(".name").textContent = product.name;
-document.querySelector(".image").textContent = product.image;
-  } else {
-    console.error("No product found");
-  }
-}
-</script> -->
-
-<!-- <script>
-  // Get references to the filter buttons and articles
-  const filterButtons = document.querySelectorAll(".filterbutton");
-  const articles = document.querySelectorAll("article");
-
-  // Variable to store the active button
-  let activeButton = document.querySelector(".filterbutton.active");
-
-  // Add a click event listener to each filter button
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const filterValue = (event.target as HTMLElement).getAttribute("data-filter");
-
-      // Remove the active class from the previous active button
-      if (activeButton) {
-        activeButton.classList.remove("active");
-      }
-
-      // Hide all articles
-      articles.forEach((article) => {
-        if (article instanceof HTMLElement) {
-          article.style.display = "none";
-        }
-      });
-
-      if (filterValue === "all") {
-        articles.forEach((article) => {
-          if (article instanceof HTMLElement) {
-            article.style.display = "grid";
-          }
-        });
-      } else {
-        const correspondingArticle = document.querySelector(`.filter${filterValue}`);
-        if (correspondingArticle instanceof HTMLElement) {
-          correspondingArticle.style.display = "grid";
-        }
-      }
-
-      // Add the active class to the clicked button
-      activeButton = event.target as HTMLElement;
-      activeButton.classList.add("active");
-    });
-  });
-</script> -->

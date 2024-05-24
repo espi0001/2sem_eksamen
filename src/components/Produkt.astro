@@ -1,32 +1,106 @@
 ---
 import "../styles/style.css";
-import Button from "./Button.astro";
+
+export interface ProduktProps {
+  images: string[]; // Change images to be an array of strings
+  name: string;
+  type2: string;
+  price: string;
+}
+
+const { images, name, type2, price } = Astro.props as ProduktProps;
 ---
 
-<article class="produkt">
-  <!-- <a href="/4_singleview">
-    <img src={data.image} alt={data.name} />
-    <div class="content">
-      <div class="product_name">
-        <p>{data.name}</p>
-        <p>{data.type2}</p>
-      </div>
-      <p>{data.price}</p>
-    </div>
-  </a> -->
-  <section></section>
+<article class="product">
+  <div class="image-container">
+    {images && <img class="product-image" src={images[0]} alt={name} />}
+    {images && images.length > 1 && <img class="product-image-hover" src={images[1]} alt={`${name} hover`} />}
+    <div class="image-overlay"></div>
+    {/* Add a div for the white background */}
+  </div>
+  <div class="product-info">
+    <p class="product-name">{name}</p>
+    <p class="product-variant">{type2}</p>
+    <p class="product-price">{price}</p>
+  </div>
 </article>
 
 <style>
-  article {
-    flex-direction: column;
-  }
-  img {
+  .product {
     max-width: 304px;
     height: auto;
+    display: flex;
+    flex-direction: column;
   }
 
-  img:hover {
-    transform: scale(1.02);
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    height: 304px; /* Adjust height as needed */
+    background-color: white; /* Set background color to white */
+  }
+
+  .product-image,
+  .product-image-hover {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .product-image-hover {
+    opacity: 0;
+  }
+
+  .image-container:hover .product-image {
+    opacity: 0;
+  }
+
+  .image-container:hover .product-image-hover {
+    opacity: 1;
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Set background color to white */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  }
+
+  .image-container:hover .image-overlay {
+    opacity: 1; /* Show the overlay on hover */
+  }
+
+  .product-info {
+    margin-top: 16px;
+  }
+
+  .product-name {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .product-variant,
+  .product-price {
+    margin-bottom: 4px;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* Styles for tablets (min-width: 768px) */
+  @media screen and (min-width: 768px) {
+    /* Add tablet-specific styles here */
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  /* Styles for desktops (min-width: 1024px) */
+  @media screen and (min-width: 1024px) {
+    /* Add desktop-specific styles here */
   }
 </style>
