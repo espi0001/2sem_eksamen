@@ -1,6 +1,5 @@
 ---
 import "../styles/style.css";
-// import Links from "../components/Links.astro";
 ---
 
 <header>
@@ -12,6 +11,7 @@ import "../styles/style.css";
 
   <nav>
     <ul class="menu">
+      <hr />
       <li><a href="/2_koncerter">Koncerter</a></li>
       <hr />
       <li><a href="/3_merchandise">Merchandise</a></li>
@@ -40,7 +40,6 @@ import "../styles/style.css";
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding-bottom: 25px; */
   }
 
   .logo img {
@@ -117,6 +116,7 @@ import "../styles/style.css";
     .burger {
       display: block;
       text-align: start;
+      z-index: 1;
     }
     .burger.active .line:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
@@ -135,13 +135,14 @@ import "../styles/style.css";
 
     nav.active .menu {
       display: block;
-      background-color: transparent;
+      background-color: var(--color_black);
       position: absolute;
-      top: 120px;
+      top: 0px;
       left: 0;
       width: 100%;
       z-index: 1;
       text-align: start;
+      padding-top: 100px;
     }
 
     nav.active .menu li {

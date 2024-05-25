@@ -11,20 +11,19 @@ import Button from "../components/Button.astro";
     <section>
       <div class="header">
         <h1>Barselona</h1>
-        <p class="tour">Efterårs tour 2024</p>
+        <p class="tour">Efterårstour 2024</p>
       </div>
       <div>
         <Timer />
+      </div>
+      <div class="knapper">
+        <div class="lyt">
+          <a href="#festivaller" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
 
-        <div class="knapper">
-          <div class="lyt">
-            <a href="#festivaller" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
-
-            <a href="#festivaller" class="listen-link"> Se festivaller</a>
-          </div>
-          <!-- <Button style="tredje" linket="#festivaller">Se festivaller</Button> -->
-          <Button style="tredje" linket="">Køb billet</Button>
+          <a href="#festivaller" class="listen-link"> Se festivaller</a>
         </div>
+
+        <Button style="tredje" linket="">Køb billet</Button>
       </div>
     </section>
   </article>
@@ -33,35 +32,31 @@ import Button from "../components/Button.astro";
     <section><h2>Kommende shows</h2></section>
   </article>
   <section class="koncerter">
-    <div>
-      <Koncertdato sted="Næstved" dato="13.09.2024" lokation="Næstved, Vershuset" buttonProps={{ linket: "https://vershuset.dk/event/barselona/" }} buttonProps2={{ linket: "#" }} />
-      <Koncertdato sted="Skjern" dato="14.09.2024" lokation="Skjern, Remisen" buttonProps={{ linket: "https://remisenskjern.dk/program/barselona" }} buttonProps2={{ linket: "https://www.facebook.com/events/781464630082262/" }} />
-      <Koncertdato sted="Svendborg" dato="20.09.2024" lokation="Svendborg, Borgerforeningen" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/546159" }} buttonProps2={{ linket: "https://www.facebook.com/events/1265590907733028/" }} />
-      <Koncertdato sted="Nørup" dato="25.09.2024" lokation="Nørup, Engelsholm Slot" buttonProps={{ linket: "https://billetto.dk/e/barselona-billetter-961321" }} buttonProps2={{ linket: "https://www.facebook.com/events/2704078069754342/" }} />
-      <Koncertdato sted="Sønderborg" dato="29.09.2024" lokation="Sønderborghus" buttonProps={{ linket: "https://sonderborghus.dk/events/barselona/" }} buttonProps2={{ linket: "https://www.facebook.com/events/1104865730654632/" }} />
-    </div>
-    <div>
-      <Koncertdato sted="Horsens" dato="12.10.2024" lokation="Horsens Ny Teater" buttonProps={{ linket: "https://horsensnyteater.dk/program/barselona/" }} buttonProps2={{ linket: "https://www.facebook.com/events/335923698918058/" }} />
-      <Koncertdato sted="Flensborg" dato="17.10.2024" lokation="Tyskland, Flensborghus" buttonProps={{ linket: "https://ssf.billetten.dk/index/chooseprice/showid/340483/type/1?" }} buttonProps2={{ linket: "" }} />
-      <Koncertdato sted="Skive" dato="18.10.2024" lokation="Skive Teater" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/546189" }} buttonProps2={{ linket: "https://www.facebook.com/events/1606456300180339/" }} />
-      <Koncertdato sted="Helsingør" dato="19.10.2024" lokation="Helsingør, Toldkammeret" buttonProps={{ linket: "https://kuto.dk/arrangementer/barselona/#select/121795" }} buttonProps2={{ linket: "https://www.facebook.com/events/2393646234163290/" }} />
-      <Koncertdato sted="København" dato="26.10.2024" lokation="København, Falkoner Salen" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/546249" }} buttonProps2={{ linket: "https://www.facebook.com/events/1596848301105564/" }} />
-    </div>
+    <div class="koncert_content"><Koncertdato sted="Næstved" dato="13.09.2024" lokation="Næstved, Vershuset" buttonProps={{ linket: "https://vershuset.dk/event/barselona/" }} buttonProps2={{ linket: "#" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Skjern" dato="14.09.2024" lokation="Skjern, Remisen" buttonProps={{ linket: "https://remisenskjern.dk/program/barselona" }} buttonProps2={{ linket: "https://www.facebook.com/events/781464630082262/" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Svendborg" dato="20.09.2024" lokation="Svendborg, Borgerforeningen" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/546159" }} buttonProps2={{ linket: "https://www.facebook.com/events/1265590907733028/" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Nørup" dato="25.09.2024" lokation="Nørup, Engelsholm Slot" buttonProps={{ linket: "https://billetto.dk/e/barselona-billetter-961321" }} buttonProps2={{ linket: "https://www.facebook.com/events/2704078069754342/" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Sønderborg" dato="29.09.2024" lokation="Sønderborghus" buttonProps={{ linket: "https://sonderborghus.dk/events/barselona/" }} buttonProps2={{ linket: "https://www.facebook.com/events/1104865730654632/" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Horsens" dato="12.10.2024" lokation="Horsens Ny Teater" buttonProps={{ linket: "https://horsensnyteater.dk/program/barselona/" }} buttonProps2={{ linket: "https://www.facebook.com/events/335923698918058/" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Flensborg" dato="17.10.2024" lokation="Tyskland, Flensborghus" buttonProps={{ linket: "https://ssf.billetten.dk/index/chooseprice/showid/340483/type/1?" }} buttonProps2={{ linket: "" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Skive" dato="18.10.2024" lokation="Skive Teater" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/546189" }} buttonProps2={{ linket: "https://www.facebook.com/events/1606456300180339/" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="Helsingør" dato="19.10.2024" lokation="Helsingør, Toldkammeret" buttonProps={{ linket: "https://kuto.dk/arrangementer/barselona/#select/121795" }} buttonProps2={{ linket: "https://www.facebook.com/events/2393646234163290/" }} /></div>
+
+    <div class="koncert_content"><Koncertdato sted="København" dato="26.10.2024" lokation="København, Falkoner Salen" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/546249" }} buttonProps2={{ linket: "https://www.facebook.com/events/1596848301105564/" }} /></div>
   </section>
 
   <article class="festivaler" id="festivaller">
     <h2>Festivaler</h2>
   </article>
   <section class="koncerter">
-    <div>
-      <Koncertdato
-        sted="Fredagsrock"
-        dato="24.05.2024"
-        lokation="København, Tivoli"
-        buttonProps={{ linket: "https://tivoli.dk/da/billetter-og-tivolikort/fredagsrock?_gl=1*1elv6o*_gcl_aw*R0NMLjE3MTYxMDk5NzEuQ2owS0NRand4cWF5QmhERkFSSXNBQU5XUm5TQko3MnZFa2FPdEh6TDRrY2sxR09obTk1WGJSNkxobjIzZzRfWjdJcEVSM3NISHZ2Z0VsY2FBb2lURUFMd193Y0I.*_gcl_au*MTEyNjIzNzY4OS4xNzE1MDc2MDgx*_up*MQ..*_ga*MTIzMjUwNTM4My4xNzE1MDc2MDgx*_ga_Z1V7EM2RQ2*MTcxNjEwOTk3MC4zLjAuMTcxNjEwOTk3MC4wLjAuNDYyMTIzNDE5*_ga_QDWY0DDVKX*MTcxNjEwOTk3MC4zLjAuMTcxNjEwOTk3MC4wLjAuMTY5NzAwNzQ0MQ..&gclid=Cj0KCQjwxqayBhDFARIsAANWRnSBJ72vEkaOtHzL4kck1GOhm95XbR6Lhn23g4_Z7IpER3sHHvvgElcaAoiTEALw_wcB&_ga=2.2872240.1495674400.1716109971-1232505383.1715076081&_gac=1.188724698.1716109971.Cj0KCQjwxqayBhDFARIsAANWRnSBJ72vEkaOtHzL4kck1GOhm95XbR6Lhn23g4_Z7IpER3sHHvvgElcaAoiTEALw_wcB" }}
-        buttonProps2={{ linket: "https://www.tivoli.dk/da/kultur-og-program/musik/2024/fredagsrockbarselonapil22240524?gad_source=1&gclid=Cj0KCQjwxqayBhDFARIsAANWRnSBJ72vEkaOtHzL4kck1GOhm95XbR6Lhn23g4_Z7IpER3sHHvvgElcaAoiTEALw_wcB" }}
-      />
-    </div>
     <div><Koncertdato sted="Northside" dato="8.06.2024" lokation="Aahus, Northside" buttonProps={{ linket: "https://www.ticketmaster.dk/event/partout-northside-2024-billetter/541071" }} buttonProps2={{ linket: "https://northside.dk/artister/barselona/" }} /></div>
     <div><Koncertdato sted="Roskilde Festival" dato="06.07.2024" lokation="Roskilde, Roskilde Festival" buttonProps={{ linket: "https://www.roskilde-festival.dk/billetter" }} buttonProps2={{ linket: "https://www.roskilde-festival.dk/program/musik/barselona" }} /></div>
     <div><Koncertdato sted="Gæsten" dato="23.07.2024" lokation="Allinge, Gæstgiveren" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/547053" }} buttonProps2={{ linket: "https://www.facebook.com/events/1081549736263668/" }} /></div>
@@ -74,6 +69,7 @@ import Button from "../components/Button.astro";
   .baggrund {
     background: url(https://esterpiazza.dk/kea/10_eksamen/radial.avif);
     background-size: cover;
+    aspect-ratio: 1440/714;
   }
   .koncerter {
     display: block;
@@ -81,18 +77,19 @@ import Button from "../components/Button.astro";
   .header {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   h4 {
     text-transform: uppercase;
   }
   .baggrund p {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bolder;
   }
   .knapper {
     display: flex;
     gap: 60px;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .lyt {
     display: flex;
@@ -119,26 +116,18 @@ import Button from "../components/Button.astro";
   }
 
   .festivaler {
-    padding: 80px;
+    background: url(https://esterpiazza.dk/kea/10_eksamen/radial_festival.avif);
+    background-size: cover;
     aspect-ratio: 1440/406;
   }
   /* ___________________________ TABLET  ___________________________*/
-  /* reglerne gælder når skærmen er minimum 768px */
   @media screen and (min-width: 768px) {
     .koncerter {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 64px;
     }
-    .baggrund {
-      background: url(https://esterpiazza.dk/kea/10_eksamen/radial.avif);
-      background-size: cover;
-      padding: 80px;
-      aspect-ratio: 1440/714;
-    }
-    /* .koncerter {
-      display: block;
-    } */
+
     .header {
       display: flex;
       flex-direction: column;
@@ -147,27 +136,15 @@ import Button from "../components/Button.astro";
       text-transform: uppercase;
     }
     .baggrund p {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bolder;
-    }
-    .knapper {
-      display: flex;
-      gap: 60px;
-      justify-content: flex-end;
     }
     h2 {
       text-align: center;
     }
 
-    .festivaler {
-      background: url(https://esterpiazza.dk/kea/10_eksamen/radial_festival.avif);
-      background-size: cover;
-      padding: 80px;
-      aspect-ratio: 1440/406;
-    }
     .lyt {
       padding-top: 10px;
-      grid-area: 5 / 3 / 6 / 5;
     }
     .lyt img {
       max-width: 30px;
@@ -181,7 +158,6 @@ import Button from "../components/Button.astro";
   @media screen and (min-width: 1024px) {
     .lyt {
       padding-top: 20px;
-      grid-area: 8 / 2 / 9 / 4;
     }
   }
 </style>

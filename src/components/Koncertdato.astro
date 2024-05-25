@@ -20,7 +20,6 @@ const { sted, dato, lokation, buttonProps, buttonProps2 } = Astro.props; // Adde
       </div>
       <div class="knapper">
         <div class="knap1">
-          {/* Pass buttonProps to the Button component */}
           <Button {...buttonProps} style="secondary">Find billetter</Button>
         </div>
         <Button {...buttonProps2} style="secondary">Begivenhed</Button>
@@ -60,8 +59,9 @@ const { sted, dato, lokation, buttonProps, buttonProps2 } = Astro.props; // Adde
 
   .lokation_knapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
   }
 
   @media screen and (min-width: 768px) {
@@ -80,7 +80,6 @@ const { sted, dato, lokation, buttonProps, buttonProps2 } = Astro.props; // Adde
   }
 
   @media screen and (min-width: 1024px) {
-    /* Add desktop-specific styles here */
     .lokation_knapper {
       display: flex;
       align-items: center;

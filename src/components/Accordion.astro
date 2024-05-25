@@ -11,64 +11,7 @@ const { titel, overskrift1, text1, overskrift2, text2, overskrift3, text3, overs
         <p>{overskrift1}</p>
       </div>
       <div class="content">
-        <p>
-          {text1}
-        </p>
-      </div>
-    </div>
-    <hr />
-    <div class="container">
-      <div class="label">
-        <p>{overskrift2}</p>
-      </div>
-      <div class="content">
-        <p>
-          {text2}
-        </p>
-      </div>
-    </div>
-    <hr />
-    <div class="container">
-      <div class="label">
-        <p>{overskrift3}</p>
-      </div>
-      <div class="content">
-        <p>
-          {text3}
-        </p>
-      </div>
-    </div>
-    <hr />
-    <div class="container">
-      <div class="label">
-        <p>{overskrift4}</p>
-      </div>
-      <div class="content">
-        <p>
-          {text4}
-        </p>
-      </div>
-    </div>
-    <hr />
-    <div class="container">
-      <div class="label">
-        <p>{overskrift5}</p>
-      </div>
-      <div class="content">
-        <p>
-          {text5}
-        </p>
-      </div>
-    </div>
-    <hr />
-    <div class="container">
-      <div class="label">
-        <p>{overskrift6}</p>
-      </div>
-      <div class="content">
-        <p>
-          {text6}
-        </p>
+        <slot />
       </div>
     </div>
     <hr />
@@ -77,7 +20,6 @@ const { titel, overskrift1, text1, overskrift2, text2, overskrift3, text3, overs
 
 <style>
   /* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
-
   .accordion {
     max-width: 800px;
     margin: auto;
@@ -91,7 +33,6 @@ const { titel, overskrift1, text1, overskrift2, text2, overskrift3, text3, overs
   }
 
   /* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
-
   .accordion .label {
     position: relative;
     padding: 10px 0;
@@ -121,7 +62,6 @@ const { titel, overskrift1, text1, overskrift2, text2, overskrift3, text3, overs
     position: relative;
     background: var(--color_black);
     height: 0;
-    text-align: justify;
     max-width: 670px;
     overflow: hidden;
     transition: 0.5s;
@@ -151,16 +91,10 @@ const { titel, overskrift1, text1, overskrift2, text2, overskrift3, text3, overs
     font-size: 30px;
   }
 
-  /* ___________________________ TABLET  ___________________________*/
-  /* reglerne gælder når skærmen er minimum 768px */
   @media screen and (min-width: 768px) {
     .accordion {
       padding-inline: 45px;
     }
-  }
-
-  /* ___________________________ DESKTOP  ___________________________*/
-  @media screen and (min-width: 1024px) {
   }
 </style>
 

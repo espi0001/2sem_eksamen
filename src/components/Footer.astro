@@ -3,7 +3,6 @@ import "../styles/style.css";
 ---
 
 <footer>
-  <!-- <hr /> -->
   <div class="content">
     <div class="logo">
       <a href="/"> <img src="logo/LogoWhite.svg" alt="logo" /></a>
@@ -80,16 +79,16 @@ import "../styles/style.css";
   }
   hr {
     width: 100%;
-    color: var(--color_blue);
+    color: var(--color_white);
   }
 
   .credits {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 32px;
     margin-top: 32px;
+    flex-direction: column-reverse;
   }
 
   .footer_links {
@@ -104,15 +103,13 @@ import "../styles/style.css";
   .credits a:hover {
     color: var(--color_blue);
   }
-  /* .footer_links a {
-    text-decoration: underline;
-  }
-  .footer_links a:hover {
-    text-decoration: none;
-  } */
+
   /* ___________________________ TABLET  ___________________________*/
-  /* reglerne gælder når skærmen er minimum 768px */
   @media screen and (min-width: 768px) {
+    .credits {
+      flex-direction: row;
+      gap: 10px;
+    }
   }
 
   /* ___________________________ DESKTOP  ___________________________*/

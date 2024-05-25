@@ -1,8 +1,6 @@
 ---
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Links from "../components/Links.astro";
 import Header2 from "../components/Header2.astro";
 import Mail from "../components/Mail.astro";
 ---
@@ -10,7 +8,7 @@ import Mail from "../components/Mail.astro";
 <MainLayout title="Kontakt">
   <!-- <h1>forside</h1> -->
   <section class="header">
-    <Header2 header1="Kontakt os" text="Hvis du har spørgsmål, ønsker at give feedback eller har andre forslag til forbedringer, så kan du kontakte os på følgende mailadresser:" />
+    <Header2 header1="Kontakt os" />
   </section>
   <section class="mails">
     <article>
@@ -20,7 +18,7 @@ import Mail from "../components/Mail.astro";
       <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?" text="Louis Tvede"> louis.tvede@umusic.com</Mail>
     </article>
 
-    <article>
+    <article class="billede">
       <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/rud_rasmus.avif" alt="Rud og Rasmus koncertbillede" />
     </article>
   </section>
@@ -35,8 +33,7 @@ import Mail from "../components/Mail.astro";
   .mails {
     align-items: center;
   }
-  /* ___________________________ TABLET  ___________________________*/
-  /* reglerne gælder når skærmen er minimum 768px */
+
   @media screen and (min-width: 768px) {
     .mails {
       display: grid;
@@ -46,12 +43,15 @@ import Mail from "../components/Mail.astro";
     }
   }
 
-  /* ___________________________ DESKTOP  ___________________________*/
   @media screen and (min-width: 1024px) {
     .header {
       text-align: start;
       align-items: center;
       align-self: center;
+    }
+
+    .mails {
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>
