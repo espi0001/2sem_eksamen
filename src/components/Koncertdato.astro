@@ -1,26 +1,30 @@
 ---
 import "../styles/style.css";
 import Button from "./Button.astro";
-const { sted, dato, lokation, linket2 } = Astro.props;
+
+const { sted, dato, lokation, buttonProps, buttonProps2 } = Astro.props; // Added buttonProps
 ---
 
 <article>
   <hr />
   <div class="koncert">
     <div class="sted_dato">
-      <h5>{sted}</h5>
+      <h4>{sted}</h4>
       <div class="dato">
-        <p>{dato}</p>
+        <p>/ {dato}</p>
       </div>
     </div>
-    <div class="lokation">
-      <p>{lokation}</p>
-    </div>
-    <div class="knapper">
-      <div class="knap1">
-        <Button linket="https://www.ticketmaster.dk/artist/barselona-billetter/992110" style="primary">Find billetter</Button>
+    <div class="lokation_knapper">
+      <div class="lokation">
+        <p>{lokation}</p>
       </div>
-      <Button linket2="https://www.facebook.com/search/events/?q=Barselona&sde=AbrVxKua3d7Q7RQz7ZWPsa9be21FsYZGGfNj98HZhw7z4Jr8oNcvAkTnImoVykXdacbGlW6lojQ2wh8K7DGAbDnw&locale=da_DK" style="secondary">Begivenhed</Button>
+      <div class="knapper">
+        <div class="knap1">
+          {/* Pass buttonProps to the Button component */}
+          <Button {...buttonProps} style="secondary">Find billetter</Button>
+        </div>
+        <Button {...buttonProps2} style="secondary">Begivenhed</Button>
+      </div>
     </div>
   </div>
 </article>
@@ -30,33 +34,35 @@ const { sted, dato, lokation, linket2 } = Astro.props;
     padding: 24px 0px;
   }
 
-  h5 {
+  h4 {
     text-transform: uppercase;
   }
   .sted_dato {
     display: flex;
     margin-bottom: 24px;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
   }
   .lokation {
-    margin-bottom: 24px;
-  }
-
-  .dato {
-    background-color: var(--color_lightgrey);
-    padding: 4px 8px;
+    /* margin-bottom: 24px; */
+    font-size: var(--font_size_large);
   }
   .dato p {
-    font-size: var(--font_size_small);
-    font-weight: medium;
-    color: var(--color_black);
-    font-weight: bold;
+    font-size: var(--font_size_large);
+
+    color: var(--color_white);
   }
   .knapper {
     display: flex;
+    flex-wrap: wrap;
   }
   .knap1 {
     padding-right: 10px;
+  }
+
+  .lokation_knapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 </style>

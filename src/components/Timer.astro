@@ -1,0 +1,124 @@
+---
+//Brugt i CLF temaet
+import "../styles/style.css";
+---
+
+<div class="flex_timer">
+  <div class="date_timer_flex">
+    <!-- <div class="text-color-action">
+      <p>2/2-25/2</p>
+    </div> -->
+    <div class="home_event-item-header_countdown">
+      <div class="home_event-item-header_number-wrapper">
+        <p id="days" class="heading-style-h3 text-color-action">122</p>
+        <p class="text-color-action">Dage</p>
+      </div>
+      <div class="home_event-item-header_countdown-divider"></div>
+      <div class="home_event-item-header_number-wrapper">
+        <p id="hours" class="heading-style-h3 text-color-action">3</p>
+        <p class="text-color-action">Timer</p>
+      </div>
+      <div class="home_event-item-header_countdown-divider"></div>
+      <div class="home_event-item-header_number-wrapper">
+        <p id="minutes" class="heading-style-h3 text-color-action">14</p>
+        <p class="text-color-action">Min</p>
+      </div>
+      <div class="home_event-item-header_countdown-divider"></div>
+      <div class="home_event-item-header_number-wrapper">
+        <p id="seconds" class="heading-style-h3 text-color-action">30</p>
+        <p class="text-color-action">Sek</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="home_event-item-header_number-changes w-embed w-script">
+  <script>
+    (function () {
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+      // Set the target date and time for the countdown (format: "MM/DD/YYYY HH:mm:ss")
+      const targetDateString = "09/13/2024 21:00:00";
+      const targetDate = new Date(targetDateString).getTime();
+      const updateCountdown = () => {
+        const now = new Date().getTime(), // Get the current date and time
+          distance = targetDate - now; // Calculate the time remaining until the target date
+        // Update the HTML elements with the remaining time
+        document.getElementById("days").innerText = Math.floor(distance / day);
+        document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
+        document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
+        document.getElementById("seconds").innerText = Math.floor((distance % minute) / second);
+        // Check if the target date has already passed
+        if (distance < 0) {
+          clearInterval(countdown_timer); // Stop the countdown timer
+          document.getElementById("days").innerText = "0";
+          document.getElementById("hours").innerText = "0";
+          document.getElementById("minutes").innerText = "0";
+          document.getElementById("seconds").innerText = "0";
+          // You can display an element at the end of the countdown with this ID
+          document.getElementById("message").style.display = "block";
+        }
+      };
+      // Initial call to update countdown
+      updateCountdown();
+      // Update the countdown every second
+      const interval = setInterval(updateCountdown, 1000);
+      let countdown_timer = interval;
+    })();
+  </script>
+</div>
+
+<style>
+  .flex_timer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .date_timer_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .home_event-item-header_countdown {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    padding: 1rem;
+    justify-content: center;
+  }
+
+  .home_event-item-header_countdown-divider {
+    margin: 10px;
+  }
+
+  .home_event-item-header_number-wrapper {
+    min-width: 4.5rem;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+
+  .heading-style-h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .text-color-action p {
+    font-size: 1.4rem;
+    font-weight: 900;
+
+    letter-spacing: 0.1rem;
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .flex_timer {
+      display: flex;
+      justify-content: right;
+    }
+  }
+</style>
