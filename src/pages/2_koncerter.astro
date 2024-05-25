@@ -17,7 +17,12 @@ import Button from "../components/Button.astro";
         <Timer />
 
         <div class="knapper">
-          <Button style="tredje" linket="#festivaller">Se festivaller</Button>
+          <div class="lyt">
+            <a href="#festivaller" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
+
+            <a href="#festivaller" class="listen-link"> Se festivaller</a>
+          </div>
+          <!-- <Button style="tredje" linket="#festivaller">Se festivaller</Button> -->
           <Button style="tredje" linket="">Køb billet</Button>
         </div>
       </div>
@@ -44,24 +49,24 @@ import Button from "../components/Button.astro";
     </div>
   </section>
 
-  <article class="festivaler">
+  <article class="festivaler" id="festivaller">
     <h2>Festivaler</h2>
   </article>
   <section class="koncerter">
     <div>
       <Koncertdato
         sted="Fredagsrock"
-        dato="24 maj 2024"
+        dato="24.05.2024"
         lokation="København, Tivoli"
         buttonProps={{ linket: "https://tivoli.dk/da/billetter-og-tivolikort/fredagsrock?_gl=1*1elv6o*_gcl_aw*R0NMLjE3MTYxMDk5NzEuQ2owS0NRand4cWF5QmhERkFSSXNBQU5XUm5TQko3MnZFa2FPdEh6TDRrY2sxR09obTk1WGJSNkxobjIzZzRfWjdJcEVSM3NISHZ2Z0VsY2FBb2lURUFMd193Y0I.*_gcl_au*MTEyNjIzNzY4OS4xNzE1MDc2MDgx*_up*MQ..*_ga*MTIzMjUwNTM4My4xNzE1MDc2MDgx*_ga_Z1V7EM2RQ2*MTcxNjEwOTk3MC4zLjAuMTcxNjEwOTk3MC4wLjAuNDYyMTIzNDE5*_ga_QDWY0DDVKX*MTcxNjEwOTk3MC4zLjAuMTcxNjEwOTk3MC4wLjAuMTY5NzAwNzQ0MQ..&gclid=Cj0KCQjwxqayBhDFARIsAANWRnSBJ72vEkaOtHzL4kck1GOhm95XbR6Lhn23g4_Z7IpER3sHHvvgElcaAoiTEALw_wcB&_ga=2.2872240.1495674400.1716109971-1232505383.1715076081&_gac=1.188724698.1716109971.Cj0KCQjwxqayBhDFARIsAANWRnSBJ72vEkaOtHzL4kck1GOhm95XbR6Lhn23g4_Z7IpER3sHHvvgElcaAoiTEALw_wcB" }}
         buttonProps2={{ linket: "https://www.tivoli.dk/da/kultur-og-program/musik/2024/fredagsrockbarselonapil22240524?gad_source=1&gclid=Cj0KCQjwxqayBhDFARIsAANWRnSBJ72vEkaOtHzL4kck1GOhm95XbR6Lhn23g4_Z7IpER3sHHvvgElcaAoiTEALw_wcB" }}
       />
     </div>
-    <div><Koncertdato sted="Northside" dato="8 juni 2024" lokation="Aahus, Northside" buttonProps={{ linket: "https://www.ticketmaster.dk/event/partout-northside-2024-billetter/541071" }} buttonProps2={{ linket: "https://northside.dk/artister/barselona/" }} /></div>
-    <div><Koncertdato sted="Roskilde Festival" dato="06 juli 2024" lokation="Roskilde, Roskilde Festival" buttonProps={{ linket: "https://www.roskilde-festival.dk/billetter" }} buttonProps2={{ linket: "https://www.roskilde-festival.dk/program/musik/barselona" }} /></div>
-    <div><Koncertdato sted="Gæsten" dato="23 juli 2024" lokation="Allinge, Gæstgiveren" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/547053" }} buttonProps2={{ linket: "https://www.facebook.com/events/1081549736263668/" }} /></div>
-    <div><Koncertdato sted="Suset Festival" dato="16 august 2024" lokation="Esbjerg, Esbjerghavn" buttonProps={{ linket: "https://www.livenation.dk/show/1468075/suset-festival-2024/esbjerg/2024-08-16" }} buttonProps2={{ linket: "https://www.ticketmaster.dk/event/suset-festival-2024-partout-fre-lor-billetter/543975" }} /></div>
-    <div><Koncertdato sted="Landsbyen" dato="17 august 2024" lokation="Odense, Den Fynske Landsby" buttonProps={{ linket: "https://www.ticketmaster.dk/event/tim-christensen-barselona-billetter/540235" }} buttonProps2={{ linket: "https://www.facebook.com/events/591824959683988/" }} /></div>
+    <div><Koncertdato sted="Northside" dato="8.06.2024" lokation="Aahus, Northside" buttonProps={{ linket: "https://www.ticketmaster.dk/event/partout-northside-2024-billetter/541071" }} buttonProps2={{ linket: "https://northside.dk/artister/barselona/" }} /></div>
+    <div><Koncertdato sted="Roskilde Festival" dato="06.07.2024" lokation="Roskilde, Roskilde Festival" buttonProps={{ linket: "https://www.roskilde-festival.dk/billetter" }} buttonProps2={{ linket: "https://www.roskilde-festival.dk/program/musik/barselona" }} /></div>
+    <div><Koncertdato sted="Gæsten" dato="23.07.2024" lokation="Allinge, Gæstgiveren" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/547053" }} buttonProps2={{ linket: "https://www.facebook.com/events/1081549736263668/" }} /></div>
+    <div><Koncertdato sted="Suset Festival" dato="16.08.2024" lokation="Esbjerg, Esbjerghavn" buttonProps={{ linket: "https://www.livenation.dk/show/1468075/suset-festival-2024/esbjerg/2024-08-16" }} buttonProps2={{ linket: "https://www.ticketmaster.dk/event/suset-festival-2024-partout-fre-lor-billetter/543975" }} /></div>
+    <div><Koncertdato sted="Landsbyen" dato="17.08.2024" lokation="Odense, Den Fynske Landsby" buttonProps={{ linket: "https://www.ticketmaster.dk/event/tim-christensen-barselona-billetter/540235" }} buttonProps2={{ linket: "https://www.facebook.com/events/591824959683988/" }} /></div>
   </section>
 </MainLayout>
 
@@ -89,6 +94,26 @@ import Button from "../components/Button.astro";
     gap: 60px;
     justify-content: flex-end;
   }
+  .lyt {
+    display: flex;
+    align-items: center;
+  }
+  .lyt img {
+    max-width: 30px;
+    align-self: center;
+  }
+  .listen-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .lyt a {
+    font-size: var(--font_size_small);
+  }
+  .listen-link:hover {
+    color: var(--color_blue);
+    text-decoration: none;
+  }
   h2 {
     text-align: center;
   }
@@ -111,9 +136,9 @@ import Button from "../components/Button.astro";
       padding: 80px;
       aspect-ratio: 1440/714;
     }
-    .koncerter {
+    /* .koncerter {
       display: block;
-    }
+    } */
     .header {
       display: flex;
       flex-direction: column;
@@ -140,9 +165,23 @@ import Button from "../components/Button.astro";
       padding: 80px;
       aspect-ratio: 1440/406;
     }
+    .lyt {
+      padding-top: 10px;
+      grid-area: 5 / 3 / 6 / 5;
+    }
+    .lyt img {
+      max-width: 30px;
+    }
+    .lyt a {
+      font-size: var(--font_size_regular);
+    }
   }
 
   /* ___________________________ DESKTOP  ___________________________*/
   @media screen and (min-width: 1024px) {
+    .lyt {
+      padding-top: 20px;
+      grid-area: 8 / 2 / 9 / 4;
+    }
   }
 </style>

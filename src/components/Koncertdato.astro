@@ -44,12 +44,10 @@ const { sted, dato, lokation, buttonProps, buttonProps2 } = Astro.props; // Adde
     gap: 10px;
   }
   .lokation {
-    /* margin-bottom: 24px; */
-    font-size: var(--font_size_large);
+    font-size: var(--font_size_small);
   }
   .dato p {
-    font-size: var(--font_size_large);
-
+    font-size: var(--font_size_small);
     color: var(--color_white);
   }
   .knapper {
@@ -64,5 +62,37 @@ const { sted, dato, lokation, buttonProps, buttonProps2 } = Astro.props; // Adde
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @media screen and (min-width: 768px) {
+    .lokation_knapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .dato p {
+      font-size: var(--font_size_regular);
+    }
+    .lokation {
+      font-size: var(--font_size_regular);
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    /* Add desktop-specific styles here */
+    .lokation_knapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    .dato p {
+      font-size: var(--font_size_large);
+    }
+    .lokation {
+      margin-bottom: 0px;
+      font-size: var(--font_size_large);
+    }
   }
 </style>

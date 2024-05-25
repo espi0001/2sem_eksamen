@@ -8,7 +8,7 @@ const { style, linket } = Astro.props;
 <style>
   a {
     display: inline-block;
-    font-size: var(--font_size_regular);
+    font-size: var(--font_size_small);
     padding: 8px 20px;
     cursor: pointer;
     transition: all 0.55s ease;
@@ -49,5 +49,17 @@ const { style, linket } = Astro.props;
     background: var(--color_blue);
     color: var(--color_white);
     text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    a {
+      font-size: var(--font_size_regular);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    a {
+      font-size: var(--font_size_regular);
+    }
   }
 </style>
