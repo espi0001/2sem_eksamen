@@ -16,7 +16,6 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     {images && <img class="product-image" src={images[0]} alt={name} />}
     {images && images.length > 1 && <img class="product-image-hover" src={images[1]} alt={`${name} hover`} />}
     <div class="image-overlay"></div>
-    {/* Add a div for the white background */}
   </div>
   <div class="product-info">
     <p class="product-name">{name}</p>
@@ -31,13 +30,13 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     height: auto;
     display: flex;
     flex-direction: column;
+    padding-top: 34px;
   }
 
   .image-container {
     position: relative;
     overflow: hidden;
     height: 304px; /* Adjust height as needed */
-    background-color: white; /* Set background color to white */
   }
 
   .product-image,
@@ -62,17 +61,6 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     opacity: 1;
   }
 
-  .image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white; /* Set background color to white */
-    opacity: 0; /* Initially invisible */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
-  }
-
   .image-container:hover .image-overlay {
     opacity: 1; /* Show the overlay on hover */
   }
@@ -92,14 +80,12 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     margin-bottom: 4px;
   }
 
-  /* ___________________________ TABLET  ___________________________*/
-  /* Styles for tablets (min-width: 768px) */
   @media screen and (min-width: 768px) {
-    /* Add tablet-specific styles here */
+    .product {
+      padding-top: 0px;
+    }
   }
 
-  /* ___________________________ DESKTOP  ___________________________*/
-  /* Styles for desktops (min-width: 1024px) */
   @media screen and (min-width: 1024px) {
     /* Add desktop-specific styles here */
   }
