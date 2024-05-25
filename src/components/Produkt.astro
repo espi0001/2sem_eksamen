@@ -1,27 +1,27 @@
 ---
 import "../styles/style.css";
-
 export interface ProduktProps {
   images: string[]; // Change images to be an array of strings
   name: string;
   type2: string;
   price: string;
 }
-
 const { images, name, type2, price } = Astro.props as ProduktProps;
 ---
 
 <article class="product">
-  <div class="image-container">
-    {images && <img class="product-image" src={images[0]} alt={name} />}
-    {images && images.length > 1 && <img class="product-image-hover" src={images[1]} alt={`${name} hover`} />}
-    <div class="image-overlay"></div>
-  </div>
-  <div class="product-info">
-    <p class="product-name">{name}</p>
-    <p class="product-variant">{type2}</p>
-    <p class="product-price">{price}</p>
-  </div>
+  <a href="/4_singleview" class="product-link">
+    <div class="image-container">
+      {images && <img class="product-image" src={images[0]} alt={name} />}
+      {images && images.length > 1 && <img class="product-image-hover" src={images[1]} alt={`${name} hover`} />}
+      <div class="image-overlay"></div>
+    </div>
+    <div class="product-info">
+      <p class="product-name">{name}</p>
+      <p class="product-variant">{type2}</p>
+      <p class="product-price">{price}</p>
+    </div>
+  </a>
 </article>
 
 <style>
@@ -31,6 +31,7 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     display: flex;
     flex-direction: column;
     padding-top: 34px;
+    cursor: pointer; /* Change cursor to pointer to indicate clickable element */
   }
 
   .image-container {

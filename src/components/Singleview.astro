@@ -1,36 +1,50 @@
 ---
 import "../styles/style.css";
 import Button from "./Button.astro";
-const { link1, link2, link3 } = Astro.props;
+
+export interface ProductDetails {
+  name: string;
+  price: string;
+  images: string[];
+  about: string;
+  material: string;
+  weight: string;
+  more: string;
+  obs: string;
+  size: string[];
+  status: string;
+  tracklist: string[];
+}
+const { images, name, price, about, material, weight, more, obs, size, status, tracklist } = Astro.props.productDetails || {};
 ---
 
 <article>
-  <div class="produkt_billeder">
-    <img src="https://esterpiazza.dk/kea/10_eksamen/Image.png" alt="produktbillede" />
+  <div class="product-image">
+    {images && <img src={images[0]} alt={name} />}
   </div>
-  <div class="produkt_info">
-    <div class="navn_pris">
-      <h3>Logo Hoodie</h3>
-      <h5>500,-</h5>
+  <div class="product-info">
+    <div class="name-price">
+      <h3>{name}</h3>
+      <h5>{price}</h5>
     </div>
     <div class="description">
-      <p>Sort hættetrøje med hvidt Barselona logo</p>
+      <p>{about}</p>
       <ul>
-        <li>85% økologisk bomuld, 15% genbrugt polyester</li>
-        <li>Vægt: 280 G/M²</li>
-        <li>GOTS, Fair Wear og PETA-Godkendt</li>
-        <li>Louis er 187 cm høj og bærer en str. L</li>
+        <li>Material: {material}</li>
+        <li>Weight: {weight}</li>
+        <li>More: {more}</li>
+        <li>Obs: {obs}</li>
+        <li>Size: {size}</li>
+        <li>Status: {status}</li>
+        <li>Tracklist: {tracklist}</li>
       </ul>
     </div>
-    <div class="input">
-      <p>Størrelse</p>
-      <div class="select"></div>
-    </div>
-    <div class="form_submit">
+    <div class="form-submit">
       <Button style="primary">Tilføj til kurv</Button>
     </div>
   </div>
 </article>
+
 <style>
   article {
     padding-top: 24px;
