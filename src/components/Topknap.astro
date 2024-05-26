@@ -1,0 +1,68 @@
+---
+import "../styles/style.css";
+---
+
+<button onclick="topFunction()" id="backToTopBtn" title="Go to top"><span>←</span></button>
+
+<style>
+  /* Styles for the back to top button */
+  #backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: var(--font_size_tiny);
+    background-color: transparent;
+    color: var(--color_white);
+    border: 1px solid var(--color_blue);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all 0.55s ease;
+    transform: rotate(90deg);
+  }
+  #backToTopBtn:hover {
+    background-color: var(--color_blue);
+
+    transform: scale(1.1) rotate(90deg);
+  }
+
+  /* Show the button only after scrolling down 400px */
+  @media (min-width: 768px) {
+    #backToTopBtn {
+      display: none;
+    }
+    #backToTopBtn.show {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  // Get the button
+  var mybutton = document.getElementById("backToTopBtn");
+
+  // When the user scrolls down 400px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.classList.add("show");
+    } else {
+      mybutton.classList.remove("show");
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  mybutton.onclick = function () {
+    topFunction();
+  };
+
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+</script>

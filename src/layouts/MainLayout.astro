@@ -3,7 +3,7 @@ import "../styles/style.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
-// import Topknap from "../components/Topknap.astro";
+import Topknap from "../components/Topknap.astro";
 const { title } = Astro.props;
 ---
 
@@ -44,8 +44,10 @@ const { title } = Astro.props;
     <Navigation />
     <main>
       <slot />
+      <Topknap />
     </main>
     <Newsletter />
+
     <Footer />
     <script></script>
   </body>
