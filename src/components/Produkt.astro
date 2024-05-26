@@ -71,7 +71,7 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
   }
 
   .product-name {
-    font-size: 1.2rem;
+    font-size: var(--font_size_regular);
     margin-bottom: 8px;
     font-weight: bold;
   }
@@ -85,8 +85,14 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     .product {
       padding-top: 0px;
     }
+    .product-name {
+      font-size: var(--font_size_medium);
+    }
   }
 
   @media screen and (min-width: 1024px) {
+    .product-name {
+      font-size: var(--font_size_large);
+    }
   }
 </style>

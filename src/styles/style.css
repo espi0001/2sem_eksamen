@@ -114,6 +114,7 @@ h6 {
 
 p {
   max-width: 65ch;
+  font-size: var(--font_size_regular);
 }
 a {
   cursor: pointer;
@@ -164,6 +165,7 @@ hr {
   }
   h3 {
     font-size: 1.8rem;
+    padding-bottom: 30px;
   }
   h4 {
     font-size: 1.65rem;
@@ -173,6 +175,10 @@ hr {
   }
   h6 {
     font-size: 1.25rem;
+  }
+
+  p {
+    font-size: var(--font_size_medium);
   }
 }
 
@@ -196,5 +202,9 @@ hr {
   }
   h6 {
     font-size: 1.25rem;
+  }
+
+  p {
+    font-size: var(--font_size_large);
   }
 }

@@ -42,8 +42,10 @@ import "../styles/style.css";
     align-items: center;
     position: absolute;
     width: 100%;
-    top: 20px;
-    padding-inline: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-inline: 36px;
+    z-index: 1;
   }
 
   .logo img {
@@ -110,7 +112,7 @@ import "../styles/style.css";
   /* Reglen gælder til og med 1024px */
   @media screen and (max-width: 1024px) {
     header {
-      padding-inline: 20px;
+      padding-inline: 40px;
       text-align: start;
     }
     .menu {
@@ -155,7 +157,7 @@ import "../styles/style.css";
     }
 
     nav.active .menu a {
-      font-size: 1.2rem;
+      font-size: var(--font_size_large);
       text-align: start;
     }
     hr {
@@ -164,6 +166,10 @@ import "../styles/style.css";
     }
     .logo img {
       width: 55px;
+      height: auto;
+    }
+    li:last-child img {
+      max-width: 45px;
       height: auto;
     }
   }
@@ -177,7 +183,7 @@ import "../styles/style.css";
     }
 
     nav.active .menu a {
-      font-size: 1rem;
+      font-size: var(--font_size_medium);
       text-align: start;
     }
     .logo img {

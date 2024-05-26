@@ -1,6 +1,6 @@
 ---
 import "../styles/style.css";
-const { h2, image, image_alt } = Astro.props;
+const { col, h2, image, image_alt } = Astro.props;
 ---
 
 <article>
@@ -8,7 +8,7 @@ const { h2, image, image_alt } = Astro.props;
     <h2>{h2}</h2>
     <slot />
   </div>
-  <div>
+  <div class={col}>
     <img src={image} alt={image_alt} loading="lazy" />
   </div>
 </article>
@@ -27,6 +27,11 @@ const { h2, image, image_alt } = Astro.props;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 44px;
+      align-items: center;
+    }
+
+    .col2 {
+      order: -1;
     }
   }
 </style>
