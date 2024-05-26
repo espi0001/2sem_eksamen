@@ -1,11 +1,10 @@
 ---
 import "../styles/style.css";
-const { header1, text } = Astro.props;
+const { header1 } = Astro.props;
 ---
 
 <article class="content">
   <h1>{header1}</h1>
-  <p>{text}</p>
 </article>
 
 <style>
@@ -14,8 +13,5 @@ const { header1, text } = Astro.props;
   }
   h1 {
     padding-bottom: 24px;
-  }
-  p {
-    max-width: none;
   }
 </style>
