@@ -2,32 +2,38 @@
 import "../styles/style.css";
 ---
 
-<h6>Lyt til vores musik</h6>
+<article>
+  <h5>Vores musikkatalog</h5>
+</article>
+
 <article class="musik">
   <div class="album">
-    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/hjerte_album.avif" alt="Væbnet hjerte album" /></a>
+    <a href="https://open.spotify.com/track/61YDJR6RjXaV8aiMIVlwvF?si=37b8e9084f2247ee" target="_blank"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/ardit_sang.avif" alt="Væbnet hjerte album" loading="lazy" /></a>
   </div>
   <div class="album">
-    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/1dag_album.avif" alt="1 dag er vi 1 minde album" /></a>
+    <a href="https://open.spotify.com/album/44WAdOT7BNFzQuz71Zuw1y?si=8LbF4_HcRV6IOo5-J63etA" target="_blank"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/1dag_album.avif" alt="1 dag er vi 1 minde album" loading="lazy" /></a>
   </div>
   <div class="album">
-    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/lege_album.avif" alt="Legebørn album" /></a>
+    <a href="https://open.spotify.com/album/1IrfYgdNAzSX4NzPB0pjKD?si=8uWeRZVZQhiJLPqspv5cAA" target="_blank"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/lege_album.avif" alt="Legebørn album" loading="lazy" /></a>
   </div>
   <div class="album">
-    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/hjertebank_album.avif" alt="Hjertebank album" /></a>
+    <a href="https://open.spotify.com/album/54WErhcavCQvFpBP4gt9ga?si=C8yw1VxAQxy3POa29OnzdQ" target="_blank"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/hjertebank_album.avif" alt="Hjertebank album" loading="lazy" /></a>
   </div>
   <div class="album">
-    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/drengepop.webp" alt="Drengepop EP" /></a>
+    <a href="https://open.spotify.com/album/7z6nGM7xwKb7hyhRF7nnb1?si=nhs6fqYOSxK0pXCOmV8Lfg" target="_blank"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/drengepop.webp" alt="Drengepop EP" loading="lazy" /></a>
   </div>
   <div class="album">
-    <a href="#"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/sommerkys_album.avif" alt="Sommerkys EP" /></a>
+    <a href="https://open.spotify.com/album/5PSUAJLJOEUvUpqqKHfKDJ?si=Het-3Uy5TgWC68vF4_aEcg" target="_blank"><img src="https://esterpiazza.dk/kea/10_eksamen/albums/sommerkys_album.avif" alt="Sommerkys EP" loading="lazy" /></a>
   </div>
 </article>
 
 <style>
+  h5 {
+    padding-bottom: 24px;
+  }
   .musik {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     justify-content: center;
     align-items: center;
@@ -36,6 +42,7 @@ import "../styles/style.css";
   .musik img {
     max-width: 379px;
     height: auto;
+    margin: auto;
   }
   .album {
     border: 1px solid #a5a5a5;
@@ -47,6 +54,9 @@ import "../styles/style.css";
   }
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
+    h5 {
+      padding-bottom: 64px;
+    }
     .musik {
       display: grid;
       grid-template-columns: 1fr 1fr;

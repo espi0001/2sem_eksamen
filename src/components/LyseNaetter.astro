@@ -6,27 +6,116 @@ import "../styles/style.css";
   <h3>Lyse Nætter</h3>
 </article>
 
-<article>
+<article class="nr1">
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri1.avif" alt="Rasmus på scenen" loading="lazy" />
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri2.avif" alt="Rud og Rasmus sidder sammen" loading="lazy" />
+
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri4.avif" alt="Rasmus og Rud poserer sammen" loading="lazy" />
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri5.avif" alt="Rasmus og Rud på scenen og spiller" loading="lazy" />
+
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/koncert.avif" alt="Rud synger til koncert" loading="lazy" />
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri8.avif" alt="Barselona til koncert" />
+
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri6.avif" alt="Rasmus sidder ved klaver og Rud står" loading="lazy" />
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/rud_backstage.avif" alt="Rud står op med noget i hånden " loading="lazy" />
+
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri9.avif" alt="Barselona spiller til koncert i VEGA" loading="lazy" />
+  <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/rud_koncert.avif" alt="Rasmus spiller klaver til koncert" loading="lazy" />
+</article>
+
+<article class="nr2">
   <div class="grid_3">
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri1.avif" alt="Rasmus på scenen" />
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri2.avif" alt="Rud og Rasmus sidder sammen" />
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/koncert.avif" alt="Rud synger til koncert" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri1.avif" alt="Rasmus på scenen" loading="lazy" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri2.avif" alt="Rud og Rasmus sidder sammen" loading="lazy" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/koncert.avif" alt="Rud synger til koncert" loading="lazy" />
   </div>
   <div class="grid_4">
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri4.avif" alt="Rasmus og Rud poserer sammen" />
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri5.avif" alt="Rasmus og Rud på scenen og spiller" />
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri6.avif" alt="Rasmus sidder ved klaver og Rud står" />
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/rud_backstage.avif" alt="Rud står op med noget i hånden " />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri4.avif" alt="Rasmus og Rud poserer sammen" loading="lazy" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri5.avif" alt="Rasmus og Rud på scenen og spiller" loading="lazy" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri6.avif" alt="Rasmus sidder ved klaver og Rud står" loading="lazy" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/rud_backstage.avif" alt="Rud står op med noget i hånden " loading="lazy" />
   </div>
   <div class="grid_3">
     <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri8.avif" alt="Barselona til koncert" />
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri9.avif" alt="Barselona spiller til koncert i VEGA" />
-    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/rud_koncert.avif" alt="Rasmus spiller klaver til koncert" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/galleri9.avif" alt="Barselona spiller til koncert i VEGA" loading="lazy" />
+    <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/side_om_dem/rud_koncert.avif" alt="Rasmus spiller klaver til koncert" loading="lazy" />
   </div>
 </article>
+
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <img id="modal-img" class="modal-content" alt="Modal Image" />
+</div>
+
 <style>
+  h3 {
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .nr1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .nr2 {
+    display: none;
+  }
+  img {
+    cursor: pointer;
+  }
+
+  /* Style the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  /* Style the modal content (image) */
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%; /* Adjust as needed */
+    max-height: 90%; /* Adjust as needed */
+  }
+  .modal-content img {
+    width: 50%;
+    height: auto;
+  }
+
+  /* Style the close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--color_white);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: var(--color_blue);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
+    .nr1 {
+      display: none;
+    }
+    .nr2 {
+      display: block;
+    }
     .grid_3 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -43,17 +132,47 @@ import "../styles/style.css";
 
   /* ___________________________ DESKTOP  ___________________________*/
   @media screen and (min-width: 1024px) {
-    .grid_3 {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 36px;
+    h3 {
+      padding-bottom: 64px;
     }
     .grid_4 {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 52px;
       padding-top: 30px;
       padding-bottom: 30px;
     }
   }
 </style>
+
+<!-- <script>
+  // Get the modal
+  var modal = document.getElementById("modal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // Get all images inside the articles
+  var images = document.querySelectorAll("article img");
+
+  // Loop through each image and add a click event listener
+  images.forEach(function (image) {
+    image.addEventListener("click", function () {
+      // Set the source of the modal image to the clicked image source
+      var modalImg = document.getElementById("modal-img");
+      modalImg.src = this.src;
+
+      // Display the modal
+      modal.style.display = "block";
+    });
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script> -->

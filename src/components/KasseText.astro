@@ -1,0 +1,32 @@
+---
+import "../styles/style.css";
+const { h2, image, image_alt } = Astro.props;
+---
+
+<article>
+  <div>
+    <h2>{h2}</h2>
+    <slot />
+  </div>
+  <div>
+    <img src={image} alt={image_alt} loading="lazy" />
+  </div>
+</article>
+
+<style>
+  h2 {
+    padding-bottom: 30px;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  @media screen and (min-width: 768px) {
+    h2 {
+      padding-bottom: 64px;
+    }
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+    }
+  }
+</style>

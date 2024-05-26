@@ -3,6 +3,8 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import LytMusik from "../components/LytMusik.astro";
 import LyseNaetter from "../components/LyseNaetter.astro";
+import KasseText from "../components/KasseText.astro";
+import KasseText2 from "../components/KasseText2.astro";
 ---
 
 <MainLayout title="Om Barsekona">
@@ -10,37 +12,56 @@ import LyseNaetter from "../components/LyseNaetter.astro";
     <video autoplay muted loop src="https://esterpiazza.dk/kea/10_eksamen/indhold/barselonavideomp4.mp4"></video>
   </article>
 
-  <section class="start">
-    <article>
-      <h2>Hvor det hele startede</h2>
+  <section>
+    <KasseText h2="Starten på Barselona" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/barselona2.avif" image_alt="Rud og Rasmus sidder">
       <p>Rud Aksel og Rasmus Theodor mødte hinanden på Ollerup efterskole, her møder de en højgravid lærer som bandet er opkaldt efter.</p>
-      <p>Bandnavnet handler om at gå på barsel, hvilket er lidt bizart når vi er to unge drenge. Men vi kan ikke rigtig ændre det nu. da hele vores univers er bundet op på det navn - Rud.</p>
-    </article>
-    <article>
-      <img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/barselona2.avif" alt="" />
-    </article>
+      <p>
+        <br />
+        Bandnavnet handler om at gå på barsel, hvilket er lidt bizart når vi er to unge drenge. Men vi kan ikke rigtig ændre det nu. da hele vores univers er bundet op på det navn - Rud.
+      </p>
+    </KasseText>
   </section>
-  <section>
-    <img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat2.avif" alt="Rud og Rasmus" />
-  </section>
-  <section>
-    <h2>Rejsen sammen</h2>
-    <p>Barselona blev dannet i 2016, hvor Rud Aksel og Rasmus Theodor havde en fælles drøm om, at skabe nye baner inden for pop- og rockmusik. Vi stræber altid efter at være autentiske og ærlige med alt, hvad vi laver. vi definerer ikke os selv inden for en bestemt genre, det svinger meget og kommer meget an på hvilken dag det er, hvorhenne i livet vi er, og hvor vi er med vores musik. Vi går meget op i, at vores musik skal laves ordentligt. Vi skal ikke bare udgive noget bare for at udgive noget. Det tager tid at bygge noget godt op, og det har vi også accepteret. Derfor tog det os også 3 år at lave et album, men det blev præcis som vi ville have det, og vi kan stå inde for det, og derfor er vi også ærlige. - Rasmus</p>
-    <img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat1.avif" alt="Rud og Rasmus" />
-  </section>
-  <section>
-    <h2>Væbnet Hjerter</h2>
-    <p>
-      I vores unge dage var det ikke vigtig for os, at musikken havde en speciel betydning, vi ville tage ud og give den gas og optræde foran alle og mærke publikum. Så ville vi tage hjem og skrive en sang hurtig, så vi kunne udgive noget og komme ud igen og optræde. Det var en rus vi fik igennem kroppen, vi blev afhængige af det. Men rusen forsvandt og corona kom og hele landet blev lukket ned. Efter en lang pause begyndte vi og skrive musik sammen igen, og vi besluttede os for, at det skulle være på en ny måde. Vi fik udviklet et album, der for første gang er blevet en projekt, der betyder meget for os. Det er lavet med alt vores energi, og vi har lagt så meget tid i det, og gjort det perfekt ned til mindste detalje. Albummet Væbnet Hjerter er et 3 årig projekt, der er lavet med
-      tålmodighed. Under processen har der været en del udfordringer. Det er første gang i vores karriere, at vi har haft så meget modgang, og tvivl, samt tvivl på os selv. Hvad vil vi? Hvem er vi? Hvor vil vi hen? Vi har skulle bakke hinanden meget op, og fortælle at os selv hele tiden at det nok skulle gå. Vi kunne slet ikke se lys for enden af tunellen.
-    </p>
+
+  <section class="billeder">
+    <div class="billede1"><img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat2.avif" alt="Rud og Rasmus" loading="lazy" /></div>
+    <div class="billede2"><img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat1.avif" alt="Rud og Rasmus" loading="lazy" /></div>
   </section>
 
   <section>
+    <KasseText h2="Rejsen sammen" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/koncertbillede.avif" image_alt="Rud og Rasmus sidder">
+      <p>Barselona blev dannet i 2016, hvor Rud Aksel og Rasmus Theodor havde en fælles drøm om, at skabe nye baner inden for pop- og rockmusik.</p>
+      <p>
+        Vi stræber altid efter at være autentiske og ærlige med alt, hvad vi laver. vi definerer ikke os selv inden for en bestemt genre, det svinger meget og kommer meget an på hvilken dag det er, hvorhenne i livet vi er, og hvor vi er med vores musik.
+        <br />
+        Vi går meget op i, at vores musik skal laves ordentligt. Vi skal ikke bare udgive noget bare for at udgive noget. Det tager tid at bygge noget godt op, og det har vi også accepteret. Derfor tog det os også 3 år at lave et album, men det blev præcis som vi ville have det, og vi kan stå inde for det, og derfor er vi også ærlige.
+        <br />
+        - Rasmus
+      </p>
+    </KasseText>
+  </section>
+
+  <section>
+    <KasseText2 h2="Væbnet Hjerter">
+      <p>I vores unge dage var det ikke vigtig for os, at musikken havde en speciel betydning, vi ville tage ud og give den gas og optræde foran alle og mærke publikum. Så ville vi tage hjem og skrive en sang hurtig, så vi kunne udgive noget og komme ud igen og optræde.</p>
+      <p>
+        <br />
+        <br />
+        Det var en rus vi fik igennem kroppen, vi blev afhængige af det. Men rusen forsvandt og corona kom og hele landet blev lukket ned. Efter en lang pause begyndte vi og skrive musik sammen igen, og vi besluttede os for, at det skulle være på en ny måde. Vi fik udviklet et album, der for første gang er blevet en projekt, der betyder meget for os. Det er lavet med alt vores energi, og vi har lagt så meget tid i det, og gjort det perfekt ned til mindste detalje.
+      </p>
+      <p>
+        <br />
+        <br />
+        Albummet Væbnet Hjerter er et 3 årig projekt, der er lavet med tålmodighed. Under processen har der været en del udfordringer. Det er første gang i vores karriere, at vi har haft så meget modgang, og tvivl, samt tvivl på os selv. Hvad vil vi? Hvem er vi? Hvor vil vi hen? Vi har skulle bakke hinanden meget op, og fortælle at os selv hele tiden at det nok skulle gå. Vi kunne slet ikke se lys for enden af tunellen.
+      </p>
+    </KasseText2>
+  </section>
+  <section class="musik">
     <LytMusik />
   </section>
   <section>
-    <LyseNaetter />
+    <article class="lyse">
+      <LyseNaetter />
+    </article>
   </section>
 </MainLayout>
 
@@ -50,6 +71,34 @@ import LyseNaetter from "../components/LyseNaetter.astro";
     height: 100%;
     object-fit: cover;
   }
+
+  .billeder {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .billede1 img,
+  .billede2 img {
+    opacity: 0;
+    transform: translateY(20px); /* Adjust as needed */
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out; /* Adjust timing as needed */
+  }
+
+  .billede1 img.in-view,
+  .billede2 img.in-view {
+    opacity: 1;
+    max-width: 80%;
+  }
+  .billede1 img.in-view {
+    transform: translateY(0) rotate(-15deg);
+  }
+
+  .billede2 img.in-view {
+    transform: translateY(0) rotate(15deg);
+  }
+
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
     .start {
@@ -57,5 +106,47 @@ import LyseNaetter from "../components/LyseNaetter.astro";
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
+    .lyse {
+      background-image: url(https://esterpiazza.dk/kea/10_eksamen/radial_lyse.avif);
+      background-size: cover;
+      aspect-ratio: 1440/1030;
+    }
+    .billeder {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .billede1 img.in-view,
+    .billede2 img.in-view {
+      max-width: 60%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const options = {
+      root: null, // Use the viewport as the root
+      rootMargin: "0px",
+      threshold: 0.1, // Adjust as needed
+    };
+
+    const callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target); // Stop observing once the element is in view
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    const images = document.querySelectorAll(".billede1 img, .billede2 img");
+    images.forEach((image) => {
+      observer.observe(image);
+    });
+  });
+</script>
