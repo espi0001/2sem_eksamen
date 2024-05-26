@@ -2,15 +2,16 @@
 import "../styles/style.css";
 import SecondLayout from "../layouts/SecondLayout.astro";
 import Navigation2 from "../components/Navigation2.astro";
+import Newsletter from "../components/Newsletter.astro";
 
-const data = await fetch("https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/eksamen", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw",
-  },
-}).then((res) => res.json());
+// const data = await fetch("https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/eksamen", {
+//   method: "GET",
+//   headers: {
+//     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw",
+//   },
+// }).then((res) => res.json());
 
-console.log(data);
+// console.log(data);
 ---
 
 <SecondLayout title="Forside">
@@ -32,6 +33,9 @@ console.log(data);
       </div>
     </article>
     <section id="musik" class="musik"></section>
+    <section>
+      <Newsletter />
+    </section>
   </main>
 </SecondLayout>
 
