@@ -4,7 +4,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Header2 from "../components/Header2.astro";
 import Produkt from "../components/Produkt.astro";
 import Breadcrumb2 from "../components/Breadcrumb2.astro";
-import Navigation from "../components/Navigation.astro";
 
 const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen";
 const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw";
@@ -41,19 +40,16 @@ try {
 </script>
 
 <MainLayout title="Merchandise">
-  <Navigation />
-  <main>
-    <section>
-      <Header2 header1="Merchandise" text="" />
-      <article class="breadcrumb_button">
-        <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster" />
-      </article>
-    </section>
+  <section>
+    <Header2 header1="Merchandise" text="" />
+    <article class="breadcrumb_button">
+      <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster" />
+    </article>
+  </section>
 
-    <section class="produkter">
-      {data.length > 0 ? data.map((product) => <Produkt images={product.image} name={product.name} type2={product.type2} price={product.price} />) : <p>No products available.</p>}
-    </section>
-  </main>
+  <section class="produkter">
+    {data.length > 0 ? data.map((product) => <Produkt images={product.image} name={product.name} type2={product.type2} price={product.price} />) : <p>No products available.</p>}
+  </section>
 </MainLayout>
 
 <style>

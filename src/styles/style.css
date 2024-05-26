@@ -49,6 +49,7 @@ main {
 
 body {
   list-style: none;
+  background-color: var(--color_black);
 }
 section {
   margin-inline: 20px;

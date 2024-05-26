@@ -3,28 +3,24 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Header2 from "../components/Header2.astro";
 import Mail from "../components/Mail.astro";
-import Navigation from "../components/Navigation.astro";
 ---
 
 <MainLayout title="Kontakt">
-  <Navigation />
-  <main>
-    <section class="header">
-      <Header2 header1="Kontakt os" />
-    </section>
-    <section class="mails">
-      <article>
-        <Mail overskrift="Henvendelser vedr. barselona.dk" link="mailto:mail@barselona.dk?"> mail@barselona.dk</Mail>
-        <Mail overskrift="Management" link="mailto:jonas@sierra79.com?" text="Jonas Fjelding"> jonas@sierra79.com</Mail>
-        <Mail overskrift="Booking" link="mailto:soren@sierra79.com?" text="Søren Mensberg"> soren@sierra79.com</Mail>
-        <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?" text="Louis Tvede"> louis.tvede@umusic.com</Mail>
-      </article>
+  <section class="header">
+    <Header2 header1="Kontakt os" />
+  </section>
+  <section class="mails">
+    <article>
+      <Mail overskrift="Henvendelser vedr. barselona.dk" link="mailto:mail@barselona.dk?"> mail@barselona.dk</Mail>
+      <Mail overskrift="Management" link="mailto:jonas@sierra79.com?" text="Jonas Fjelding"> jonas@sierra79.com</Mail>
+      <Mail overskrift="Booking" link="mailto:soren@sierra79.com?" text="Søren Mensberg"> soren@sierra79.com</Mail>
+      <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?" text="Louis Tvede"> louis.tvede@umusic.com</Mail>
+    </article>
 
-      <article class="billede">
-        <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/rud_rasmus.avif" alt="Rud og Rasmus koncertbillede" />
-      </article>
-    </section>
-  </main>
+    <article class="billede">
+      <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/rud_rasmus.avif" alt="Rud og Rasmus koncertbillede" />
+    </article>
+  </section>
 </MainLayout>
 
 <style>

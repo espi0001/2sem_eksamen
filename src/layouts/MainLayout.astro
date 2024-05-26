@@ -1,6 +1,6 @@
 ---
 import "../styles/style.css";
-import Navigation from "../components/Navigation.astro";
+import Navigation2 from "../components/Navigation2.astro";
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Topknap from "../components/Topknap.astro";
@@ -41,6 +41,7 @@ const { title } = Astro.props;
     <!-- titel på siden -->
     <title>{title}</title>
   </head><body id="top">
+    <Navigation2 />
     <main>
       <slot />
       <Topknap />
