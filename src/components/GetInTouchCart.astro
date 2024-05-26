@@ -1,0 +1,134 @@
+---
+import "../styles/style.css";
+import Button from "./Button.astro";
+---
+
+<article class="newsletter">
+  <div class="getintouch_text">
+    <p class="tagline">Tilmeld dig Barselonas</p>
+    <h1>Nyhedsbrev</h1>
+    <p class="first">Vær blandt de første til at høre om:</p>
+    <p class="info">Ny Musik, Koncerter, Merchandise, Konkurrencer, Lyttesessions, Behind The Scenes, Limited Editions Og Meget Mere.</p>
+  </div>
+  <form name="newsletter" method="POST" data-netlify="true">
+    <label for="firstName" class="firstName">Fornavn: <input type="text" id="firstName" name="firstName" required /></label>
+
+    <label for="lastName" class="lastName">Efternavn: <input type="text" id="lastName" name="lastName" required /></label>
+
+    <label for="email" class="email">Email: <input type="email" id="email" name="email" required /></label>
+
+    <div class="number_city">
+      <label for="phoneNumber" class="phoneNumber">Mobil: <input type="tel" id="phoneNumber" name="phoneNumber" required /></label>
+
+      <label for="city" class="city">By: <input type="text" id="city" name="city" required class="last-input" /></label>
+    </div>
+    <div class="terms_checkbox">
+      <input type="checkbox" id="terms" name="terms" required />
+      <label for="terms" class="terms"> Jeg har læst og <a href="/10_persondata">Politik for personoplysninger</a> </label>
+    </div>
+    <button class="send_buttondiv" type="submit">Submit</button>
+    <!-- <Button class="secondary" type="submit">Tilmeld</Button> -->
+  </form>
+</article>
+
+<style>
+  .newsletter {
+    display: block;
+    background-color: var(--color_white);
+    max-width: 768px;
+  }
+  .getintouch_text {
+    text-align: center;
+    margin-inline: auto;
+    padding-top: 32px;
+  }
+  .getintouch_text p,
+  .getintouch_text h1 {
+    color: var(--color_black);
+    margin-bottom: 16px;
+  }
+
+  .tagline,
+  .first {
+    font-size: var(--font_size_regular);
+    font-weight: bold;
+  }
+  .info {
+    font-size: var(--font_size_small);
+    text-transform: uppercase;
+  }
+  form {
+    margin-top: 48px;
+    margin-inline: auto;
+    width: 100%;
+    background: var(--color_white);
+    color: var(--color_black);
+    font-family: var(--font_body);
+    padding-inline: 20px;
+  }
+  #firstName,
+  #lastName,
+  #email,
+  #phoneNumber,
+  #city {
+    margin-top: 8px;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .number_city {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .number_city .last-input {
+    width: auto;
+  }
+
+  a {
+    color: var(--color_black);
+    text-decoration: underline;
+  }
+
+  label .terms a {
+    color: var(--color_black);
+  }
+
+  .terms_checkbox {
+    display: flex;
+    justify-content: space-between;
+  }
+  input {
+    padding: 0.5rem;
+  }
+
+  textarea {
+    height: 150px;
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  #terms {
+    width: auto;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .number_city {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .tagline,
+    .first {
+      font-size: var(--font_size_large);
+    }
+  }
+</style>
