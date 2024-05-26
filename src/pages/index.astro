@@ -1,6 +1,6 @@
 ---
 import "../styles/style.css";
-import SecondLayout from "../layouts/SecondLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import Navigation2 from "../components/Navigation2.astro";
 import Newsletter from "../components/Newsletter.astro";
 
@@ -14,7 +14,7 @@ import Newsletter from "../components/Newsletter.astro";
 // console.log(data);
 ---
 
-<SecondLayout title="Forside">
+<MainLayout title="Forside">
   <main>
     <article class="hero">
       <div class="content">
@@ -39,7 +39,7 @@ import Newsletter from "../components/Newsletter.astro";
       <Newsletter />
     </section>
   </main>
-</SecondLayout>
+</MainLayout>
 
 <style>
   .hero {

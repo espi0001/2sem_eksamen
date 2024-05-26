@@ -2,107 +2,111 @@
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Accordion from "../components/Accordion.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <MainLayout title="Persondatapolitik">
-  <section class="header">
-    <h1>Persondata&shy;politik</h1>
-  </section>
+  <Navigation />
+  <main>
+    <section class="header">
+      <h1>Persondata&shy;politik</h1>
+    </section>
 
-  <section class="accordion">
-    <Accordion overskrift1="01. Persondatapolitik Hos Barselona.dk">
-      <p>Vi indhenter kun persondata i de tilfælde, hvor dette skulle være relevant for os, og vi vil kun indhente persondata, hvis det er relevant for din aktivitet hos Benern Op I/S.</p>
-      <p>
-        <br />
-        Ved indsamling, behandling og anvendelse af dine persondata overholder vi altid alle relevante og gældende lovbestemmelser.
-      </p>
-      <p>
-        <br />
-        Vi vil kun opbevare dine persondata, så længe vi enten er pålagt en juridisk forpligtelse hertil, eller så længe det er relevant for den hensigt, hvormed de blev indsamlet.
-      </p>
-    </Accordion>
-    <Accordion overskrift1="02. Oplysninger vi indsamler">
-      <p>Hvis du ønsker at købe og modtage et produkt eller en ydelse fra os, har vi brug for at indsamle visse persondata for at kunne gennemføre handlen og for at kunne tilbyde dig vores services. Vi bruger bl.a. cookies til at holde styr på indholdet i din indkøbskurv, mens du bruger vores webshop.</p>
-      <p>
-        <br />
-        Vi kan indhente oplysninger som f.eks. navn, e-mailadresse, postadresse, leveringsadresse (hvis den varierer fra postadresse), telefonnummer og betalingsoplysninger.
-      </p>
-      <p>
-        <br />
-        Benern Op I/S indsamler og behandler dine persondata, når du foretager dig følgende:
-      </p>
-      <p>– Besøger vores hjemmeside</p>
-    </Accordion>
-    <Accordion overskrift1="03. Den dataansvarlige">
-      <p>Den dataansvarlige for indsamling, behandling og anvendelse af dine personoplysninger på www.barselona.dk er Rasmus Theodor.</p>
-    </Accordion>
-    <Accordion overskrift1="04. Behandlingsgrundlag og formål">
-      <p>
-        <br />
-        Dine almindelige kontaktoplysninger som navn og adresse indhenter vi for at kunne levere det produkt eller den ydelse, som du har købt hos os. Din e-mailadresse indhenter vi for at kunne sende dig en ordrebekræftelse samt en leveringsbekræftelse.
-      </p>
-      <p>
-        <br />
-        Dine oplysninger (undtagen din e-mailadresse, hvis du har givet samtykke til behandling heraf med henblik på modtagelse af tilbud) vil blive slettet 5 år efter du har modtaget din vare eller ydelse.
-      </p>
-    </Accordion>
-    <Accordion overskrift1="05. Andre modtagere af personoplysninger">
-      <p>
-        <br />
-        Vi sælger ikke dine persondata til tredjemand, og vi overfører ikke dine persondata til tredjelande.
-      </p>
-      <p>
-        <br />
-        Vi har vores hjemmeside hos simply.com, som fungerer som vores databehandler. Alle persondata som du oplyser på vores hjemmeside vil blive opbevaret i simply.coms datacentre.
-      </p>
-      <p>
-        <br />
-        Vi bruger eksterne virksomheder som leverandører for at levere vores ydelser bedst muligt. Disse eksterne leverandører er databehandlere og behandler i visse tilfælde personoplysninger i forbindelse med deres levering af ydelser til os. Vores databehandlere behandler kun personoplysninger efter vores instrukser og i overensstemmelse med lovgivningens krav til databehandlere.
-      </p>
-      <p>
-        <br />
-        Vi har indgået databehandleraftaler med vores databehandlere, hvilket er vores og din garanti for, at de overholder gældende regler om beskyttelse af dine personoplysninger.
-      </p>
-    </Accordion>
-    <Accordion overskrift1="06. Dine rettigheder">
-      <p>Som den registrerede har du en række rettigheder, som vi til enhver tid skal sikre opfyldelse af. Du har ret til at anmode os om følgende:</p>
-      <ul>
-        <li>• At få adgang til og få ændret dine persondata</li>
-        <li>• At få slettet persondata</li>
-      </ul>
-      <p>
-        <br />
-        Du har derudover ret til at protestere over behandlingen af dine personlige data, og du har ret til at indgive klage til en databeskyttelsesmyndighed.
-      </p>
-      <p>
-        <br />
-        Ønsker du ikke længere, at vi skal behandle dine personoplysninger, eller at vi skal begrænse behandlingen af dine personoplysninger, kan du også sende os en anmodning herom til <a href="mailto:mail@barselona.dk?"> mail@barselona.dk</a>.
-      </p>
-    </Accordion>
-  </section>
-
-  <style>
-    h1 {
-      word-break: break-word; /* Bryder ordet på et passende sted */
-      hyphens: manual;
-    }
-    .header {
-      display: flex;
-      justify-content: center;
-    }
-    section .accordion {
-      padding-top: 0px;
-    }
-    p {
-      max-width: none;
-    }
-
-    a {
-      text-decoration: underline;
-    }
-
-    a:hover {
-      color: var(--color_blue);
-    }
-  </style>
+    <section class="accordion">
+      <Accordion overskrift1="01. Persondatapolitik Hos Barselona.dk">
+        <p>Vi indhenter kun persondata i de tilfælde, hvor dette skulle være relevant for os, og vi vil kun indhente persondata, hvis det er relevant for din aktivitet hos Benern Op I/S.</p>
+        <p>
+          <br />
+          Ved indsamling, behandling og anvendelse af dine persondata overholder vi altid alle relevante og gældende lovbestemmelser.
+        </p>
+        <p>
+          <br />
+          Vi vil kun opbevare dine persondata, så længe vi enten er pålagt en juridisk forpligtelse hertil, eller så længe det er relevant for den hensigt, hvormed de blev indsamlet.
+        </p>
+      </Accordion>
+      <Accordion overskrift1="02. Oplysninger vi indsamler">
+        <p>Hvis du ønsker at købe og modtage et produkt eller en ydelse fra os, har vi brug for at indsamle visse persondata for at kunne gennemføre handlen og for at kunne tilbyde dig vores services. Vi bruger bl.a. cookies til at holde styr på indholdet i din indkøbskurv, mens du bruger vores webshop.</p>
+        <p>
+          <br />
+          Vi kan indhente oplysninger som f.eks. navn, e-mailadresse, postadresse, leveringsadresse (hvis den varierer fra postadresse), telefonnummer og betalingsoplysninger.
+        </p>
+        <p>
+          <br />
+          Benern Op I/S indsamler og behandler dine persondata, når du foretager dig følgende:
+        </p>
+        <p>– Besøger vores hjemmeside</p>
+      </Accordion>
+      <Accordion overskrift1="03. Den dataansvarlige">
+        <p>Den dataansvarlige for indsamling, behandling og anvendelse af dine personoplysninger på www.barselona.dk er Rasmus Theodor.</p>
+      </Accordion>
+      <Accordion overskrift1="04. Behandlingsgrundlag og formål">
+        <p>
+          <br />
+          Dine almindelige kontaktoplysninger som navn og adresse indhenter vi for at kunne levere det produkt eller den ydelse, som du har købt hos os. Din e-mailadresse indhenter vi for at kunne sende dig en ordrebekræftelse samt en leveringsbekræftelse.
+        </p>
+        <p>
+          <br />
+          Dine oplysninger (undtagen din e-mailadresse, hvis du har givet samtykke til behandling heraf med henblik på modtagelse af tilbud) vil blive slettet 5 år efter du har modtaget din vare eller ydelse.
+        </p>
+      </Accordion>
+      <Accordion overskrift1="05. Andre modtagere af personoplysninger">
+        <p>
+          <br />
+          Vi sælger ikke dine persondata til tredjemand, og vi overfører ikke dine persondata til tredjelande.
+        </p>
+        <p>
+          <br />
+          Vi har vores hjemmeside hos simply.com, som fungerer som vores databehandler. Alle persondata som du oplyser på vores hjemmeside vil blive opbevaret i simply.coms datacentre.
+        </p>
+        <p>
+          <br />
+          Vi bruger eksterne virksomheder som leverandører for at levere vores ydelser bedst muligt. Disse eksterne leverandører er databehandlere og behandler i visse tilfælde personoplysninger i forbindelse med deres levering af ydelser til os. Vores databehandlere behandler kun personoplysninger efter vores instrukser og i overensstemmelse med lovgivningens krav til databehandlere.
+        </p>
+        <p>
+          <br />
+          Vi har indgået databehandleraftaler med vores databehandlere, hvilket er vores og din garanti for, at de overholder gældende regler om beskyttelse af dine personoplysninger.
+        </p>
+      </Accordion>
+      <Accordion overskrift1="06. Dine rettigheder">
+        <p>Som den registrerede har du en række rettigheder, som vi til enhver tid skal sikre opfyldelse af. Du har ret til at anmode os om følgende:</p>
+        <ul>
+          <li>• At få adgang til og få ændret dine persondata</li>
+          <li>• At få slettet persondata</li>
+        </ul>
+        <p>
+          <br />
+          Du har derudover ret til at protestere over behandlingen af dine personlige data, og du har ret til at indgive klage til en databeskyttelsesmyndighed.
+        </p>
+        <p>
+          <br />
+          Ønsker du ikke længere, at vi skal behandle dine personoplysninger, eller at vi skal begrænse behandlingen af dine personoplysninger, kan du også sende os en anmodning herom til <a href="mailto:mail@barselona.dk?"> mail@barselona.dk</a>.
+        </p>
+      </Accordion>
+    </section>
+  </main>
 </MainLayout>
+
+<style>
+  h1 {
+    word-break: break-word; /* Bryder ordet på et passende sted */
+    hyphens: manual;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  section .accordion {
+    padding-top: 0px;
+  }
+  p {
+    max-width: none;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--color_blue);
+  }
+</style>
