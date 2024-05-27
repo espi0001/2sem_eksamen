@@ -39,29 +39,27 @@ try {
 
       <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster" />
     </article>
-
-    <section class="produkter">
+  </section>
+  <section>
+    <article class="produkter">
       {data.length > 0 ? data.map((product) => <Produkt id={product.id} images={product.image} name={product.name} type2={product.type2} price={product.price} />) : <p>No products available.</p>}
-    </section>
+    </article>
   </section>
 </MainLayout>
 
 <style>
   h1 {
     padding-bottom: 48px;
-    text-align: center;
-  }
-  .breadcrumb_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .produkter {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    margin-top: 32px;
+    gap: 32px;
   }
+
+  /* Tablet */
   @media screen and (min-width: 768px) {
     h1 {
       text-align: start;
@@ -72,19 +70,14 @@ try {
     }
 
     .produkter {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 32px;
-      justify-content: center;
-      margin-top: 0px;
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
+
+  /* Desktop */
   @media screen and (min-width: 1024px) {
     .produkter {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      justify-content: center;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 </style>

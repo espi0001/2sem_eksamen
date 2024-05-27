@@ -150,7 +150,7 @@ hr {
 /* reglerne gælder når skærmen er minimum 768px */
 @media screen and (min-width: 768px) {
   section {
-    margin-inline: 64px;
+    margin-inline: 36px;
     padding-top: 90px;
   }
   h1 {
@@ -181,6 +181,11 @@ hr {
 
 /* ___________________________ DESKTOP  ___________________________*/
 @media screen and (min-width: 1024px) {
+  section {
+    margin-inline: 40px;
+    padding-top: 90px;
+  }
+
   h1 {
     font-size: 3.5rem;
   }

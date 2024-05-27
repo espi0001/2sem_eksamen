@@ -1,7 +1,7 @@
 ---
+import "../../styles/style.css";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Breadcrumb2 from "../../components/Breadcrumb2.astro";
-import Button from "../../components/Button.astro";
 
 export async function getStaticPaths() {
   const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen";
@@ -22,16 +22,17 @@ export async function getStaticPaths() {
   });
 }
 
-//const { id } = Astro.params;
-const { post, name } = Astro.props;
+const { post } = Astro.props;
 ---
 
 <MainLayout title="Produkt">
   <section>
-    <Breadcrumb2 navn1="Merchandise" link1={`../3_merchandise`} navn2={post?.type || ""} link2={`../3_merchandise`} navn3={post?.name || ""} />
-    <!-- <Singleview productDetails={post} /> -->
+    <article class="breadcrumb">
+      <Breadcrumb2 navn1="Merchandise" link1={`../3_merchandise`} navn2={post?.type || ""} link2={`../3_merchandise`} navn3={post?.name || ""} />
+      <!-- <Singleview productDetails={post} /> -->
+    </article>
 
-    <article>
+    <article class="produkt">
       <div class="billeder">
         <div class="product-image">
           <img src={post.image[0]} alt={post.name} />
@@ -51,35 +52,46 @@ const { post, name } = Astro.props;
           <h5>{post.price},-</h5>
         </div>
         <div class="description">
-          <p>{post.about}</p>
-          <ul>
-            {post.material && <li>Material: {post.material}</li>}
+          <p class="about">{post.about}</p>
 
-            {post.weight && <li>Weight: {post.weight}</li>}
+          <div>{post.material && <p>{post.material}</p>}</div>
 
-            {post.more && <li>More: {post.more}</li>}
+          <div>{post.color && <p>Farve: {post.color}</p>}</div>
 
-            {post.obs && <li>Obs: {post.obs}</li>}
-            {post.size && <li>Size: {post.size}</li>}
-            {post.status && <li>Status: {post.status}</li>}
+          <div>{post.weight && <p>{post.weight}</p>}</div>
 
-            <!-- {images && <img class="product-image" src={images[0]} alt={name} />}
-            {images && images.length > 1 && <img class="product-image-hover" src={images[1]} alt={`${name} hover`} />} -->
-          </ul>
+          <div>{post.more && <p>{post.more}</p>}</div>
 
-          {post.tracklist && <p>Tracklist:</p>}
-          <ul>
+          <div>{post.obs && <p>{post.obs}</p>}</div>
+
+          <div class="size">
+            {post.size && <p>Størrelse:</p>}
+
             {
-              post.tracklist &&
-                post.tracklist.map((track) => {
-                  return <li>{track}</li>;
+              post.size &&
+                post.size.map((size) => {
+                  return <button>{size}</button>;
                 })
             }
-          </ul>
+          </div>
+
+          <div class="status">{post.status && <p>{post.status}</p>}</div>
+
+          <div class="tracklist">
+            {post.tracklist && <p>Tracklist:</p>}
+            <ul>
+              {
+                post.tracklist &&
+                  post.tracklist.map((track) => {
+                    return <li>{track}</li>;
+                  })
+              }
+            </ul>
+          </div>
         </div>
 
-        <div class="form-submit">
-          <Button style="primary">Tilføj til kurv</Button>
+        <div class="basket">
+          <button style="width:100%">Tilføj til kurv</button>
         </div>
       </div>
     </article>
@@ -87,42 +99,85 @@ const { post, name } = Astro.props;
 </MainLayout>
 
 <style>
+  .breadcrumb {
+    padding-top: 80px;
+  }
+
   article {
     padding-top: 24px;
   }
   .small {
     width: 75px;
   }
-  .navn_pris,
-  .description,
-  .input {
-    padding-bottom: 24px;
-  }
-  h3 {
-    padding-bottom: 8px;
-  }
-  .description p {
-    padding-bottom: 16px;
-  }
-  li {
-    padding-top: 8px;
-  }
+
   .billeder {
     display: flex;
     gap: 16px;
     flex-direction: column;
   }
+
   .billede_grid {
     display: flex;
     gap: 16px;
   }
+  .product-info {
+    margin-top: 48px;
+  }
+
+  .name-price,
+  .description,
+  .status p,
+  .size,
+  .input {
+    padding-bottom: 24px;
+  }
+
+  h3 {
+    padding-bottom: 8px;
+  }
+
+  .description p {
+    padding-bottom: 16px;
+  }
+
+  .size p {
+    padding-bottom: 8px;
+    font-weight: bold;
+  }
+  button {
+    display: inline-block;
+    font-size: var(--font_size_small);
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.55s ease;
+    background: var(--color_white);
+    color: var(--color_black);
+    border: 1px solid var(--color_white);
+    margin-right: 10px;
+  }
+
+  button:hover {
+    background: var(--color_black);
+    border: 1px solid var(--color_white);
+    color: var(--color_white);
+    text-decoration: none;
+  }
+
   .tracklist {
     display: flex;
     flex-direction: column;
   }
+  .tracklist p {
+    font-weight: bold;
+    padding-bottom: 0px;
+  }
+  ul li {
+    list-style-type: none;
+    font-size: var(--font_size_small);
+  }
 
-  /* ___________________________ TABLET  ___________________________*/
-  @media screen and (min-width: 768px) {
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
     article {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -132,35 +187,21 @@ const { post, name } = Astro.props;
     }
 
     .billeder {
-      display: flex;
-      gap: 16px;
       flex-direction: row;
     }
 
     .billede_grid {
       display: flex;
       flex-direction: column;
-      gap: 16px;
       order: -1;
     }
 
-    .navn_pris,
-    .description,
-    .input {
-      padding-bottom: 24px;
+    .product-info {
+      margin-top: 0px;
     }
-    h3 {
-      padding-bottom: 8px;
-    }
-    .description p {
-      padding-bottom: 16px;
-    }
-    li {
-      padding-top: 8px;
-    }
-  }
 
-  /* ___________________________ DESKTOP  ___________________________*/
-  @media screen and (min-width: 1024px) {
+    ul li {
+      font-size: var(--font_size_regular);
+    }
   }
 </style>
