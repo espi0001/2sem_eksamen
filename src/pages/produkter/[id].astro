@@ -1,0 +1,166 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Breadcrumb2 from "../../components/Breadcrumb2.astro";
+import Button from "../../components/Button.astro";
+
+export async function getStaticPaths() {
+  const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen";
+  const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw";
+
+  const response = await fetch(`${apiUrl}`, {
+    headers: {
+      apikey: apiKey,
+    },
+  });
+  const data = await response.json();
+
+  return data.map((onePost) => {
+    return {
+      params: { id: onePost.id },
+      props: { post: onePost },
+    };
+  });
+}
+
+//const { id } = Astro.params;
+const { post, name } = Astro.props;
+---
+
+<MainLayout title="Produkt">
+  <section>
+    <Breadcrumb2 navn1="Merchandise" link1={`../3_merchandise`} navn2={post?.type || ""} link2={`../3_merchandise`} navn3={post?.name || ""} />
+    <!-- <Singleview productDetails={post} /> -->
+
+    <article>
+      <div class="billeder">
+        <div class="product-image">
+          <img src={post.image[0]} alt={post.name} />
+        </div>
+        <div class="billede_grid">
+          {
+            post.image.map((img) => {
+              return <img src={img} class="small" alt={post.name} />;
+            })
+          }
+        </div>
+      </div>
+
+      <div class="product-info">
+        <div class="name-price">
+          <h3>{post.name}</h3>
+          <h5>{post.price},-</h5>
+        </div>
+        <div class="description">
+          <p>{post.about}</p>
+          <ul>
+            {post.material && <li>Material: {post.material}</li>}
+
+            {post.weight && <li>Weight: {post.weight}</li>}
+
+            {post.more && <li>More: {post.more}</li>}
+
+            {post.obs && <li>Obs: {post.obs}</li>}
+            {post.size && <li>Size: {post.size}</li>}
+            {post.status && <li>Status: {post.status}</li>}
+
+            <!-- {images && <img class="product-image" src={images[0]} alt={name} />}
+            {images && images.length > 1 && <img class="product-image-hover" src={images[1]} alt={`${name} hover`} />} -->
+          </ul>
+
+          {post.tracklist && <p>Tracklist:</p>}
+          <ul>
+            {
+              post.tracklist &&
+                post.tracklist.map((track) => {
+                  return <li>{track}</li>;
+                })
+            }
+          </ul>
+        </div>
+
+        <div class="form-submit">
+          <Button style="primary">Tilføj til kurv</Button>
+        </div>
+      </div>
+    </article>
+  </section>
+</MainLayout>
+
+<style>
+  article {
+    padding-top: 24px;
+  }
+  .small {
+    width: 75px;
+  }
+  .navn_pris,
+  .description,
+  .input {
+    padding-bottom: 24px;
+  }
+  h3 {
+    padding-bottom: 8px;
+  }
+  .description p {
+    padding-bottom: 16px;
+  }
+  li {
+    padding-top: 8px;
+  }
+  .billeder {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+  }
+  .billede_grid {
+    display: flex;
+    gap: 16px;
+  }
+  .tracklist {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  @media screen and (min-width: 768px) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin: auto;
+      padding-top: 24px;
+    }
+
+    .billeder {
+      display: flex;
+      gap: 16px;
+      flex-direction: row;
+    }
+
+    .billede_grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      order: -1;
+    }
+
+    .navn_pris,
+    .description,
+    .input {
+      padding-bottom: 24px;
+    }
+    h3 {
+      padding-bottom: 8px;
+    }
+    .description p {
+      padding-bottom: 16px;
+    }
+    li {
+      padding-top: 8px;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+  }
+</style>

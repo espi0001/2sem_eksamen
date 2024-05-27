@@ -2,41 +2,43 @@
 import "../styles/style.css";
 import Button from "./Button.astro";
 
-export interface ProductDetails {
-  name: string;
-  price: string;
-  images: string[];
-  about: string;
-  material: string;
-  weight: string;
-  more: string;
-  obs: string;
-  size: string[];
-  status: string;
-  tracklist: string[];
-}
-const { images, name, price, about, material, weight, more, obs, size, status, tracklist } = Astro.props.productDetails || {};
+const { image, name, price, about, material, weight, more, obs, size, status, tracklist } = Astro.props.productDetails || {};
 ---
 
+<!-- <article>
+  <Breadcrumb2 navn1="Merchandise" navn2="Tøj" navn3={post?.name || ""} />
+</article> -->
 <article>
-  <div class="product-image">
-    {images && <img src={images[0]} alt={name} />}
+  <div class="billeder">
+    <div class="product-image">
+      <img src={image[0]} alt={name} />
+    </div>
+    <div class="billede_grid">
+      {
+        image.map((img) => {
+          return <img src={img} class="small" alt={name} />;
+        })
+      }
+    </div>
   </div>
   <div class="product-info">
     <div class="name-price">
       <h3>{name}</h3>
-      <h5>{price}</h5>
+      <h5>{price},-</h5>
     </div>
     <div class="description">
       <p>{about}</p>
       <ul>
-        <li>Material: {material}</li>
-        <li>Weight: {weight}</li>
-        <li>More: {more}</li>
-        <li>Obs: {obs}</li>
-        <li>Size: {size}</li>
-        <li>Status: {status}</li>
-        <li>Tracklist: {tracklist}</li>
+        {material && <li>Material: {material}</li>}
+
+        {weight && <li>Weight: {weight}</li>}
+
+        {more && <li>More: {more}</li>}
+
+        {obs && <li>Obs: {obs}</li>}
+        {size && <li>Size: {size}</li>}
+        {status && <li>Status: {status}</li>}
+        {tracklist && <li>Tracklist: {tracklist}</li>}
       </ul>
     </div>
     <div class="form-submit">
@@ -48,6 +50,9 @@ const { images, name, price, about, material, weight, more, obs, size, status, t
 <style>
   article {
     padding-top: 24px;
+  }
+  .small {
+    width: 75px;
   }
   .navn_pris,
   .description,
@@ -63,6 +68,15 @@ const { images, name, price, about, material, weight, more, obs, size, status, t
   li {
     padding-top: 8px;
   }
+  .billeder {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+  }
+  .billede_grid {
+    display: flex;
+    gap: 16px;
+  }
 
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
@@ -73,6 +87,20 @@ const { images, name, price, about, material, weight, more, obs, size, status, t
       margin: auto;
       padding-top: 24px;
     }
+
+    .billeder {
+      display: flex;
+      gap: 16px;
+      flex-direction: row;
+    }
+
+    .billede_grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      order: -1;
+    }
+
     .navn_pris,
     .description,
     .input {

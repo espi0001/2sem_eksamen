@@ -1,25 +1,19 @@
 ---
 import "../styles/style.css";
-export interface ProduktProps {
-  images: string[]; // Change images to be an array of strings
-  name: string;
-  type2: string;
-  price: string;
-}
-const { images, name, type2, price } = Astro.props as ProduktProps;
+const { images, name, type2, price, id, type } = Astro.props;
 ---
 
 <article class="product">
-  <a href="/4_singleview" class="product-link">
+  <a href={`/produkter/${id}`} class="product-link">
     <div class="image-container">
       {images && <img class="product-image" src={images[0]} alt={name} />}
       {images && images.length > 1 && <img class="product-image-hover" src={images[1]} alt={`${name} hover`} />}
-      <div class="image-overlay"></div>
+      <!-- <div class="image-overlay"></div> -->
     </div>
     <div class="product-info">
       <p class="product-name">{name}</p>
       <p class="product-variant">{type2}</p>
-      <p class="product-price">{price}</p>
+      <p class="product-price">{price},-</p>
     </div>
   </a>
 </article>
@@ -31,7 +25,7 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     display: flex;
     flex-direction: column;
     padding-top: 34px;
-    cursor: pointer; /* Change cursor to pointer to indicate clickable element */
+    cursor: pointer;
   }
 
   .image-container {
@@ -74,6 +68,9 @@ const { images, name, type2, price } = Astro.props as ProduktProps;
     font-size: var(--font_size_regular);
     margin-bottom: 8px;
     font-weight: bold;
+  }
+  .product-name:hover {
+    text-decoration: underline;
   }
 
   .product-variant,

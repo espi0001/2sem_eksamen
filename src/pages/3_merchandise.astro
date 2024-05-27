@@ -31,24 +31,18 @@ try {
 }
 ---
 
-<script>
-  // Navigate to single view of the product with product data
-  function openProductSingleView(product) {
-    const url = `/pages/singleview.astro?name=${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image)}&about=${encodeURIComponent(product.about)}&material=${encodeURIComponent(product.material)}&weight=${encodeURIComponent(product.weight)}&more=${encodeURIComponent(product.more)}&obs=${encodeURIComponent(product.obs)}&size=${encodeURIComponent(product.size)}&status=${encodeURIComponent(product.status)}&tracklist=${encodeURIComponent(product.tracklist)}`;
-    window.location.href = url;
-  }
-</script>
-
 <MainLayout title="Merchandise">
   <section>
     <Header2 header1="Merchandise" />
     <article class="breadcrumb_button">
+      <!-- <a href={`../3_merchandise${type}`} class="">Test </a> -->
+
       <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster" />
     </article>
-  </section>
 
-  <section class="produkter">
-    {data.length > 0 ? data.map((product) => <Produkt images={product.image} name={product.name} type2={product.type2} price={product.price} />) : <p>No products available.</p>}
+    <section class="produkter">
+      {data.length > 0 ? data.map((product) => <Produkt id={product.id} images={product.image} name={product.name} type2={product.type2} price={product.price} />) : <p>No products available.</p>}
+    </section>
   </section>
 </MainLayout>
 
