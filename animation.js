@@ -3,6 +3,7 @@ import "splitting/dist/splitting.css"; // Importer Splitting.js CSS
 import gsap from "gsap";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("overlay");
   const herotitle = document.getElementById("herotitle").querySelector("h1");
 
   if (herotitle) {
@@ -12,24 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tl = gsap.timeline();
 
+    tl.to(overlay, {
+      duration: 1,
+      scaleY: 0,
+      transformOrigin: "top",
+      ease: "power2.inOut",
+    });
+
     tl.from(
       chars,
       {
         opacity: 0,
         y: 80,
         rotateX: -90,
-        stagger: 0.02,
+        stagger: 0.05,
+        duration: 1,
+        ease: "back.out(1.7)",
       },
-      "<"
-    ).to(
-      chars,
-      {
-        opacity: 0,
-        y: -80,
-        rotateX: 90,
-        stagger: 0.02,
-      },
-      "<1"
+      "-=0.5"
     );
   }
 });
