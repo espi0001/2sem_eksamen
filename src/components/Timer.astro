@@ -5,6 +5,7 @@ import "../styles/style.css";
 
 <div class="flex_timer">
   <div class="date_timer_flex">
+    <p style="text-align: center; font-weight: bold;">Countdown</p>
     <div class="header_countdown">
       <div class="header_number-wrapper">
         <p id="days" class="heading-style-h3 text-color-action">122</p>
@@ -75,7 +76,9 @@ import "../styles/style.css";
     display: flex;
     justify-content: center;
   }
-
+  .flex_timer p {
+    color: var(--color_blue);
+  }
   .date_timer_flex {
     display: flex;
     flex-direction: column;
