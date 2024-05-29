@@ -19,20 +19,18 @@ import Citat from "../components/Citat.astro";
           <a href="#mutoursik" class="listen-link"> Efterårstour</a>
         </div>
         <div class="lyt">
-          <a href="#festivaller" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
+          <a href="#festivaler" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
 
-          <a href="#mufestivallersik" class="listen-link"> Festivaller</a>
+          <a href="#mufestivallersik" class="listen-link"> Festivaler</a>
         </div>
       </div>
     </section>
   </article>
 
   <section id="tour">
-    <section>
-      <Citat citat="Efterårstour 2024">
-        <div class="timer_effekt"><Timer /></div>
-      </Citat>
-    </section>
+    <Citat citat="Efterårstour 2024">
+      <div class="timer_effekt"><Timer /></div>
+    </Citat>
   </section>
 
   <section class="koncerter_grid" id="grid1">
@@ -57,11 +55,11 @@ import Citat from "../components/Citat.astro";
     <div class="koncert_content"><Koncertdato sted="København" dato="26.10.2024" lokation="København, Falkoner Salen" buttonProps={{ linket: "https://www.ticketmaster.dk/event/barselona-billetter/546249" }} buttonProps2={{ linket: "https://www.facebook.com/events/1596848301105564/" }} /></div>
   </section>
 
-  <article class="koncerter_baggerund2">
-    <section id="festivaller">
-      <TextKasse h2="Festivaler" />
-    </section>
-  </article>
+  <section id="festivaler" class="festivaler">
+    <Citat citat="Festivaler sommeren 2024">
+      <!-- <div class="timer_effekt"><p>Fang os på festivalerne landet rundt til sommer!</p></div> -->
+    </Citat>
+  </section>
   <section class="koncerter_grid">
     <div><Koncertdato sted="Northside" dato="8.06.2024" lokation="Aahus, Northside" buttonProps={{ linket: "https://www.ticketmaster.dk/event/partout-northside-2024-billetter/541071" }} buttonProps2={{ linket: "https://northside.dk/artister/barselona/" }} /></div>
     <div><Koncertdato sted="Roskilde Festival" dato="06.07.2024" lokation="Roskilde, Roskilde Festival" buttonProps={{ linket: "https://www.roskilde-festival.dk/billetter" }} buttonProps2={{ linket: "https://www.roskilde-festival.dk/program/musik/barselona" }} /></div>
@@ -144,6 +142,9 @@ import Citat from "../components/Citat.astro";
     .lyt a {
       font-size: var(--font_size_small);
     }
+    .festivaler {
+      padding-bottom: 90px;
+    }
   }
 
   /* ___________________________ DESKTOP  ___________________________*/
@@ -151,11 +152,6 @@ import Citat from "../components/Citat.astro";
     .hero_items {
       padding-top: 125px;
     }
-
-    /* .hero_top {
-      display: block;
-      text-align: start;
-    } */
     .lyt {
       padding-top: 20px;
     }
