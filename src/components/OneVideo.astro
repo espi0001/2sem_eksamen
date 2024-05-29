@@ -8,6 +8,7 @@ const { image } = Astro.props;
     <img src={image} alt="custom-preview" loading="lazy" />
   </div>
 </article>
+
 <style>
   .youtube-player {
     position: relative;
@@ -27,6 +28,18 @@ const { image } = Astro.props;
 
   .youtube-player.pristine::before {
     color: transparent;
+    content: attr(data-hover-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-family: var(--font_body);
+    font-size: var(--font_size_large);
+    transition: 0.5s ease;
+  }
+  /* .youtube-player.pristine::before {
+    color: transparent;
     content: "Real Love";
     position: absolute;
     top: 50%;
@@ -37,7 +50,7 @@ const { image } = Astro.props;
     font-family: var(--font_body);
     font-size: var(--font_size_large);
     transition: 0.5s ease;
-  }
+  } */
 
   .youtube-player.pristine:hover::before {
     color: var(--color_white);
@@ -51,4 +64,10 @@ const { image } = Astro.props;
   @media screen and (min-width: 1024px) {
   }
 </style>
-<script></script>
+<script>
+  document.querySelectorAll(".youtube-player").forEach((player) => {
+    player.addEventListener("mouseover", () => {
+      player.querySelector("::before").content = player.getAttribute("data-hover-text");
+    });
+  });
+</script>

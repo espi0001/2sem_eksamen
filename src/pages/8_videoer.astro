@@ -3,7 +3,6 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Videoafspiller from "../components/Videoafspiller.astro";
 import OneVideo from "../components/OneVideo.astro";
-import Header2 from "../components/Header2.astro";
 ---
 
 <MainLayout title="Barselona | Videoer">
@@ -43,16 +42,28 @@ import Header2 from "../components/Header2.astro";
   .videoafspiller {
     padding-bottom: 32px;
   }
-  .videoer_galleri {
+  .videoer_galleri,
+  .video {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px;
     justify-content: center;
   }
+  .produkter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 22px;
+  }
 
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
-    .videoer_galleri {
+    .videoer_galleri,
+    .video {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .produkter {
       grid-template-columns: 1fr 1fr 1fr;
       gap: 32px;
     }
@@ -62,6 +73,9 @@ import Header2 from "../components/Header2.astro";
   @media screen and (min-width: 1024px) {
     .videoer_galleri {
       display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .produkter {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
