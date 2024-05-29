@@ -90,15 +90,17 @@ li {
 }
 
 h1 {
-  font-size: 2rem;
+  /* font-size: 2rem;
+  font-size: 8.5cqw; */
+  text-align: center;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 h3 {
-  font-size: 1.7rem;
+  font-size: 1.45rem;
 }
 h4 {
   font-size: 1.5rem;
@@ -152,9 +154,6 @@ hr {
     margin-inline: 36px;
     padding-top: 90px;
   }
-  h1 {
-    font-size: 2.5rem;
-  }
 
   h2 {
     font-size: 2rem;
@@ -183,10 +182,6 @@ hr {
   section {
     margin-inline: 40px;
     padding-top: 90px;
-  }
-
-  h1 {
-    font-size: 3.5rem;
   }
 
   h2 {

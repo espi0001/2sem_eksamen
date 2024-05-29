@@ -3,10 +3,14 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Videoafspiller from "../components/Videoafspiller.astro";
 import OneVideo from "../components/OneVideo.astro";
+import Header2 from "../components/Header2.astro";
 ---
 
 <MainLayout title="Barselona | Videoer">
-  <section>
+  <section class="hero_items">
+    <Header2 header1="Barselona Musikvideoer" />
+  </section>
+  <section class="videoafspiller">
     <Videoafspiller />
   </section>
 
@@ -33,21 +37,35 @@ import OneVideo from "../components/OneVideo.astro";
 </MainLayout>
 
 <style>
+  .hero_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+  }
+  .videoafspiller {
+    padding-bottom: 32px;
+  }
   .videoer_galleri {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-    grid-gap: clamp(1rem, 2vw, 1rem);
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    justify-content: center;
   }
+
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
+    .videoer_galleri {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
   }
 
   /* ___________________________ DESKTOP  ___________________________*/
   @media screen and (min-width: 1024px) {
     .videoer_galleri {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-      grid-gap: clamp(1rem, 2vw, 1rem);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 </style>

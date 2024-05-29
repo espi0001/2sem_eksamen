@@ -3,15 +3,52 @@ import "../styles/style.css";
 const { header1 } = Astro.props;
 ---
 
-<article class="content">
-  <h1>{header1}</h1>
+<article class="hero">
+  <div class="content">
+    <div class="text" id="herotitle">
+      <h1>{header1}</h1>
+    </div>
+
+    <slot />
+  </div>
 </article>
 
 <style>
-  article {
-    padding-top: 80px;
+  .hero {
+    padding-inline: 20px;
   }
+
+  .content {
+    display: flex;
+    max-width: 1600px;
+    flex-direction: column;
+  }
+  .text {
+    margin: auto;
+    padding-top: 8%;
+  }
+
   h1 {
-    padding-bottom: 24px;
+    font-size: 7cqw;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 768px) {
+    .text {
+      margin: auto;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .hero {
+      padding-top: 25px;
+      padding-inline: 36px;
+    }
+  }
+  @media screen and (min-width: 1600px) {
+    h1 {
+      font-size: 8rem;
+    }
   }
 </style>

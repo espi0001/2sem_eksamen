@@ -4,19 +4,19 @@ const {} = Astro.props;
 ---
 
 <article>
-  <div class="video-section">
-    <div class="titel">
-      <h1>Barselona - Øjeblikke</h1>
-    </div>
-  </div>
   <div class="youtube-player pristine" data-video-id="FiSxg_LNEFU">
     <img src="https://esterpiazza.dk/kea/10_eksamen/videoer/oejeblikke.avif" alt="custom-preview" />
+  </div>
+  <div class="video-section">
+    <div class="titel">
+      <h2>Barselona - 'Øjeblikke'</h2>
+    </div>
   </div>
 </article>
 
 <style>
   article {
-    padding-top: 80px;
+    text-align: center;
   }
   .youtube-player {
     position: relative;
@@ -26,7 +26,6 @@ const {} = Astro.props;
     cursor: pointer;
   }
   .youtube-player img {
-    border: 1px solid #a5a5a5;
     filter: brightness(60%);
     transition: 0.5s ease;
   }
@@ -64,23 +63,27 @@ const {} = Astro.props;
     max-width: 24px;
     height: auto;
   }
+  .video-section {
+    padding-top: 32px;
+  }
 
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
-  }
-
-  /* ___________________________ DESKTOP  ___________________________*/
-  @media screen and (min-width: 1024px) {
     article {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
+      text-align: start;
     }
 
-    .youtube-player {
-      order: -1;
+    .video-section {
+      padding-top: 0px;
     }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
   }
 </style>
 <script>

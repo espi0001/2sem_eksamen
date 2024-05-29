@@ -4,35 +4,35 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Koncertdato from "../components/Koncertdato.astro";
 import Timer from "../components/Timer.astro";
 import Header2 from "../components/Header2.astro";
-import KasseText from "../components/KasseText.astro";
+import TextKasse from "../components/TextKasse.astro";
+import Citat from "../components/Citat.astro";
 ---
 
 <MainLayout title="Barselona | Koncerter">
   <article class="koncerter_baggerund">
     <section class="hero_items">
-      <div class="hero_top">
-        <Header2 header1="Koncerter 2024" />
+      <Header2 header1="Koncerter 2024" />
+      <div class="to_links">
+        <div class="lyt">
+          <a href="#tour" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
 
-        <div class="to_links">
-          <div class="lyt2">
-            <a href="#tour" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
+          <a href="#mutoursik" class="listen-link"> Efterårstour</a>
+        </div>
+        <div class="lyt">
+          <a href="#festivaller" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
 
-            <a href="#tour" class="listen-link"> Efterårstour</a>
-          </div>
-          <div class="lyt2">
-            <a href="#festivaller" class="listen-link"><img src="/iconer2/IconArrowDown.svg" alt="pil ned" /></a>
-
-            <a href="#festivaller" class="listen-link"> Festivaller</a>
-          </div>
+          <a href="#mufestivallersik" class="listen-link"> Festivaller</a>
         </div>
       </div>
     </section>
   </article>
 
   <section id="tour">
-    <KasseText h2="Efterårstour 2024">
-      <Timer />
-    </KasseText>
+    <section>
+      <Citat citat="Efterårstour 2024">
+        <div class="timer_effekt"><Timer /></div>
+      </Citat>
+    </section>
   </section>
 
   <section class="koncerter_grid" id="grid1">
@@ -59,7 +59,7 @@ import KasseText from "../components/KasseText.astro";
 
   <article class="koncerter_baggerund2">
     <section id="festivaller">
-      <KasseText h2="Festivaler" />
+      <TextKasse h2="Festivaler" />
     </section>
   </article>
   <section class="koncerter_grid">
@@ -91,27 +91,24 @@ import KasseText from "../components/KasseText.astro";
     padding-top: 80px;
     margin-bottom: 125px;
   }
-  .hero_top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+
   .to_links {
     display: flex;
+    align-items: center;
     gap: 80px;
   }
 
-  .lyt2 {
+  .lyt {
     display: flex;
     align-items: center;
+    padding-top: 5%;
   }
-  .lyt2 img {
+  .lyt img {
     max-width: 30px;
     align-self: center;
   }
 
-  .lyt2 a {
+  .lyt a {
     font-size: var(--font_size_small);
   }
   .listen-link {
@@ -133,9 +130,6 @@ import KasseText from "../components/KasseText.astro";
   /* ___________________________ TABLET  ___________________________*/
   /* reglerne gælder når skærmen er minimum 768px */
   @media screen and (min-width: 768px) {
-    .hero_items {
-      align-items: start;
-    }
     .koncerter_grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -147,7 +141,7 @@ import KasseText from "../components/KasseText.astro";
       margin-bottom: 90px;
     }
 
-    .lyt2 a {
+    .lyt a {
       font-size: var(--font_size_small);
     }
   }
@@ -155,18 +149,33 @@ import KasseText from "../components/KasseText.astro";
   /* ___________________________ DESKTOP  ___________________________*/
   @media screen and (min-width: 1024px) {
     .hero_items {
-      display: flex;
-      align-items: start;
       padding-top: 125px;
     }
 
-    .hero_top {
+    /* .hero_top {
       display: block;
       text-align: start;
+    } */
+    .lyt {
+      padding-top: 20px;
     }
-
-    .lyt2 a {
+    .lyt a {
       font-size: var(--font_size_regular);
     }
   }
 </style>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  window.addEventListener("load", () => {
+    const sr = ScrollReveal({
+      distance: "160px",
+      duration: 1350,
+      easing: "ease-out",
+    });
+
+    sr.reveal(".billede_indhold2, .tekst_indhold1, .citat_billede1", { delay: 110, origin: "left" });
+    sr.reveal("", { delay: 110, origin: "bottom" });
+    sr.reveal(".citat, .timer_effekt", { delay: 110, origin: "top" });
+    sr.reveal(".tekst_indhold2, .tekst_indhold2, .citat_billede2", { delay: 110, origin: "right" });
+  });
+</script>

@@ -4,8 +4,9 @@ const { overskrift, text, link } = Astro.props;
 ---
 
 <article>
-  <h6>{overskrift}</h6>
-  <p>{text}</p>
+  <div class="overskrift"><p>{overskrift}:</p></div>
+  <div class="tekst"><p>{text}</p></div>
+
   <div class="mail">
     <p>Mail:</p>
     <a href={link}> <slot /></a>
@@ -14,16 +15,29 @@ const { overskrift, text, link } = Astro.props;
 
 <style>
   article {
-    padding-bottom: 40px;
+    padding-bottom: 80px;
   }
 
-  h4 {
+  .overskrift p {
+    padding-bottom: 8px;
+    font-size: var(--font_size_large);
+    font-weight: bold;
+  }
+  .tekst p {
     padding-bottom: 8px;
   }
+
   .mail {
     display: flex;
   }
   .mail p {
-    padding-right: 8px;
+    padding-right: 16px;
+  }
+
+  .mail a {
+    text-decoration: underline 1px;
+  }
+  .mail a:hover {
+    color: var(--color_blue);
   }
 </style>

@@ -3,7 +3,7 @@ import "../styles/style.css";
 const { h3 } = Astro.props;
 ---
 
-<article>
+<article class="hjerte_grid">
   <div class="tekst_indhold1">
     <h3>{h3}</h3>
     <slot />
@@ -19,7 +19,7 @@ const { h3 } = Astro.props;
   }
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
-    article {
+    .hjerte_grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 44px;

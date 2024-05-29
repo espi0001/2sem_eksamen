@@ -32,13 +32,12 @@ try {
 ---
 
 <MainLayout title="Barselona | Merchandise">
-  <section>
+  <section class="hero_items">
     <Header2 header1="Merchandise" />
-    <article class="breadcrumb_button">
-      <!-- <a href={`../3_merchandise${type}`} class="">Test </a> -->
-
+    <!-- <article class="breadcrumb_button">
       <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster" />
     </article>
+    -->
   </section>
   <section>
     <article class="produkter">
@@ -48,15 +47,18 @@ try {
 </MainLayout>
 
 <style>
-  h1 {
-    padding-bottom: 48px;
+  .hero_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
   }
 
   .produkter {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    gap: 32px;
+    gap: 22px;
   }
 
   /* Tablet */
@@ -71,11 +73,15 @@ try {
 
     .produkter {
       grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
     }
   }
 
   /* Desktop */
   @media screen and (min-width: 1024px) {
+    .hero_items {
+      padding-top: 125px;
+    }
     .produkter {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }

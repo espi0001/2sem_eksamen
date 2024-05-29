@@ -6,7 +6,7 @@ import Mail from "../components/Mail.astro";
 ---
 
 <MainLayout title="Barselona | Kontakt">
-  <section class="header">
+  <section class="hero_items">
     <Header2 header1="Kontakt os" />
   </section>
   <section class="mails">
@@ -24,8 +24,12 @@ import Mail from "../components/Mail.astro";
 </MainLayout>
 
 <style>
-  .mails {
+  .hero_items {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding-top: 80px;
+    margin-bottom: 125px;
   }
 
   @media screen and (min-width: 768px) {
@@ -33,15 +37,12 @@ import Mail from "../components/Mail.astro";
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 80px;
-      align-items: center;
     }
   }
 
   @media screen and (min-width: 1024px) {
-    .header {
-      text-align: start;
-      align-items: center;
-      align-self: center;
+    .hero_items {
+      padding-top: 125px;
     }
 
     .mails {

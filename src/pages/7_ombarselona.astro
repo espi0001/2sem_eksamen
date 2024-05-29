@@ -74,13 +74,24 @@ const { parentActive } = Astro.props;
     <Citat citat="Generationsportrættet:" />
   </section>
   <section>
-    <KasseText2 h3="Væbnet Hjerte">
-      <p>I vores unge dage var det ikke vigtigt for os, at musikken havde en særlig betydning. Vi ville bare optræde, mærke publikum, skrive en hurtig sang, udgive noget og komme ud igen. Det gav os en rus som vi blev afhængige af, men den forsvandt, og så kom corona.</p>
-      <p>
-        <br />
-        Efter en lang pause begyndte vi at skrive musik igen, denne gang på en ny måde. Vi udviklede albummet "Væbnet Hjerte" som et treårigt projekt, der betyder meget for os. Det er lavet med al vores energi og perfektion. Under processen mødte vi mange udfordringer og tvivl, både på os selv og vores musik. Vi måtte støtte hinanden meget og tro på, at det nok skulle gå, selvom vi ikke kunne se lys for enden af tunnelen.
-      </p>
-    </KasseText2>
+    <article class="hjerte_grid">
+      <div class="tekst_indhold1">
+        <h3>Væbnet Hjerte</h3>
+        <p>
+          <br />
+          I vores unge dage var det ikke vigtigt for os, at musikken havde en særlig betydning. Vi ville bare optræde, mærke publikum, skrive en hurtig sang, udgive noget og komme ud igen. Det gav os en rus som vi blev afhængige af, men den forsvandt, og så kom corona.
+        </p>
+        <p>
+          <br />
+          Efter en lang pause begyndte vi at skrive musik igen, denne gang på en ny måde. Vi udviklede albummet "Væbnet Hjerte" som et treårigt projekt, der betyder meget for os. Det er lavet med al vores energi og perfektion. Under processen mødte vi mange udfordringer og tvivl, både på os selv og vores musik. Vi måtte støtte hinanden meget og tro på, at det nok skulle gå, selvom vi ikke kunne se lys for enden af tunnelen.
+        </p>
+      </div>
+      <div class="billede_indhold1">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6KQjta3e4EszUXwo0OBGSB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </article>
+
+    <KasseText2 h3="Væbnet Hjerte" />
   </section>
 
   <section class="lyse_naetter">
@@ -166,7 +177,7 @@ const { parentActive } = Astro.props;
     .billeder img {
       width: 80%;
     }
-
+    .hjerte_grid,
     .lyse_naetter {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -174,7 +185,7 @@ const { parentActive } = Astro.props;
       align-items: center;
     }
   }
-
+  /* Desktop */
   @media screen and (min-width: 1024px) {
     .citater {
       display: grid;
@@ -209,8 +220,8 @@ const { parentActive } = Astro.props;
     });
 
     sr.reveal(".billede_indhold2, .tekst_indhold1, .citat_billede1", { delay: 110, origin: "left" });
-    sr.reveal(".citat", { delay: 110, origin: "bottom" });
-    sr.reveal(".citat", { delay: 110, origin: "top" });
+    sr.reveal("", { delay: 110, origin: "bottom" });
+    sr.reveal(".citat, .timer_effekt", { delay: 110, origin: "top" });
     sr.reveal(".tekst_indhold2, .tekst_indhold2, .citat_billede2", { delay: 110, origin: "right" });
   });
 </script>
