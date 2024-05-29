@@ -5,34 +5,54 @@ import LytMusik from "../components/LytMusik.astro";
 import LyseNaetter from "../components/LyseNaetter.astro";
 import KasseText from "../components/KasseText.astro";
 import KasseText2 from "../components/KasseText2.astro";
+import TextKasse from "../components/TextKasse.astro";
+import Citat from "../components/Citat.astro";
+const { parentActive } = Astro.props;
 ---
 
 <MainLayout title="Barselona | Om Barselona">
   <article>
     <video autoplay muted loop src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/barselonavideomp4.webm"></video>
   </article>
-
   <section>
-    <KasseText h2="Magien i Det Uventede" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/magien_i_det_uventede.avif" image_alt="Rud og Rasmus sidder">
-      <p style="font-style: italic;">De Uforglemmelige Øjeblikke Man Ikke Kan Planlægge</p>
+    <KasseText h3="Starten på Barselona" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat2.avif" image_alt="Rud og Rasmus sidder" col="col2">
+      <p>Barselona er et musikalsk projekt født af en fælles ambition om at udforske grænselandet mellem dansksproget pop- og rockmusik.</p>
       <p>
         <br />
-        Vi bruger ofte meget tid og energi på at forberede os og planlægge alt ned til mindste detalje. Vi går og tænker det hele igennem, forsøger at tage højde for alle mulige scenarier og sikre, at alt forløber som forventet. Ironisk nok er det ofte de øjeblikke der ender med at være de mest mindeværdige.
+        Barselona, opkaldt efter deres højgravide lærer, Lone, består af Rud Aslak (født 8. april 2000) og Rasmus Theodor (født 20. marts 1999), som dannede bandet på musikefterskolen Ollerup på Fyn i 2016.
       </p>
+    </KasseText>
+  </section>
+  <section>
+    <TextKasse h3="Grotten" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat1.avif" image_alt="Rud og Rasmus i Grotten">
+      <p>Musikken startede nede i 'Grotten'. Grotten er et lille musikstudie, og det er her, al vores musik bliver skabt. Grotten er ikke kun et lille rum, men også stedet, hvor vi henter al vores inspiration fra, fra plakater og lyskæder til skulpturer og alverdens små ting.</p>
+      <p>Vores vægge er blevet godt pyntet op gennem årene, og der kommer hele tiden nye ting til, som souvenirs fra rejser eller tegninger, der er lavet hernede.</p>
+      <p>Mange af vores sange bliver også inspireret af tingene hernede. Derfor elsker vi at tage ligegyldige ting med, fordi vi pludselig kan få en idé ved at kigge på en ting, og så kan der blive lavet en sang ud af det.</p>
+    </TextKasse>
+  </section>
+  <section>
+    <Citat citat="''Vi er to modsætninger det er nok derfor, musikken får sin karakter.''" />
+  </section>
+  <section>
+    <div class="billeder2">
+      <img class="citat_billede1" src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/rasmus_synths1.avif" alt="Rasmus fra Barselona" loading="lazy" />
+      <img class="citat_billede2" src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/rud_musik1.avif" alt="Rud fra Barselona" loading="lazy" />
+    </div>
+  </section>
+
+  <section>
+    <TextKasse h3="Magien i Det Uventede" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/magien_i_det_uventede.avif" image_alt="Rud og Rasmus sidder">
+      <p>Vi bruger ofte meget tid og energi på at forberede os og planlægge alt ned til mindste detalje. Vi går og tænker det hele igennem, forsøger at tage højde for alle mulige scenarier og sikre, at alt forløber som forventet. Ironisk nok er det ofte de øjeblikke der ender med at være de mest mindeværdige.</p>
       <p>
         <br />
         For både os selv og for publikum er det netop disse øjeblikke, der gør størst indtryk. De er autentiske og ægte, og de skaber en særlig forbindelse og intensitet, som planlagte øjeblikke sjældent kan matche. Det er i disse uforudsete øjeblikke, at magien ofte opstår, og vi oplever noget unikt og uforglemmeligt
       </p>
-    </KasseText>
+    </TextKasse>
   </section>
 
   <section>
-    <KasseText h2="Øjeblikkets Kraft" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/koncertbillede.avif" image_alt="Rud og Rasmus i Grotten" col="col2">
-      <p style="font-style: italic;">Magien af Uventet Fællesskab</p>
-      <p>
-        <br />
-        Der blev sunget tilbage mod scenen nede fra salen på en måde, vi aldrig havde oplevet før. Det syn var næsten umuligt at beskrive. Der var ikke én person i salen, som ikke hoppede i takt. Uanset alder var alle grebet af stemningen. Disse øjeblikke er dem, både vi og publikum vil huske.
-      </p>
+    <KasseText h3="Øjeblikkets Kraft" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/rud_i_rublikum.avif" image_alt="Rud og Rasmus i Grotten">
+      <p>Der blev sunget tilbage mod scenen nede fra salen på en måde, vi aldrig havde oplevet før. Det syn var næsten umuligt at beskrive. Der var ikke én person i salen, som ikke hoppede i takt. Uanset alder var alle grebet af stemningen. Disse øjeblikke er dem, både vi og publikum vil huske.</p>
       <p>
         <br />
         Man ved jo godt, at det aldrig kommer til at ske igen. Det der lige er sket. Det kan godt være, vi spiller nogle af de samme sange dagen efter, men lige præcis det, man oplever lige nu, det sker aldrig igen. Det er næsten for vildt at stå og tænke over. For så ved jeg heller ikke, om man kan nyde det fuldt ud.
@@ -41,60 +61,20 @@ import KasseText2 from "../components/KasseText2.astro";
   </section>
 
   <section>
-    <KasseText h2="Live Musikens Betydning" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/rud_i_rublikum.avif" image_alt="Rud og Rasmus sidder">
-      <p style="font-style: italic;">Forbindelsen mellem Os og Publikum</p>
-      <p>
-        <br />
-        Vi har meget brug for at se de mennesker, der lytter. Vi kan i hvert fald ikke forholde mig til lyttertal. Vi har brug for at se, hvad sangene kan i en live-kontekst. Og se, at der er nogen, der har et forhold til dem.
-      </p>
+    <TextKasse h3="Live Musikens Betydning" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/koncertbillede.avif" image_alt="Rud og Rasmus sidder">
+      <p>Vi har meget brug for at se de mennesker, der lytter. Vi kan i hvert fald ikke forholde mig til lyttertal. Vi har brug for at se, hvad sangene kan i en live-kontekst. Og se, at der er nogen, der har et forhold til dem.</p>
       <p>
         <br />
         Det er som om, det gik op for en, at det er grunden til, at vi skriver sangene. Grunden til, at vi har brugt så lang tid på at skrive en plade, er for at komme ud og spille den live.
       </p>
-    </KasseText>
+    </TextKasse>
   </section>
-  <!-- DET NYE TEKST -->
-
   <section>
-    <KasseText h2="Starten på Barselona" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat2.avif" image_alt="Rud og Rasmus sidder" col="col2">
-      <p>Barselona er et musikalsk projekt født af en fælles ambition om at udforske grænselandet mellem dansksproget pop- og rockmusik.</p>
-      <p>
-        <br />
-        Barselona, opkaldt efter deres højgravide lærer, Lone, består af Rud Aslak (født 8. april 2000) og Rasmus Theodor (født 20. marts 1999), som dannede bandet på musikefterskolen Ollerup på Fyn i 2016.
-      </p>
-    </KasseText>
+    <!-- <Citat citat="’Væbnet Hjerte’:" /> -->
+    <Citat citat="Generationsportrættet:" />
   </section>
-
   <section>
-    <div class="citater">
-      <div class="faelles_citat">
-        <h5>“Vi er slet ikke ens, vi er fuldkomne modsætninger.”</h5>
-        <img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/rud_rasmus_citat.avif" alt="" />
-      </div>
-
-      <div class="billeder">
-        <img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/rasmus_synths1.avif" alt="Rasmus fra Barselona" loading="lazy" />
-        <img src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/rud_musik1.avif" alt="Rud fra Barselona" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <KasseText h2="Grotten" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/plakat1.avif" image_alt="Rud og Rasmus i Grotten">
-      <p>Musikken startede nede i 'Grotten'. Grotten er et lille musikstudie, og det er her, al vores musik bliver skabt. Grotten er ikke kun et lille rum, men også stedet, hvor vi henter al vores inspiration fra, fra plakater og lyskæder til skulpturer og alverdens små ting.</p>
-      <p>Vores vægge er blevet godt pyntet op gennem årene, og der kommer hele tiden nye ting til, som souvenirs fra rejser eller tegninger, der er lavet hernede.</p>
-      <p>Mange af vores sange bliver også inspireret af tingene hernede. Derfor elsker vi at tage ligegyldige ting med, fordi vi pludselig kan få en idé ved at kigge på en ting, og så kan der blive lavet en sang ud af det.</p>
-    </KasseText>
-  </section>
-  <!-- <section>
-    <KasseText image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/af_dem1.avif" image_alt="Rud og Rasmus sidder" col="col2">
-      <p>“Rud Aksel er født til at være frondtmand for sin generations største rockband.“</p>
-      <p>Soundvenue engang skrevet, at Rud er født til at være frontmand for sin generations største rockband. Det synes vi lyder ret fedt, og som en mission vi vil ønske at kunne leve op til. - Rasmus</p>
-    </KasseText>
-  </section> -->
-
-  <section>
-    <KasseText2 h2="Væbnet Hjerte">
+    <KasseText2 h3="Væbnet Hjerte">
       <p>I vores unge dage var det ikke vigtigt for os, at musikken havde en særlig betydning. Vi ville bare optræde, mærke publikum, skrive en hurtig sang, udgive noget og komme ud igen. Det gav os en rus som vi blev afhængige af, men den forsvandt, og så kom corona.</p>
       <p>
         <br />
@@ -104,8 +84,10 @@ import KasseText2 from "../components/KasseText2.astro";
   </section>
 
   <section class="lyse_naetter">
-    <div>
-      <h2>Lyse Nætter</h2>
+    <video class="lyse_video billede_indhold2" controls src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/lysenaetter.webm"></video>
+
+    <div class="tekst_indhold2">
+      <h3>Lyse Nætter</h3>
       <p>“Lyse Nætter” handler om de oplevelser, vi har sommeren over og bevidstheden om, at denne tid er på lånt tid. “Lyse Nætter” sker dog året rundt. Øjeblikke fra turen til spillestedet, spændingen før koncerten, fællessang og dans under koncerten og euforien på hjemturen lyser selv de mørkeste nætter op.</p>
       <p>
         <br />
@@ -114,7 +96,6 @@ import KasseText2 from "../components/KasseText2.astro";
         <a href="/2_koncerter" class="tour_link">efterårstour 2024</a> .
       </p>
     </div>
-    <video controls src="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/lysenaetter.webm"></video>
   </section>
 
   <section class="musik">
@@ -133,22 +114,16 @@ import KasseText2 from "../components/KasseText2.astro";
     height: 100%;
     object-fit: cover;
   }
-  .citater {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  .faelles_citat {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .billeder {
+  .billeder2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    justify-items: center;
+    gap: 30px;
   }
-
+  .citat_billede1,
+  .citat_billede2 {
+    width: 80%;
+  }
   .tour_link {
     text-decoration: underline;
   }
@@ -169,7 +144,9 @@ import KasseText2 from "../components/KasseText2.astro";
       background-size: cover;
       aspect-ratio: 1440/1030;
     }
-
+    .lyse_video {
+      aspect-ratio: 16/9;
+    }
     .citater {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -193,6 +170,8 @@ import KasseText2 from "../components/KasseText2.astro";
     .lyse_naetter {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
     }
   }
 
@@ -220,29 +199,18 @@ import KasseText2 from "../components/KasseText2.astro";
     }
   }
 </style>
-
+<script src="https://unpkg.com/scrollreveal"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const options = {
-      root: null, // Use the viewport as the root
-      rootMargin: "0px",
-      threshold: 0.1, // Adjust as needed
-    };
-
-    const callback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target); // Stop observing once the element is in view
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    const images = document.querySelectorAll(".billede1 img, .billede2 img");
-    images.forEach((image) => {
-      observer.observe(image);
+  window.addEventListener("load", () => {
+    const sr = ScrollReveal({
+      distance: "160px",
+      duration: 1350,
+      easing: "ease-out",
     });
+
+    sr.reveal(".billede_indhold2, .tekst_indhold1, .citat_billede1", { delay: 110, origin: "left" });
+    sr.reveal(".citat", { delay: 110, origin: "bottom" });
+    sr.reveal(".citat", { delay: 110, origin: "top" });
+    sr.reveal(".tekst_indhold2, .tekst_indhold2, .citat_billede2", { delay: 110, origin: "right" });
   });
 </script>

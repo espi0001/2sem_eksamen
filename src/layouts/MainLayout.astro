@@ -18,8 +18,8 @@ const { title } = Astro.props;
     <!-- Fortæller at det er et pesponsivt site -->
     <meta name="viewport" content="width=device-width" />
 
-    <!-- SEO -->
-    <meta name="description" content="Eksamensprojekt" />
+    <!-- SEO metadata -->
+    <meta name="description" content="Barselona | Eksamensprojekt om Barselona" />
     <meta name="author" content="Ester, Sebastian, Rose og Nicoline" />
     <meta name="copyright" content="Team_10" />
 
@@ -29,16 +29,15 @@ const { title } = Astro.props;
     <!-- fa-icon -->
     <link rel="icon" type="image/svg+xml" href="/logo/LogoBlack.svg" />
 
-    <!-- FONTE Roboto  -->
+    <!-- Roboto font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- FONTE -  -->
-
+    <!-- Sætter generator meta tag til at angive hvilken værktøj der blev brugt til at generere siden -->
     <meta name="generator" content={Astro.generator} />
 
-    <!-- titel på siden -->
+    <!-- titel på siden (sidetitel) -->
     <title>{title}</title>
   </head>
   <body id="top">

@@ -4,12 +4,12 @@ const { h3, image, image_alt } = Astro.props;
 ---
 
 <article>
-  <div class="billede_indhold2">
-    <img src={image} alt={image_alt} loading="lazy" />
-  </div>
-  <div class="tekst_indhold2">
+  <div class="tekst_indhold1">
     <h3>{h3}</h3>
     <slot />
+  </div>
+  <div class="tekst_indhold2">
+    <img class="billede" src={image} alt={image_alt} loading="lazy" />
   </div>
 </article>
 
