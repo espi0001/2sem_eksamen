@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.8.4"
+    "astro": "^4.8.4",
+    "gsap": "^3.12.5",
+    "split-text-js": "^1.0.3",
+    "splitting": "^1.0.6"
   }
 }
