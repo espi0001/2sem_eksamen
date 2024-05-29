@@ -15,27 +15,31 @@ const { overskrift, text, link } = Astro.props;
 
 <style>
   article {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
   }
 
   .overskrift p {
-    padding-bottom: 8px;
     font-size: var(--font_size_large);
     font-weight: bold;
   }
   .tekst p {
     padding-bottom: 8px;
+    font-size: var(--font_size_regular);
   }
 
   .mail {
     display: flex;
   }
   .mail p {
-    padding-right: 16px;
+    padding-right: 8px;
+    font-size: var(--font_size_regular);
   }
 
   .mail a {
     text-decoration: underline 1px;
+    font-size: var(--font_size_regular);
   }
   .mail a:hover {
     color: var(--color_blue);

@@ -1,7 +1,6 @@
 ---
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
-import LytMusik from "../components/LytMusik.astro";
 import LyseNaetter from "../components/LyseNaetter.astro";
 import KasseText from "../components/KasseText.astro";
 import KasseText2 from "../components/KasseText2.astro";
@@ -61,7 +60,7 @@ const { parentActive } = Astro.props;
   </section>
 
   <section>
-    <TextKasse h3="Live Musikens Betydning" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/koncertbillede.avif" image_alt="Rud og Rasmus sidder">
+    <TextKasse h3="Live Musikksens Betydning" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/koncertbillede.avif" image_alt="Rud og Rasmus sidder">
       <p>Vi har meget brug for at se de mennesker, der lytter. Vi kan i hvert fald ikke forholde mig til lyttertal. Vi har brug for at se, hvad sangene kan i en live-kontekst. Og se, at der er nogen, der har et forhold til dem.</p>
       <p>
         <br />
@@ -70,7 +69,6 @@ const { parentActive } = Astro.props;
     </TextKasse>
   </section>
   <section>
-    <!-- <Citat citat="’Væbnet Hjerte’:" /> -->
     <Citat citat="Generationsportrættet:" />
   </section>
   <section>
@@ -90,8 +88,6 @@ const { parentActive } = Astro.props;
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6KQjta3e4EszUXwo0OBGSB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </article>
-
-    <KasseText2 h3="Væbnet Hjerte" />
   </section>
 
   <section class="lyse_naetter">
@@ -109,9 +105,6 @@ const { parentActive } = Astro.props;
     </div>
   </section>
 
-  <section class="musik">
-    <LytMusik />
-  </section>
   <section>
     <article class="lyse">
       <LyseNaetter />

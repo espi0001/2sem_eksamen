@@ -6,30 +6,36 @@ import Mail from "../components/Mail.astro";
 ---
 
 <MainLayout title="Barselona | Kontakt">
-  <section class="hero_items">
-    <Header2 header1="Kontakt os" />
-  </section>
-  <section class="mails">
-    <article>
-      <Mail overskrift="Henvendelser vedr. barselona.dk" link="mailto:mail@barselona.dk?"> mail@barselona.dk</Mail>
-      <Mail overskrift="Management" link="mailto:jonas@sierra79.com?" text="Jonas Fjelding"> jonas@sierra79.com</Mail>
-      <Mail overskrift="Booking" link="mailto:soren@sierra79.com?" text="Søren Mensberg"> soren@sierra79.com</Mail>
-      <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?" text="Louis Tvede"> louis.tvede@umusic.com</Mail>
-    </article>
+  <section class="content">
+    <div class="mails">
+      <div class="mails_grid">
+        <h1>Kontakt os</h1>
+        <Mail overskrift="Henvendelser vedr. barselona.dk" link="mailto:mail@barselona.dk?"> mail@barselona.dk</Mail>
+        <Mail overskrift="Management" link="mailto:jonas@sierra79.com?" text="Jonas Fjelding"> jonas@sierra79.com</Mail>
+        <Mail overskrift="Booking" link="mailto:soren@sierra79.com?" text="Søren Mensberg"> soren@sierra79.com</Mail>
+        <Mail overskrift="Lable" link="mailto:louis.tvede@umusic.com?" text="Louis Tvede"> louis.tvede@umusic.com</Mail>
+      </div>
 
-    <article class="billede">
-      <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/rud_rasmus.avif" alt="Rud og Rasmus fra Barselona" />
-    </article>
+      <div class="billede">
+        <img src="https://esterpiazza.dk/kea/10_eksamen/indhold/rud_rasmus.avif" alt="Rud og Rasmus fra Barselona" />
+      </div>
+    </div>
   </section>
 </MainLayout>
 
 <style>
-  .hero_items {
+  .mails {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
     padding-top: 80px;
     margin-bottom: 125px;
+  }
+  .content {
+    padding-top: 8%;
+  }
+  h1 {
+    padding-bottom: 44px;
   }
 
   @media screen and (min-width: 768px) {
@@ -41,11 +47,8 @@ import Mail from "../components/Mail.astro";
   }
 
   @media screen and (min-width: 1024px) {
-    .hero_items {
-      padding-top: 125px;
-    }
-
     .mails {
+      padding-top: 125px;
       grid-template-columns: 1fr 1fr;
     }
   }
