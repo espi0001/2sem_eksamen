@@ -33,7 +33,15 @@ import Newsletter from "../components/Newsletter.astro";
     <section id="musik" class="musik">
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6KQjta3e4EszUXwo0OBGSB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <div>
-        <video autoplay muted loop src="https://esterpiazza.dk/kea/10_eksamen/albums/vinyl_hjerte_drejer.mp4"></video>
+        <!-- <video autoplay muted loop src="https://esterpiazza.dk/kea/10_eksamen/albums/vinyl_hjerte_drejer.mp4"></video> -->
+        <p>Find os på:</p>
+        <div class="sociale_links">
+          <a href="https://www.facebook.com/barselonaband" target="_blank"><img src="/iconer2/IconFacebook.svg" alt="Facebook icon" /></a>
+          <a href="https://www.instagram.com/barselona_officiel/?hl=da" target="_blank"> <img src="/iconer2/IconInstagram.svg" alt="Instagram icon" /></a>
+          <a href="https://www.tiktok.com/@barselona_officiel" target="_blank"> <img src="/iconer2/IconTikTok.svg" alt="TikTok icon" /></a>
+          <a href="https://open.spotify.com/artist/2wdsck730u8ZhDA7eVHw7m?si=3DAZsMWxTZ6tsM3FmmQ6GA&nd=1&dlsi=05d53ffe0bd648a3" target="_blank"> <img src="/iconer2/IconSpotify.svg" alt="Spotify icon" /></a>
+          <a href="https://www.youtube.com/channel/UCr49KaBsStYVeuov4Qkjq-g" target="_blank"> <img src="/iconer2/IconYoutube.svg" alt="Youtube icon" /></a>
+        </div>
       </div>
     </section>
     <section>
@@ -95,6 +103,22 @@ import Newsletter from "../components/Newsletter.astro";
   .listen-link:hover {
     color: var(--color_blue);
     text-decoration: none;
+  }
+  .sociale_links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+  .sociale_links a {
+    background-color: var(--color_white);
+    border-radius: 50px;
+    width: 30px;
+    height: auto;
+    font-size: var(--font_size_medium);
+  }
+  .sociale_links a:hover {
+    background-color: var(--color_blue);
   }
 
   @media screen and (min-width: 768px) {
