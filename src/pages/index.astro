@@ -32,6 +32,9 @@ import Newsletter from "../components/Newsletter.astro";
     </article>
     <section id="musik" class="musik">
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6KQjta3e4EszUXwo0OBGSB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div>
+        <video autoplay muted loop src="https://esterpiazza.dk/kea/10_eksamen/albums/vinyl_hjerte_drejer.mp4"></video>
+      </div>
     </section>
     <section>
       <Newsletter />
@@ -104,6 +107,11 @@ import Newsletter from "../components/Newsletter.astro";
     }
     .lyt a {
       font-size: var(--font_size_small);
+    }
+    .musik {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
     }
   }
 
