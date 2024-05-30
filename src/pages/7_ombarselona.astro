@@ -216,12 +216,12 @@ const { parentActive } = Astro.props;
   window.addEventListener("load", () => {
     const sr = ScrollReveal({
       distance: "160px",
-      duration: 1350,
+      duration: 1600,
       easing: "ease-out",
+      viewFactor: 0.5, // Adjust this value to control when the animation triggers
     });
 
     sr.reveal(".billede_indhold2, .tekst_indhold1, .citat_billede1", { delay: 110, origin: "left" });
-    sr.reveal("", { delay: 110, origin: "bottom" });
     sr.reveal(".citat, .timer_effekt", { delay: 110, origin: "top" });
     sr.reveal(".tekst_indhold2, .tekst_indhold2, .citat_billede2", { delay: 110, origin: "right" });
   });

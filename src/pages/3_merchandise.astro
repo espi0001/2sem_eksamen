@@ -3,7 +3,7 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Header2 from "../components/Header2.astro";
 import Produkt from "../components/Produkt.astro";
-import Breadcrumb2 from "../components/Breadcrumb2.astro";
+import Filter from "../components/Filter.astro";
 
 const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen";
 const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw";
@@ -34,11 +34,19 @@ try {
 <MainLayout title="Barselona | Merchandise">
   <section class="hero_items">
     <Header2 header1="Merchandise" />
-    <!-- <article class="breadcrumb_button">
-      <Breadcrumb2 navn1="Tøj" navn2="Accessories" navn3="Musik" navn4="Poster" />
-    </article>
-    -->
   </section>
+  <section class="filter_ting">
+    <div class="lyt2">
+      <img src="/iconer2/filter.svg" alt="Filter Icon" />
+      <p>Filtrer og Sotér</p>
+    </div>
+    <div class="filter_produkter">
+      <Filter />
+
+      <p>31 PRODUKTER</p>
+    </div>
+  </section>
+
   <section>
     <article class="produkter">
       {data.length > 0 ? data.map((product) => <Produkt id={product.id} images={product.image} name={product.name} type2={product.type2} price={product.price} />) : <p>No products available.</p>}
@@ -59,6 +67,31 @@ try {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: 22px;
+  }
+  .filter_ting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .filter_ting p {
+    font-size: var(--font_size_small);
+  }
+  .filter_produkter {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .lyt2 {
+    display: flex;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .lyt2 img {
+    max-width: 20px;
+    align-self: center;
+  }
+  .lyt2 p:hover {
+    color: var(--color_blue);
   }
 
   /* Tablet */

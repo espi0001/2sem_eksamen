@@ -20,7 +20,7 @@ const { images, name, type2, price, id, type } = Astro.props;
     <div class="product-info">
       <p class="product-name">{name}</p>
       <p class="product-variant">{type2}</p>
-      <p class="product-price">{price},-</p>
+      <p class="product-price">{price},00 DKK</p>
     </div>
   </a>
 </article>
@@ -83,7 +83,10 @@ const { images, name, type2, price, id, type } = Astro.props;
   .product-name:hover {
     text-decoration: underline;
   }
-
+  .product-variant {
+    opacity: 80%;
+    font-size: var(--font_size_small);
+  }
   .product-variant,
   .product-price {
     margin-bottom: 4px;
