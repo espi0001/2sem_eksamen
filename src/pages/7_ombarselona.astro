@@ -30,7 +30,7 @@ const { parentActive } = Astro.props;
     </TextKasse>
   </section>
   <section>
-    <Citat citat="''Vi er to modsætninger det er nok derfor, musikken får sin karakter.''" />
+    <Citat citat="''Vi er to modsætninger, det er nok derfor musikken får sin karakter.''" />
   </section>
   <section>
     <div class="billeder2">
@@ -60,8 +60,8 @@ const { parentActive } = Astro.props;
   </section>
 
   <section>
-    <TextKasse h3="Live Musikksens Betydning" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/koncertbillede.avif" image_alt="Rud og Rasmus sidder">
-      <p>Vi har meget brug for at se de mennesker, der lytter. Vi kan i hvert fald ikke forholde mig til lyttertal. Vi har brug for at se, hvad sangene kan i en live-kontekst. Og se, at der er nogen, der har et forhold til dem.</p>
+    <TextKasse h3="Live Musikkens Betydning" image="https://esterpiazza.dk/kea/10_eksamen/side_om_dem/koncertbillede.avif" image_alt="Rud og Rasmus sidder">
+      <p>Vi har meget brug for at se de mennesker, der lytter. Vi kan i hvert fald ikke forholde os til lyttertal. Vi har brug for at se, hvad sangene kan i en live-kontekst. Og se, at der er nogen, der har et forhold til dem.</p>
       <p>
         <br />
         Det er som om, det gik op for en, at det er grunden til, at vi skriver sangene. Grunden til, at vi har brugt så lang tid på at skrive en plade, er for at komme ud og spille den live.
@@ -69,7 +69,7 @@ const { parentActive } = Astro.props;
     </TextKasse>
   </section>
   <section>
-    <Citat citat="Generationsportrættet:" />
+    <Citat citat="Generations­portræt­tet:" />
   </section>
   <section>
     <article class="hjerte_grid">
@@ -124,10 +124,10 @@ const { parentActive } = Astro.props;
     justify-items: center;
     gap: 30px;
   }
-  .citat_billede1,
+  /* .citat_billede1,
   .citat_billede2 {
     width: 80%;
-  }
+  } */
   .tour_link {
     text-decoration: underline;
   }
@@ -173,6 +173,11 @@ const { parentActive } = Astro.props;
     .billeder img {
       width: 80%;
     }
+    .citat_billede1,
+    .citat_billede2 {
+      width: 80%;
+    }
+
     .hjerte_grid,
     .lyse_naetter {
       display: grid;

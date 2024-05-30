@@ -2,7 +2,10 @@
 import "../styles/style.css";
 ---
 
-<button onclick="topFunction()" id="backToTopBtn" title="Go to top"><span>←</span></button>
+<!-- <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><span>←</span></button> -->
+<button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+  <img src="/iconer2/IconArrowDown.svg" alt="pil ned" />
+</button>
 
 <style>
   /* Styles for the back to top button */
@@ -15,17 +18,17 @@ import "../styles/style.css";
     font-size: var(--font_size_tiny);
     background-color: transparent;
     color: var(--color_white);
-    border: 1px solid var(--color_blue);
+    border: 2px solid var(--color_blue);
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
     transition: all 0.55s ease;
-    transform: rotate(90deg);
+    transform: rotate(180deg);
   }
   #backToTopBtn:hover {
     background-color: var(--color_blue);
 
-    transform: scale(1.1) rotate(90deg);
+    transform: scale(1.1) rotate(180deg);
   }
 
   /* Show the button only after scrolling down 400px */
