@@ -2,6 +2,7 @@
 import "../../styles/style.css";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Breadcrumb2 from "../../components/Breadcrumb2.astro";
+import ProduktCopy from "../../components/ProduktCopy.astro";
 
 export async function getStaticPaths() {
   const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/ekamen";
@@ -96,9 +97,41 @@ const { post } = Astro.props;
       </div>
     </article>
   </section>
-</MainLayout>
+  <!-- 
+  <section class="produkter_i_singleview">
+    <a href={`/${post.id}`} class="product-link">
+      <img src="https://esterpiazza.dk/kea/10_eksamen/merch/2_logo_hoodie/logo_hoodie1.avif" alt="hoodie" />
+      <p class="product-name">Logo Hoodie</p>
+      <p class="product-variant">Hoodie</p>
+      <p class="product-price">500,00 DKK</p>
+    </a>
 
+    <a href={`/${post.id}`} class="product-link">
+      <img src="https://esterpiazza.dk/kea/10_eksamen/merch/2_graa_hoodie/hoodie1.avif" alt="hoodie" />
+      <p class="product-name">Logo Hoodie</p>
+      <p class="product-variant">Hoodie</p>
+      <p class="product-price">500,00 DKK</p>
+    </a>
+
+    <a href={`/${post.id}`} class="product-link">
+      <img src="https://esterpiazza.dk/kea/10_eksamen/merch/2_logo_hoodie/logo_hoodie1.avif" alt="hoodie" />
+      <p class="product-name">Logo Hoodie</p>
+      <p class="product-variant">Hoodie</p>
+      <p class="product-price">500,00 DKK</p>
+    </a>
+
+    <a href={`/${post.id}`} class="product-link nr4">
+      <img src="https://esterpiazza.dk/kea/10_eksamen/merch/2_logo_hoodie/logo_hoodie1.avif" alt="hoodie" />
+      <p class="product-name">Logo Hoodie</p>
+      <p class="product-variant">Hoodie</p>
+      <p class="product-price">500,00 DKK</p>
+    </a>
+  </section> -->
+</MainLayout>
 <style>
+  /* .produkter_i_singleview {
+    display: none;
+  } */
   .breadcrumb {
     padding-top: 80px;
   }
@@ -176,6 +209,17 @@ const { post } = Astro.props;
     font-size: var(--font_size_small);
   }
 
+  /* @media screen and (min-width: 768px) {
+    .produkter_i_singleview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .nr4 {
+      display: none;
+    }
+  } */
+
   /* ___________________________ DESKTOP  ___________________________*/
   @media screen and (min-width: 1024px) {
     article {
@@ -203,5 +247,13 @@ const { post } = Astro.props;
     ul li {
       font-size: var(--font_size_regular);
     }
+    /* .produkter_i_singleview {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+    .nr4 {
+      display: block;
+    } */
   }
 </style>
