@@ -1,0 +1,149 @@
+---
+import "../../styles/style.css";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Breadcrumb2 from "../../components/Breadcrumb2.astro";
+
+export async function getStaticPaths() {
+  const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/youtubeeksamen";
+  const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw";
+
+  const response = await fetch(`${apiUrl}`, {
+    headers: {
+      apikey: apiKey,
+    },
+  });
+  const data = await response.json();
+
+  return data.map((onePost) => {
+    return {
+      params: { id: onePost.id },
+      props: { post: onePost },
+    };
+  });
+}
+
+const { post } = Astro.props;
+---
+
+<MainLayout title={post.name}>
+  <section>
+    <article class="produkt">
+      <iframe width="560" height="315" src={post.video} title=" YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <div class="product-info">
+        <div class="name-price">
+          <h1>{post.artist}</h1>
+          <h3>{post.name}</h3>
+        </div>
+      </div>
+    </article>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    padding-top: 80px;
+  }
+
+  article {
+    padding-top: 24px;
+  }
+  .small {
+    width: 75px;
+  }
+
+  .billeder {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .billede_grid {
+    display: flex;
+    gap: 16px;
+  }
+  .product-info {
+    margin-top: 48px;
+  }
+
+  .name-price,
+  .description,
+  .status p,
+  .size,
+  .input {
+    padding-bottom: 24px;
+  }
+
+  h3 {
+    padding-bottom: 8px;
+  }
+
+  .description p {
+    padding-bottom: 16px;
+  }
+
+  .size p {
+    padding-bottom: 8px;
+    font-weight: bold;
+  }
+  button {
+    display: inline-block;
+    font-size: var(--font_size_small);
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.55s ease;
+    background: var(--color_white);
+    color: var(--color_black);
+    border: 1px solid var(--color_white);
+    margin-right: 10px;
+  }
+
+  button:hover {
+    background: var(--color_black);
+    border: 1px solid var(--color_white);
+    color: var(--color_white);
+    text-decoration: none;
+  }
+
+  .tracklist {
+    display: flex;
+    flex-direction: column;
+  }
+  .tracklist p {
+    font-weight: bold;
+    padding-bottom: 0px;
+  }
+  ul li {
+    list-style-type: none;
+    font-size: var(--font_size_small);
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin: auto;
+      padding-top: 24px;
+    }
+
+    .billeder {
+      flex-direction: row;
+    }
+
+    .billede_grid {
+      display: flex;
+      flex-direction: column;
+      order: -1;
+    }
+
+    .product-info {
+      margin-top: 0px;
+    }
+
+    ul li {
+      font-size: var(--font_size_regular);
+    }
+  }
+</style>

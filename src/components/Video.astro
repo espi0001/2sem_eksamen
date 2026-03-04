@@ -1,10 +1,10 @@
 ---
 import "../styles/style.css";
-const { images, name, type2, price, id, type } = Astro.props;
+const { video, name, artist, images, id } = Astro.props;
 ---
 
 <article class="product">
-  <a href={`/produkter/${id}`} class="product-link">
+  <a href={`/videoer/${id}`} class="product-link">
     <div class="image-container">
       {
         images && images.length > 0 ? (
@@ -17,10 +17,10 @@ const { images, name, type2, price, id, type } = Astro.props;
         )
       }
     </div>
+
     <div class="product-info">
       <p class="product-name">{name}</p>
-      <p class="product-variant">{type2}</p>
-      <p class="product-price">{price},-</p>
+      <p class="product-variant">{artist}</p>
     </div>
   </a>
 </article>

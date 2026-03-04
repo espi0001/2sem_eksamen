@@ -3,12 +3,49 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Videoafspiller from "../components/Videoafspiller.astro";
 import OneVideo from "../components/OneVideo.astro";
-import Header2 from "../components/Header2.astro";
+import Video from "../components/Video.astro";
+
+const apiUrl = "https://orihtpvviiwcpmwzboqr.supabase.co/rest/v1/youtubeeksamen";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaWh0cHZ2aWl3Y3Btd3pib3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzNjY0NzEsImV4cCI6MjAzMTk0MjQ3MX0.D3VmybLu_cJTAhpmkfHnKtssujUzP4qg3XDV1owo6Cw";
+
+// Fetch data from Supabase ordered by the saved shuffled order
+let data = [];
+try {
+  const response = await fetch(apiUrl, {
+    method: "GET",
+    headers: {
+      apikey: apiKey,
+    },
+  });
+
+  console.log("Response status:", response.status); // Debugging: Check response status
+  data = await response.json();
+  console.log("Fetched data:", data); // Debugging: Log fetched data
+
+  if (!Array.isArray(data)) {
+    throw new Error("Fetched data is not an array");
+  }
+} catch (error) {
+  console.error("Error fetching or processing data:", error);
+  data = []; // Ensure data is an empty array in case of error
+}
 ---
 
 <MainLayout title="Barselona | Videoer">
   <section>
     <Videoafspiller />
+  </section>
+
+  <!-- <section>
+    <article class="video">
+      {data.length > 0 ? data.map((video) => <Video id={video.id} artist={video.artist} name={video.name} video={video.video} />) : <p>No products available.</p>}
+    </article>
+  </section> -->
+
+  <section>
+    <article class="produkter">
+      {data.length > 0 ? data.map((product) => <Video id={product.id} images={product.video} name={product.name} artist={product.artist} />) : <p>No products available.</p>}
+    </article>
   </section>
 
   <section class="videoer_galleri">
@@ -43,16 +80,28 @@ import Header2 from "../components/Header2.astro";
   .videoafspiller {
     padding-bottom: 32px;
   }
-  .videoer_galleri {
+  .videoer_galleri,
+  .video {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px;
     justify-content: center;
   }
+  .produkter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 22px;
+  }
 
   /* ___________________________ TABLET  ___________________________*/
   @media screen and (min-width: 768px) {
-    .videoer_galleri {
+    .videoer_galleri,
+    .video {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .produkter {
       grid-template-columns: 1fr 1fr 1fr;
       gap: 32px;
     }
@@ -62,6 +111,9 @@ import Header2 from "../components/Header2.astro";
   @media screen and (min-width: 1024px) {
     .videoer_galleri {
       display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .produkter {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
