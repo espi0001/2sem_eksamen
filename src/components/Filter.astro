@@ -1,0 +1,101 @@
+---
+import "../styles/style.css";
+---
+
+<div class="raw_grid">
+  <div class="dropdown">
+    <div class="lyt2">
+      <p>Soter efter</p>
+      <img src="/iconer2/IconArrowDown.svg" alt="pil ned" />
+    </div>
+    <div class="dropdown-content">
+      <a href="#">Fremhævet</a>
+      <hr />
+      <a href="#">Bestseller</a>
+      <hr />
+      <a href="#">Alfabetisk, A-Å</a>
+      <hr />
+      <a href="#">Alfabetisk, Å-A</a>
+      <hr />
+      <a href="#">Pris, Lav til Høj</a>
+      <hr />
+      <a href="#">Pris, Høj til Lav</a>
+      <hr />
+      <a href="#">Dato, Ældre til Nyere</a>
+      <hr />
+      <a href="#">Dato, Nyere til Ældre</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .raw_grid {
+    display: none;
+  }
+  .raw_grid p,
+  .raw_grid a {
+    font-size: var(--font_size_small);
+  }
+  .lyt2 {
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+  }
+  .lyt2 img {
+    max-width: 30px;
+    align-self: center;
+  }
+  .lyt2 p:hover {
+    color: var(--color_blue);
+  }
+  .dropdown-content {
+    text-transform: uppercase;
+  }
+  /* Container needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color_white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: var(--color_black);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: var(--color_blue);
+    color: var(--color_white);
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Style the image */
+  .dropdown img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .raw_grid {
+      display: block;
+    }
+  }
+</style>
